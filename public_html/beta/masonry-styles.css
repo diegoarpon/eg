@@ -1,0 +1,40 @@
+/* Estilos para el grid de masonry */
+
+.grid-sizer,
+.grid-item {
+  width: 33.333%;
+  padding: 10px;
+}
+
+.grid-item--width2 {
+  width: 66.666%;
+}
+
+.grid-item .card {
+  height: 100%;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.item-number {
+  font-size: 4rem;
+  font-weight: 200;
+  line-height: 1;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.circle-bg {
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--color-primary-dark-50);
+  z-index: 0;
+}
+
+.card-body {
+  position: relative;
+  z-index: 1;
+}

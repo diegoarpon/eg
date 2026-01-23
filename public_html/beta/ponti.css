@@ -1,0 +1,221 @@
+/* Ponti specific styles */
+:root {
+  --ponti-color: #fb805f;
+  --ponti-secondary: #192852;
+  --ponti-tertiary: #008AA9;
+}
+
+body.ponti {
+  padding-top: 0;
+  background-image: url('images/pontitosi/ponti-blur.webp');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Card styles */
+.card-height-90 {
+  height: 90vh;
+}
+
+.card-height-95 {
+  height: 95vh;
+}
+
+.z-index-1 {
+  z-index: 1;
+}
+
+/* Logo sizes */
+.logo-sm {
+  max-width: 100px;
+}
+
+.logo-md {
+  max-width: 150px;
+}
+
+.logo-lg {
+  max-width: 350px;
+}
+
+.logo-eg {
+  max-width: 160px;
+}
+
+/* Download icon */
+.download-icon {
+  font-size: 3rem;
+  display: block;
+}
+
+.ponti-text {
+  color: var(--ponti-color);
+}
+
+.ponti-bg {
+  background-color: var(--ponti-color);
+  color: white;
+}
+
+.ponti-text-secondary {
+  color: var(--ponti-secondary);
+}
+
+.ponti-bg-secondary {
+  background-color: var(--ponti-secondary);
+  color: white;
+}
+
+.ponti-text-tertiary {
+  color: var(--ponti-tertiary);
+}
+
+.ponti-bg-tertiary {
+  background-color: var(--ponti-tertiary);
+  color: white;
+}
+
+.contact-link {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.contact-link:hover {
+  transform: scale(1.025);
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.contact-link.icon:hover {
+  transform: scale(1.25);
+}
+
+.ponti-img-bg {
+  background-image: url(images/pontitosi/ponti.webp);
+  background-size: cover;
+}
+
+.ponti-inv-img-bg {
+  background-image: url(images/pontitosi/ponti.webp);
+  background-position: center right;
+}
+
+/* Responsive typography */
+h1,
+.display-3 {
+  font-size: calc(2rem + 2vw);
+}
+
+h2,
+.h2 {
+  font-size: calc(1.3rem + 0.9vw);
+}
+
+h3,
+.h3 {
+  font-size: calc(1.2rem + 0.6vw);
+}
+
+h4,
+.h4 {
+  text-transform: uppercase;
+  font-weight: var(--font-weight-medium);
+  font-size: calc(1rem + 0.3vw);
+}
+
+p {
+  font-weight: var(--font-weight-regular);
+  font-size: calc(0.9rem + 0.2vw);
+  margin-bottom: 0.5rem !important;
+  line-height: 1.2;
+  hyphens: auto;
+}
+
+@media (max-width: 768px) {
+
+  .text-center,
+  .justify-content-center {
+    text-align: center !important;
+  }
+
+  .text-end {
+    text-align: end !important;
+  }
+
+  .logo-xl {
+    max-width: 100%;
+  }
+
+  .card-height-95 {
+    height: 100%;
+  }
+
+  h1,
+  .display-3 {
+    font-size: calc(1.75rem + 0.75vw);
+  }
+}
+
+/* Enable hyphenation for all text elements */
+body {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+}
+
+/* Make logos consistent size on mobile */
+@media (max-width: 768px) {
+
+  .logo-md,
+  .logo-xl,
+  .logo-sm,
+  .logo-lg {
+    width: 80%;
+  }
+
+  .logo-eg,
+  .logo-eg-md {
+    width: 110%;
+  }
+}
+
+/* Responsive pill badge */
+.badge {
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding-bottom: 0.7rem !important;
+
+}
+
+@media (max-width: 768px) {
+  .badge {
+    padding: 0.7rem;
+    padding-bottom: 0.6rem !important;
+
+  }
+
+  .badge {
+    font-size: calc(0.75rem + 0.5vw);
+  }
+
+  .badge p {
+    font-size: 0.9rem;
+  }
+
+  .badge .btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  body.ponti {
+    background-image: url('images/pontitosi/ponti-blur-2.webp');
+  }
+}

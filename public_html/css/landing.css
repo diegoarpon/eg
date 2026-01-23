@@ -1,0 +1,337 @@
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize ! Todos los content-box son border-box */body,html{overflow-x:hidden}hr,img{border:0}pre,textarea{overflow:auto}html{font-family:'Montserrat','Arial',sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0;padding:0;}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block;box-sizing:border-box}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:border-box;box-sizing:border-box;display:block;height:1px;border-top:1px solid #ccc;margin:1em 0;padding:0}.visuallyhidden,fieldset,legend{border:0;padding:0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}textarea{resize:vertical}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}audio,canvas,form,img,svg,video{vertical-align:middle}fieldset{margin:0}.hidden{display:none!important;visibility:hidden}.visuallyhidden{clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;position:absolute;width:1px}.visuallyhidden.focusable:active,.visuallyhidden.focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}a,div,footer,h1,h2,h3,h4,h5,header,li,p,section,span,ul{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}a,button,h1,h2,input,p,select,textarea{-webkit-tap-highlight-color:transparent}::-moz-selection{background:#b3d4fc;text-shadow:none}::selection{background:#b3d4fc;text-shadow:none}footer::-moz-selection,header::-moz-selection{background:0 0;text-shadow:none}footer::selection,header::selection{background:0 0;text-shadow:none}input[type=number]{-moz-appearance:textfield;appearance:textfield!important}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}input:-internal-autofill-previewed,input:-internal-autofill-selected,select:-internal-autofill-previewed,select:-internal-autofill-selected,textarea:-internal-autofill-previewed,textarea:-internal-autofill-selected{background-color:rgba(0,0,0,0)!important;background-image:none!important;color:#000!important}div{position: relative}img{max-width: 100%; height: auto;}[class*=flex-],li{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;-ms-flex-line-pack:center;align-content:center;width:100%;margin:0 auto;-ms-flex-wrap:wrap;flex-wrap:wrap}[class*=flex-]>*{width:100%;box-sizing:border-box}@media only screen and (max-width:719px){[class*=flex-]>*{padding-bottom:50px}}@media only screen and (min-width:720px){[class*=flex-]>*{width:50%}[class*=flex-12]>*{width:calc(100% / 3)}}@media only screen and (min-width:1280px){[class*=flex-3]>*{width:calc(100% / 3)}[class*=flex-4]>*{width:25%}[class*=flex-5]>*{width:20%}[class*=flex-6]>*{width:calc(100% / 6)}[class*=flex-7]>*{width:calc(100% / 7)}[class*=flex-8]>*{width:calc(100% / 8)}[class*=flex-12]>*{width:calc(100% / 4)}}@media only screen and (min-width:1600px){[class*=flex-12]>*{width:calc(100% /6)}}[class*="-center"]{align-items:center}
+
+* {box-sizing: border-box;}
+
+body {
+  background: #fefefe url('../img/zoominar/b.png') no-repeat left 3vh;
+  background-size: 40vw auto;
+  background-attachment: fixed;
+  color:#484848;
+  padding: 0;
+  margin: 0;
+}
+
+
+header {
+  background-color: #484848;
+  padding:15px 30px;
+  text-align: center;
+  color: #ccc;
+    font-weight: 700;
+}
+
+header img {
+  margin: 0 auto;
+  display: block;
+  max-height: 5vh;
+  width: auto;
+}
+
+header span {
+  content: "MARKETING";
+  display: block;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 8px 0;
+}
+
+header::before {
+  content: "ORGANIZA";
+  display: block;
+  font-size: 10px;
+  letter-spacing: 3px;
+  padding: 8px 0;
+}
+
+section  {font-size: 16px; text-align: center; position: relative;}
+section img { display: block; margin: 0 auto; max-width: 100%;}
+
+section:nth-of-type(2) {
+  padding: 15px;
+  background-color: rgba(0,0,0,.42);
+  padding: 60px 0;
+}
+
+
+h1, h2 {
+  margin: 0 auto;
+  padding: 0;
+  line-height: 1.4;
+  color: #fff;
+  width: 90%;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+h2 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 30px
+}
+
+form a {
+  color: #fff;
+  text-decoration: none;
+}
+
+h2 + p {
+  color: #fff;
+  line-height: 130%;
+  font-size: 16px;
+}
+
+
+form h3 {
+  color: #fff;
+  border-bottom: rgba(255,255,255,0.3) 1px solid;
+  margin-bottom: 15px;
+  padding-bottom: 8px
+}
+
+
+form {
+  width: 100%;
+  display:block;
+  margin: 0;
+  padding: 15px 0;
+  box-sizing: border-box;
+  border: 0;
+  text-align: center;
+
+}
+
+input {
+  display: block;
+  margin: 0 auto 30px;
+  padding:15px;
+  width: 90%;
+  max-width: 640px;
+  border: none;
+  -webkit-appearance:none;
+  appearance:none;
+}
+
+form > div {
+  display: block;
+  margin: 0 auto 15px;
+  padding: 8px;
+  width: 90%;
+  max-width: 640px;
+  text-align: left;
+}
+
+.cajita {
+  margin: 0 auto;
+  max-width: 640px;
+  width: 90%;
+}
+
+.bt {display: none}
+.bt-zoom {display: block;}
+
+       [class^=bt] {
+         display: inline-block;
+         text-decoration: none;
+         padding: 20px 45px;
+         color: #fff;
+         background-color: #578afa;
+         font-weight: 700;
+         font-size: 32px;
+       }
+
+
+footer {padding: 30px 3vw; background-color: #242424; color: #FCFCFC; text-align: center; margin: 0 auto;}
+footer p {text-align: justify; font-size: 12px;}
+footer div a {
+  display: inline-block;
+  margin: 15px;
+  text-decoration: none;
+  height: 42px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+  color: #FCFCFC
+}
+footer a span {display: none}
+footer a svg {
+  display: inline-block; height: 38px; width: auto;
+  margin-right: 8px;
+}
+
+input[type=checkbox] {
+  display: inline-block;
+  position: relative;
+  max-width: 30px;
+  max-height: 30px;
+  margin:0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+
+  input:checked::after {
+    background: url(../img/check.svg) center center no-repeat #fff;
+    background-size: cover;
+    border: 2px solid #222;
+    padding: 1px;
+    margin-top: -2px;
+    -webkit-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, .5);
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, .5);
+  }
+
+  input[type=checkbox]::after {
+    display: block;
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    background-color: #fff;
+    cursor: pointer;
+    padding: 0;
+    margin-top: -1px
+  }
+
+  input[type=submit]{
+    display: inline-block;
+    text-decoration: none;
+    padding: 20px;
+    color: #fff;
+    background-color: #222;
+    font-weight: 700;
+    font-size: 24px;
+    width: auto;
+  }
+
+  input[type=submit]:hover {
+    background-color: #608ebc;
+  }
+
+
+
+  label {
+          width: auto;
+          display: inline-block;
+          height: 30px;
+          text-align: left;
+          vertical-align: middle;
+          margin: 25px 0 10px 8px;
+          padding: 0;
+          color: #fff;
+          font-weight: 700
+
+    }
+
+    form p {
+      color: #fcfcfc;
+      line-height: 150%;
+      font-size: 14px;
+    }
+
+
+
+     @media only screen and (max-width: 1179px) {
+       body {
+         background-position: left 3vw;
+         background-size: 100vw auto;
+       }
+       section p strong {
+         display: block;
+         margin-bottom: 30px;
+       }
+
+       img[alt='DR RAUL BANEGAS'] {max-width: 240px; margin-bottom: 10vw}
+       img[alt^='Zoominar'] {width: 80%; margin-bottom: 30px;}
+       section:nth-of-type(1) {
+         background: url('../img/zoominar/dr-raul-banegas.png') no-repeat left 150%;
+         background-size: auto 100vw;
+         padding:10vw 5vw 70vw;
+       }
+
+     }
+
+     @media only screen and (min-width: 1280px) {
+
+       header {
+         position: fixed;
+         left: 0;
+         top:0;
+         z-index: 2;
+       }
+       section {
+         z-index: 1;
+         min-height: 100vh;
+         height: auto;
+         background: url('../img/zoominar/dr-raul-banegas.png') no-repeat left 10vh;
+         background-size: auto 110vh;
+         background-attachment: fixed;
+       }
+
+
+
+       [class^=bt] {
+         display: inline-block;
+         text-decoration: none;
+         padding: 20px 45px;
+         color: #fff;
+         background-color: #578afa;
+         font-weight: 700;
+         font-size: 32px;
+       }
+
+       .pos {
+         position: absolute;
+         left: 50%;
+         -webkit-ransform: translateX(-50%);
+         transform: translateX(-50%);
+         max-width: 300px;
+       }
+
+       img[alt='DR RAUL BANEGAS'] {
+           top:5vw;
+       }
+
+       img[alt^='Zoominar'] {
+         width: 80%;
+         max-width: 700px;
+         top:50%;
+         -webkit-transform: translate(-50%,-60%);
+         transform: translate(-50%,-60%);
+       }
+
+       div.pos {
+         bottom: 3vw;
+       }
+
+       section:nth-of-type(1) > div {
+         position: absolute;
+         width: 60%;
+         right: 0;
+         top:0;
+         height: 100%;
+       }
+
+       section:nth-of-type(2) {
+         padding: 5vw 5px 3vw 40%;
+       }
+
+       footer a span {display: inline-block;}
+
+     }
+
+
+     .bt-zoom::after {
+       content: '5 minutos antes!';
+       display: block;
+       color: #fff;
+       position: relative;
+       font-size: 12px
+     }

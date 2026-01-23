@@ -1,0 +1,359 @@
+/* ===== CSS VARIABLES ===== */
+:root {
+  --font-family-primary: 'Montserrat', sans-serif;
+  --font-weight-thin: 100;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --color-terracota: #ce775c;
+  --color-blue: #091c38;
+  --color-teal: #42b3b5;
+  --color-header: #04787a;
+}
+
+/* ===== GLOBAL STYLES ===== */
+
+
+body {
+  padding-top: 0;
+  background-image: url('images/banegas/bg-banegas.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+  font-family: var(--font-family-primary) !important;
+  font-size: calc(1rem + 0.2vw);
+  padding-top: 70px;
+}
+
+/* ===== TYPOGRAPHY ===== */
+p,
+.card p {
+  font-weight: var(--font-weight-light);
+  font-size: calc(1rem + 0.2vw);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-primary) !important;
+}
+
+h2,
+.h2 {
+  font-weight: var(--font-weight-thin);
+  font-size: calc(1.15rem + 0.6vw);
+  text-transform: uppercase;
+}
+
+h3,
+.h3,
+.h3 p {
+  font-weight: var(--font-weight-thin);
+  font-size: calc(1.5rem + 0.6vw);
+}
+
+.h3 p {
+  margin-bottom: 1rem;
+}
+
+h4,
+.h4 {
+  text-transform: uppercase;
+  font-weight: var(--font-weight-light);
+  font-size: calc(2rem + 0.3vw);
+}
+
+h5,
+.h5 {
+  text-transform: uppercase;
+  font-weight: var(--font-weight-regular);
+  font-size: calc(1rem + 0.3vw);
+  margin-bottom: 1.5rem;
+
+}
+
+h6,
+.h6 {
+  text-transform: uppercase;
+  font-weight: var(--font-weight-light);
+  font-size: calc(0.7rem + 0.2vw);
+}
+
+p strong,
+.h3 strong {
+  font-weight: 600 !important;
+}
+
+/* Prevent word breaking - keeps words intact */
+.no-break {
+  word-break: keep-all;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+/* Allow word breaking - breaks long words */
+.break-word {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* Break all characters - breaks anywhere */
+.break-all {
+  word-break: break-all;
+}
+
+/* Normal word breaking - default behavior */
+.break-normal {
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+/* ===== LAYOUT & COMPONENTS ===== */
+.card {
+  border-radius: 0 !important;
+}
+
+.card-height-40 {
+  aspect-ratio: 1 !important;
+}
+
+.card-height-80 {
+  aspect-ratio: 2/1 !important;
+}
+
+.card-body {
+  z-index: 2;
+  padding: 2rem;
+}
+
+/* ===== COLOR ===== */
+.color-terracota {
+  color: var(--color-terracota)
+}
+
+.color-blue {
+  color: var(--color-blue);
+}
+
+.color-teal {
+  color: var(--color-teal);
+}
+
+/* ===== BACKGROUNDS ===== */
+.bg-banegas {
+  background-image: url(images/banegas/bg-banegas.png);
+  background-size: cover;
+}
+
+.triangles-bg {
+  background-image: url(images/banegas/dark_seamless_texture_01.webp);
+  background-size: cover;
+}
+
+.mansion-bg {
+  background-image: url(images/banegas/fortabat.webp);
+  background-size: cover;
+  background-position: bottom;
+}
+
+.bg-blue {
+  background-image: url(images/banegas/bg-blue.png);
+}
+
+.bg-terracota {
+  background-image: url(images/banegas/bg-terracota.png);
+  background-position: right;
+}
+
+.bg-butter {
+  background-image: url(images/banegas/bg-butter.png);
+  background-position: right;
+}
+
+/* ===== IMAGES & LOGOS ===== */
+.logo-top {
+  max-width: 400px;
+}
+
+.logo-center {
+  max-width: 500px;
+}
+
+.logo-bottom {
+  max-width: 200px;
+}
+
+.card-logo {
+  max-width: 150px;
+}
+
+.doctor-img {
+  max-height: 200px;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+/* ===== INTERACTIVE ELEMENTS ===== */
+.contact-link {
+  transition: transform 0.3s ease;
+  display: inline-block;
+  font-size: calc(1rem + 0.2vw);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-blue);
+}
+
+.contact-link:hover {
+  transform: scale(1.025);
+  text-decoration: none !important;
+  color: inherit;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 576px) {
+
+  p,
+  .card p {
+    font-size: 1.4rem;
+  }
+
+  h3,
+  .h3,
+  .h3 p {
+    font-size: 1.8rem;
+  }
+
+  h5,
+  .h5 {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-regular);
+  }
+
+  h6,
+  .h6 {
+    font-size: 1rem;
+  }
+
+  .card-height-40,
+  .card-height-80 {
+    aspect-ratio: unset !important;
+  }
+
+  .mansion-bg {
+    aspect-ratio: 1 !important;
+  }
+
+  .w-20 {
+    width: 60%;
+  }
+
+  .w-40 {
+    width: 80%;
+  }
+
+  .card-body {
+    padding: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+  }
+
+  .contact-link {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .text-center,
+  .justify-content-center {
+    text-align: center !important;
+  }
+
+  .text-end {
+    text-align: end !important;
+  }
+
+  h1,
+  .display-3 {
+    font-size: calc(1.75rem + 0.75vw);
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 480px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 760px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1120px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1120px;
+  }
+}
+
+/* ===== HEADER FONT OVERRIDE ===== */
+header .navbar,
+header .nav-link,
+header .navbar-nav {
+  font-family: 'Nohemi', sans-serif !important;
+}
+
+/* ===== HEADER BACKGROUND OVERRIDE ===== */
+header {
+  background: var(--color-header) !important;
+}
+
+header .navbar {
+  background: var(--color-header) !important;
+}
+
+header .header-wave path {
+  fill: var(--color-header) !important;
+}

@@ -1,0 +1,40 @@
+# robots.txt for website
+User-agent: *
+Allow: /
+
+# Main HTML pages
+Allow: /index.html
+Allow: /cursos.html
+Allow: /nosotras.html
+Allow: /onetoone.html
+Allow: /profesionales.html
+Allow: /upmidface.html
+Allow: /ponti-tosi.html
+Allow: /eventos.html
+Allow: /asesoramiento.html
+Allow: /capacitaciones.html
+
+# Course pages
+Allow: /cursos/
+
+# Block access to certain directories
+Disallow: /favicon/
+Disallow: /fonts/
+
+# Allow access to images for better SEO
+Allow: /images/
+Allow: /images/dr/
+Allow: /images/profesionales/
+
+# Block development and configuration files
+Disallow: /.gitignore
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /README.md
+
+# Crawl delay to prevent server overload
+Crawl-delay: 10
+
+# Sitemap location (you should create this file)
+Sitemap: https://www.egmarketing.com.ar/sitemap.xml
+

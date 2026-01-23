@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .split-container {
+            display: flex;
+            height: calc(100vh - 60px);
+        }
+
+        @media (max-width: 768px) {
+            .split-container {
+                flex-direction: column;
+            }
+
+            .left-half {
+                border-right: none !important;
+                border-bottom: 1px solid #ccc;
+            }
+
+            .description-text {
+                width: 90%;
+                font-size: 0.9rem;
+                display: none;
+            }
+        }
+
+        .left-half,
+        .right-half {
+            flex: 1;
+            padding: 20px;
+            transition: flex 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .content {
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .left-half:hover .content,
+        .right-half:hover .content {
+            transform: scale(1.2);
+        }
+
+        .enter-text {
+            position: absolute;
+            bottom: 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .left-half:hover .enter-text,
+        .right-half:hover .enter-text {
+            opacity: 1;
+        }
+
+        .description-text {
+            opacity: 0;
+            color: white;
+            width: 400px;
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .left-half:hover .description-text,
+        .right-half:hover .description-text {
+            opacity: 1;
+        }
+
+        .left-half {
+            background-color: #ccb5a6;
+            border-right: 3px solid #ffffff;
+        }
+
+        .right-half {
+            background-color: #9bb2ae;
+        }
+
+        .left-half:hover {
+            flex: 1.5;
+        }
+
+        .right-half:hover {
+            flex: 1.5;
+        }
+
+        .left-half:hover~.right-half {
+            filter: grayscale(100%) brightness(0.7);
+        }
+
+        .right-half:hover+.left-half,
+        .split-container:hover .left-half:not(:hover) {
+            filter: grayscale(100%) brightness(0.7);
+        }
+
+        header {
+            background-color: #6A7F8C !important;
+            transition: background-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .left-half:hover~* header,
+        .split-container:has(.left-half:hover)~* header,
+        body:has(.left-half:hover) header {
+            background-color: #ccb5a6 !important;
+        }
+
+        .right-half:hover~* header,
+        .split-container:has(.right-half:hover)~* header,
+        body:has(.right-half:hover) header {
+            background-color: #9bb2ae !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar navbar-light sticky-top">
+        <div class="container-fluid justify-content-center">
+            <img src="garrido.svg" height="40px">
+        </div>
+    </header>
+    <div class="split-container">
+        <div class="left-half">
+            <div class="content">
+                <img src="mio.png" class="img-fluid mb-4" width="300">
+                <p class="description-text">En MIO nos dedicamos a ofrecer un cuidado integral y especializado para
+                    pacientes
+                    oncológicos,
+                    enfocados en cada etapa de su recuperación física y emocional. </p>
+            </div>
+            <div class="enter-text">Conocenos</div>
+        </div>
+        <div class="right-half">
+            <div class="content">
+                <img src="mie.png" class="img-fluid mb-4" width="300">
+                <p class="description-text">En MIE nos dedicamos a realzar la belleza natural de cada paciente a través
+                    de un
+                    enfoque
+                    personalizado en medicina estética y cirugía plástica. </p>
+            </div>
+            <div class="enter-text">Conocenos</div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

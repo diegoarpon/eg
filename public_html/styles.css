@@ -2201,6 +2201,7 @@ svg {
 /* Add padding to body to prevent content from being hidden under fixed header */
 html,
 body {
+  background-color: #00515F;
   background-color: var(--color-primary);
   min-height: 100%;
   margin: 0;
@@ -2210,10 +2211,26 @@ body {
   padding-top: 70px;
   padding-top: calc(70px + constant(safe-area-inset-top));
   padding-top: calc(70px + env(safe-area-inset-top));
+  background-color: #00515F;
   background-color: var(--color-primary);
   position: relative;
   overflow-x: hidden;
   isolation: isolate;
+}
+
+/* Paint the iOS safe-area with the site color */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: constant(safe-area-inset-top);
+  height: env(safe-area-inset-top);
+  background-color: #00515F;
+  background-color: var(--color-primary);
+  z-index: 1031;
+  pointer-events: none;
 }
 
 /* Body background pattern with adjustable opacity */

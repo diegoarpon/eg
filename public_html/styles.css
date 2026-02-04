@@ -2187,11 +2187,20 @@ svg {
   right: 0;
   left: 0;
   z-index: 1030;
+  padding-top: env(safe-area-inset-top);
+  background-color: var(--color-primary);
 }
 
 /* Add padding to body to prevent content from being hidden under fixed header */
+html,
 body {
-  padding-top: 70px;
+  background-color: var(--color-primary);
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  padding-top: calc(70px + env(safe-area-inset-top));
   background-color: var(--color-primary);
   position: relative;
   overflow-x: hidden;

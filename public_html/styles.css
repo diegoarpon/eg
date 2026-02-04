@@ -1904,9 +1904,7 @@ svg {
 }
 
 /* Classes to replace inline styles */
-.scroll-padding-top-80 {
-  scroll-padding-top: 80px;
-}
+
 
 .navbar-logo {
   height: 44px;

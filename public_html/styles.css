@@ -1334,6 +1334,7 @@ html {
   position: relative;
   z-index: 10;
   min-width: 1200px;
+  width: 100%;
 }
 
 @media (max-width: 1024px) and (min-width: 767px) {
@@ -1367,6 +1368,7 @@ html {
   display: block;
   margin-top: -1px;
   min-width: 1200px;
+  width: 100%;
 }
 
 .logo-h-64 {

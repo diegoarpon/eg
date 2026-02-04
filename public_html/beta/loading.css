@@ -1,4 +1,46 @@
 /* Loading Screen Styles */
+html {
+  background-color: var(--color-primary);
+}
+
+/* Prevent content flash before the loader shows */
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 10000;
+  background-color: var(--color-primary);
+}
+
+html::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 10001;
+  background: url("images/logo-eg-icon.svg") center/120px no-repeat;
+  animation: pulse 1.5s infinite alternate;
+}
+
+html.loading-done::before {
+  opacity: 0;
+}
+
+html.loading-done::after {
+  opacity: 0;
+  visibility: hidden;
+  animation: none;
+}
+
+html:not(.loading-done) body > :not(.loading-screen) {
+  visibility: hidden;
+}
+
 .loading-screen {
   position: fixed;
   top: 0;
@@ -9,14 +51,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
-  transition: opacity 0.5s ease-out;
+  z-index: 10002;
+  transition: opacity 0.4s ease-out;
 }
 
 .loading-screen.hidden {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
+
 
 .loading-logo {
   width: 120px;

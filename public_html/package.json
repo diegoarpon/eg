@@ -12,6 +12,7 @@
     "start": "sirv --dev --no-clear --port 3000"
   },
   "devDependencies": {
+    "prettier": "^3.8.1",
     "sirv-cli": "^3.0.1"
   }
 }

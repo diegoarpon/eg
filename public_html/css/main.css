@@ -1,45 +1,57 @@
-
 .redes a {
-  display: inline-block;
-  color: #222;
-  margin-right: 15px;
+	display: inline-block;
+	color: #222;
+	margin-right: 15px;
 }
+
 .redes span {
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 400ms;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 400ms;
 }
+
 .redes a:hover span {
-  visibility: visible;
-  display: block;
-  font-size: 30px;
-  padding:0 0 4px 4px;
-    position: fixed;
-    bottom:5vw;
-    left: 5vw;
-    opacity: .4;
-    font-weight: 300;
+	visibility: visible;
+	display: block;
+	font-size: 30px;
+	padding: 0 0 4px 4px;
+	position: fixed;
+	bottom: 5vw;
+	left: 5vw;
+	opacity: 0.4;
+	font-weight: 300;
 }
+
 .redes svg {
-  max-width: 32px;
-  display: inline-block;
-  vertical-align: bottom;
+	max-width: 32px;
+	display: inline-block;
+	vertical-align: bottom;
 }
 
-.no-touch .redes svg:not(:hover) path{
-  fill:#cdcdcd;
+.no-touch .redes svg:not(:hover) path {
+	fill: #cdcdcd;
 }
 
+@media only screen and (min-width: 960px) {
+	header {
+		padding: 8vw 5vw 2vw;
+	}
 
+	section {
+		padding: 60px 4.9vw;
+	}
+}
 
- @media only screen and (min-width: 960px) {
-    header {
-      padding:8vw 5vw 2vw;
-    }
-    section {
-        padding: 60px 4.9vw;
-    }
- }
-iframe {width: 100%; display: block; height: auto; min-height:1057px; margin: 0 auto; padding: 0; border: none;}
+iframe {
+	width: 100%;
+	display: block;
+	height: auto;
+	min-height: 1057px;
+	margin: 0 auto;
+	padding: 0;
+	border: none;
+}
 
-section[role="form"] { padding: 60px 0;}
+section[role="form"] {
+	padding: 60px 0;
+}

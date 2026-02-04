@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
   fadeElements.forEach(el => {
     // Skip elements in carousels or the endless strip
     if (el.closest('.carousel') || el.closest('.carousel-item') || 
-        el.closest('.endless-strip-container') || el.closest('.strip-card')) {
+        el.closest('.endless-strip-container') || el.closest('.strip-card') ||
+        el.id === 'servicios') {
       return;
     }
     el.classList.add('fade-in');

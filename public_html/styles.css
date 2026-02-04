@@ -131,12 +131,17 @@
   --body-bg-opacity: 0.04;
 }
 
+html {
+  background-color: #1f4f59;
+}
+
 /* Typography styles */
 body {
   font-family: var(--font-family-main);
   color: var(--color-white);
   font-weight: var(--font-weight-light);
   letter-spacing: 1px;
+
 }
 
 p {
@@ -595,6 +600,7 @@ section>div:first-child {
 /* Smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;
+  background-color: var(--color-primary);
 }
 
 /* Big Words Section Styles */
@@ -2187,6 +2193,7 @@ svg {
   right: 0;
   left: 0;
   z-index: 1030;
+  padding-top: constant(safe-area-inset-top);
   padding-top: env(safe-area-inset-top);
   background-color: var(--color-primary);
 }
@@ -2200,6 +2207,8 @@ body {
 }
 
 body {
+  padding-top: 70px;
+  padding-top: calc(70px + constant(safe-area-inset-top));
   padding-top: calc(70px + env(safe-area-inset-top));
   background-color: var(--color-primary);
   position: relative;

@@ -2216,7 +2216,20 @@ body {
   isolation: isolate;
 }
 
-
+/* Body background pattern with adjustable opacity */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("images/bg-lines-opa10-white.svg");
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: center -150px;
+  opacity: var(--body-bg-opacity);
+  pointer-events: none;
+  z-index: 0;
+}
 
 /* header cubre notch */
 header.fixed-top {
@@ -2893,4 +2906,31 @@ section[id] {
   transform: translate(-50%, -50%);
   z-index: 3;
   pointer-events: auto;
+}
+
+/* 1) Header fixed: cubre safe-area + fondo sólido */
+header.fixed-top {
+  background: var(--color-primary);
+  padding-top: env(safe-area-inset-top);
+  z-index: 1030;
+}
+
+/* 2) El header tiene una ola de 60px, y la navbar ~70px.
+      Definimos altura total para empujar el contenido. */
+:root {
+  --nav-h: 70px;
+  /* si tu navbar cambia, ajustá */
+  --wave-h: 60px;
+  /* tu <svg height="60"> */
+  --header-total: calc(var(--nav-h) + var(--wave-h));
+}
+
+/* 3) Empujar TODO el contenido abajo del header (incluye notch) */
+body {
+  padding-top: calc(var(--header-total) + env(safe-area-inset-top)) !important;
+}
+
+/* 4) IMPORTANTE: sacá / desactiva el parche que compite arriba */
+body::after {
+  display: none !important;
 }

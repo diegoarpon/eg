@@ -2908,68 +2908,14 @@ section[id] {
   pointer-events: auto;
 }
 
-/* 1) Header fixed: cubre safe-area + fondo sólido */
 header.fixed-top {
   background: var(--color-primary);
   padding-top: env(safe-area-inset-top);
-  z-index: 1030;
+  z-index: 2000;
 }
 
-/* 2) El header tiene una ola de 60px, y la navbar ~70px.
-      Definimos altura total para empujar el contenido. */
-:root {
-  --nav-h: 70px;
-  /* si tu navbar cambia, ajustá */
-  --wave-h: 60px;
-  /* tu <svg height="60"> */
-  --header-total: calc(var(--nav-h) + var(--wave-h));
-}
-
-/* 3) Empujar TODO el contenido abajo del header (incluye notch) */
-body {
-  padding-top: calc(var(--header-total) + env(safe-area-inset-top)) !important;
-}
-
-/* 4) IMPORTANTE: sacá / desactiva el parche que compite arriba */
+/* mata cualquier parche viejo */
+body::before,
 body::after {
   display: none !important;
-}
-
-/* iOS notch + fixed header: hard override */
-html,
-body {
-  margin: 0 !important;
-  background: var(--color-primary) !important;
-}
-
-/* tu header es el que debe pintar arriba */
-header.fixed-top {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  z-index: 2000 !important;
-  background: var(--color-primary) !important;
-}
-
-/* pinta el safe-area SIEMPRE (iPhone notch) */
-header.fixed-top::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: env(safe-area-inset-top);
-  background: var(--color-primary);
-  z-index: 2001;
-  pointer-events: none;
-}
-
-/* NO uses body::after, compite con el header */
-body::after {
-  display: none !important;
-}
-
-body {
-  padding-top: calc(var(--header-offset, 70px) + env(safe-area-inset-top)) !important;
 }

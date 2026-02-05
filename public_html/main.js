@@ -65,3 +65,23 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize custom video covers
   initVideoEmbeds();
 });
+// ===== FIX DEFINITIVO HEADER FIXED + iOS =====
+function fixHeaderOffset() {
+  const header = document.querySelector('header.fixed-top');
+  if (!header) return;
+
+  const safeAreaTop = parseFloat(
+    getComputedStyle(document.documentElement)
+      .getPropertyValue('env(safe-area-inset-top)') || 0
+  );
+
+  const headerHeight = header.offsetHeight;
+  const totalOffset = headerHeight + safeAreaTop;
+
+  document.body.style.paddingTop = `${totalOffset}px`;
+}
+
+// recalcular en todos los casos donde iOS rompe layout
+window.addEventListener('load', fixHeaderOffset);
+window.addEventListener('resize', fixHeaderOffset);
+window.addEventListener('orientationchange', fixHeaderOffset);

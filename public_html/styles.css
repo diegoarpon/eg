@@ -2179,20 +2179,6 @@ svg {
   background-color: var(--color-primary);
 }
 
-/* Body background pattern with adjustable opacity */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("images/bg-lines-opa10-white.svg");
-  background-size: cover;
-  background-repeat: repeat;
-  background-attachment: fixed;
-  background-position: center -150px;
-  opacity: var(--body-bg-opacity);
-  pointer-events: none;
-  z-index: 0;
-}
 
 /* header cubre notch */
 header.fixed-top {

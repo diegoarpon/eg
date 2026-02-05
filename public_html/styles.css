@@ -2216,21 +2216,6 @@ body {
   isolation: isolate;
 }
 
-/* Paint the iOS safe-area with the site color */
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: constant(safe-area-inset-top);
-  height: env(safe-area-inset-top);
-  background-color: #00515F;
-  background-color: var(--color-primary);
-  z-index: 1031;
-  pointer-events: none;
-}
-
 /* Body background pattern with adjustable opacity */
 body::before {
   content: "";
@@ -2244,6 +2229,22 @@ body::before {
   opacity: var(--body-bg-opacity);
   pointer-events: none;
   z-index: 0;
+}
+
+/* header cubre notch */
+header.fixed-top {
+  background: var(--color-primary);
+  padding-top: env(safe-area-inset-top);
+  z-index: 1030;
+}
+
+/* contenido baja */
+:root {
+  --header-h: 70px;
+}
+
+body {
+  padding-top: calc(var(--header-h) + env(safe-area-inset-top));
 }
 
 body.ponti {

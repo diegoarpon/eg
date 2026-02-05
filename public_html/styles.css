@@ -122,26 +122,25 @@
 }
 
 /* Bootstrap variable overrides */
-:root {}
+:root {
+  --bs-body-bg: var(--color-primary);
+  --bs-body-font-family: var(--font-family-main);
+  --bs-body-color: var(--color-white);
+  --bs-body-font-weight: var(--font-weight-light);
+  /* Background overlay opacity for body image */
+  --body-bg-opacity: 0.04;
+}
 
-/* Typography and layout base */
-html,
+html {
+  background-color: #1f4f59;
+}
+
+/* Typography styles */
 body {
-  margin: 0;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
   font-family: var(--font-family-main);
   color: var(--color-white);
   font-weight: var(--font-weight-light);
   letter-spacing: 1px;
-  background-color: #00515F;
-  background-color: var(--color-primary);
-  position: relative;
-}
-
-body {
-  padding-top: 70px;
 
 }
 
@@ -383,8 +382,12 @@ section>div:first-child {
 
 /* Sticky header styling */
 .navbar.sticky-top {
+  background-color: var(--color-primary-95);
+  backdrop-filter: blur(10px);
   box-shadow: 0 2px 10px var(--color-black-10);
+  z-index: 1030;
   transition: all 0.3s ease;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
 }
@@ -592,6 +595,12 @@ section>div:first-child {
 /* Add some spacing after the hero section */
 .hero-section+.container {
   padding-top: 3rem;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-primary);
 }
 
 /* Big Words Section Styles */
@@ -1806,6 +1815,13 @@ strong,
   }
 }
 
+/* Fix for mobile overflow */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 svg {
   max-width: 100%;
 }
@@ -1839,6 +1855,12 @@ svg {
   }
 }
 
+/* Fix for horizontal scrolling on mobile */
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 /* Fix SVG overflow */
 .wavy-line {
   max-width: 100%;
@@ -1856,6 +1878,14 @@ svg {
     font-size: calc(2rem + 1vw);
     hyphens: auto;
   }
+}
+
+/* Comprehensive fix for mobile overflow issues */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* Fix for SVG elements */
@@ -2166,6 +2196,56 @@ svg {
   background-color: var(--color-primary);
 }
 
+/* Add padding to body to prevent content from being hidden under fixed header */
+html,
+body {
+  background-color: #00515F;
+  background-color: var(--color-primary);
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  padding-top: 70px;
+  padding-top: calc(70px + constant(safe-area-inset-top));
+  padding-top: calc(70px + env(safe-area-inset-top));
+  background-color: #00515F;
+  background-color: var(--color-primary);
+  position: relative;
+  overflow-x: hidden;
+  isolation: isolate;
+}
+
+/* Paint the iOS safe-area with the site color */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: constant(safe-area-inset-top);
+  height: env(safe-area-inset-top);
+  background-color: #00515F;
+  background-color: var(--color-primary);
+  z-index: 1031;
+  pointer-events: none;
+}
+
+/* Body background pattern with adjustable opacity */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("images/bg-lines-opa10-white.svg");
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: center -150px;
+  opacity: var(--body-bg-opacity);
+  pointer-events: none;
+  z-index: 0;
+}
+
 body.ponti {
   padding-top: 0;
   background-image: url("images/ponti.webp");
@@ -2176,6 +2256,12 @@ body.ponti {
   height: 100%;
 }
 
+@media (max-width: 767.98px) {
+  body::before {
+    background-size: 150%;
+    background-repeat: repeat;
+  }
+}
 
 .circles {
   background-size: 100%;
@@ -2188,6 +2274,9 @@ body.ponti {
 }
 
 /* Add offset for anchor links to prevent them from being hidden by the fixed header */
+:target {
+  scroll-margin-top: 80px;
+}
 
 /* Ensure all sections with IDs have proper spacing */
 section[id] {

@@ -55,5 +55,13 @@ function initVideoEmbeds() {
         loadVideo();
       });
     }
+
+    // Allow click anywhere on the video wrapper (not just the button)
+    wrapper.addEventListener('click', loadVideo);
   });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  initMenuOverlay();
+  initVideoEmbeds();
+});

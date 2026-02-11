@@ -1,0 +1,332 @@
+/*
+ * Unused styles extracted from styles.css
+ * Generated on 2026-02-05
+ */
+
+/* Text color utilities (unused) */
+.text-primary-dark {
+  color: var(--color-primary-dark) !important;
+}
+
+.text-primary-darker {
+  color: var(--color-primary-darker) !important;
+}
+
+.text-white-90 {
+  color: var(--color-white-90) !important;
+}
+
+.text-white-85 {
+  color: var(--color-white-85) !important;
+}
+
+.text-white-80 {
+  color: var(--color-white-80) !important;
+}
+
+.text-white-60 {
+  color: var(--color-white-60) !important;
+}
+
+.text-white-50 {
+  color: var(--color-white-50) !important;
+}
+
+.text-white-30 {
+  color: var(--color-white-30) !important;
+}
+
+.text-white-20 {
+  color: var(--color-white-20) !important;
+}
+
+.text-white-15 {
+  color: var(--color-white-15) !important;
+}
+
+.text-white-10 {
+  color: var(--color-white-10) !important;
+}
+
+/* Background utilities (unused) */
+.bg-secondary-90 {
+  background-color: var(--color-secondary-90) !important;
+}
+
+.bg-darker {
+  background-color: var(--color-primary-darker) !important;
+}
+
+/* Spacing & sizing utilities (unused) */
+.mb-6 {
+  margin-bottom: 6rem !important;
+}
+
+.w-50 {
+  min-width: 50%;
+}
+
+.small {
+  font-size: 75%;
+}
+
+/* Logo sizing utilities (unused) */
+.logo-h-64 {
+  height: 64px;
+}
+
+.logo-h-48 {
+  height: 48px;
+}
+
+.logo-h-40 {
+  height: 40px;
+}
+
+.logo-h-36 {
+  height: 36px;
+}
+
+.invert-white {
+  filter: brightness(0) invert(1);
+}
+
+/* Mobile-only: inscripciones button (unused) */
+@media (max-width: 576px) {
+  .inscripciones-btn {
+    white-space: normal;
+    text-align: left;
+    line-height: 1.2;
+    padding: 0.45rem 0.9rem 0.35rem;
+    font-size: 0.9rem;
+  }
+
+  .inscripciones-btn i {
+    margin-left: 0.35rem;
+  }
+}
+
+/* Form controls (unused) */
+.form-control {
+  background-color: var(--color-white-10);
+  border-color: var(--color-white-20);
+  color: var(--color-white);
+}
+
+.form-control::placeholder {
+  color: var(--color-white-60);
+}
+
+.form-control:focus {
+  background-color: var(--color-white-15);
+  border-color: var(--color-white-50);
+  color: var(--color-white);
+  box-shadow: 0 0 0 0.25rem var(--color-white-20);
+}
+
+/* Buttons (unused) */
+.btn-outline-success {
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.btn-outline-success:hover {
+  background-color: var(--color-white-20);
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.btn-outline-primary-custom {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline-primary-custom:hover,
+.btn-outline-primary-custom:focus,
+.btn-outline-primary-custom:active {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline-thick {
+  border-width: 2px;
+  background: transparent;
+}
+
+.btn-group-lg > .btn {
+  --bs-btn-font-size: 1.75rem;
+  --bs-btn-border-radius: var(--bs-border-radius-lg);
+}
+
+/* Dropdown caret (unused) */
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.caret-icon {
+  transition: transform 0.3s ease;
+  margin-left: 15px;
+  vertical-align: initial;
+  display: inline-flex;
+  align-items: center;
+}
+
+.dropdown-toggle .caret-icon {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.dropdown-toggle.active .caret-icon {
+  transform: rotate(90deg);
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+/* Wavy line variants (unused) */
+.wavy-line-dark path {
+  fill: none;
+  stroke: var(--color-primary-dark);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.wavy-line-manteca path {
+  fill: none;
+  stroke: var(--color-manteca);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.wavy-line-container {
+  width: 100%;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* Section accents (unused) */
+.section-cream-primary {
+  background-color: #fff8e1;
+  color: var(--color-primary);
+  padding-top: 3.5rem;
+}
+
+.text-primary-eg {
+  color: var(--color-primary);
+}
+
+.arrow-secondary {
+  color: var(--color-secondary);
+}
+
+.section-title.no-decor::before,
+.section-title.no-decor::after {
+  display: none;
+}
+
+/* Header misc (unused) */
+.header-social .notification-dot {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header.header-doctor-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Strong utility class (unused) */
+.strong {
+  font-weight: bolder;
+}
+
+/* Resource cards (unused) */
+.resource-card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Masonry (unused) */
+.masonry-grid.masonry-loaded {
+  visibility: visible;
+}
+
+/* Dot pulse (unused) */
+.dot-pulse {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  position: relative;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.dot-pulse::before,
+.dot-pulse::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  animation: pulse-rings 2s infinite;
+}
+
+.dot-pulse::before {
+  animation-delay: 0s;
+}
+
+.dot-pulse::after {
+  animation-delay: 1s;
+}
+
+@keyframes pulse-rings {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* Video cover extras (unused) */
+.video-cover-pattern {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08) 0, transparent 30%),
+    radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.06) 0, transparent 28%),
+    radial-gradient(circle at 50% 70%, rgba(255, 255, 255, 0.05) 0, transparent 30%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.video-cover-portrait {
+  width: 180px;
+  height: auto;
+  object-fit: cover;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}

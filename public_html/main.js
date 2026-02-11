@@ -25,7 +25,11 @@ function initVideoEmbeds() {
       if (wrapper.classList.contains('loaded')) return;
       wrapper.classList.add('loading');
       const iframe = document.createElement('iframe');
-      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+      const isTouch =
+        window.matchMedia('(pointer: coarse)').matches ||
+        window.matchMedia('(hover: none)').matches;
+      const autoplayParams = isTouch ? 'autoplay=1&mute=1' : 'autoplay=1';
+      iframe.src = `https://www.youtube.com/embed/${videoId}?${autoplayParams}&rel=0&playsinline=1`;
       iframe.title = 'YouTube video';
       iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
       iframe.allowFullscreen = true;

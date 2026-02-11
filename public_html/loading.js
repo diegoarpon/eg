@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         loadingScreen.className = 'loading-screen';
 
         const loadingLogo = document.createElement('img');
-        loadingLogo.src = 'images/logo-eg-icon.svg';
+        loadingLogo.src = 'images/logos/logo-eg-icon.svg';
         loadingLogo.alt = 'EG Marketing';
         loadingLogo.className = 'loading-logo';
 

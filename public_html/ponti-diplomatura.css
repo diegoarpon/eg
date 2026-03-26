@@ -1,0 +1,829 @@
+/* ============================================================
+   PONTI DIPLOMATURA — CSS
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Variables
+   ------------------------------------------------------------ */
+:root {
+  /* Colors */
+  --ponti-color: #2a4a9c;
+  --ponti-secondary: #1a2a6c;
+  --ponti-tertiary: #1a7a7a;
+  --ponti-accent: #f07040;
+  --ponti-white: #ffffff;
+  --ponti-overlay-light: rgba(255, 255, 255, 0.05);
+  --ponti-overlay-lighter: rgba(255, 255, 255, 0.04);
+  --ponti-overlay-darker: rgba(0, 0, 0, 0.2);
+  --ponti-overlay-border: rgba(255, 255, 255, 0.15);
+
+
+  /* Gradients */
+  --ponti-gradient: linear-gradient(135deg, #1a2a6c 0%, #1a8a8a 100%);
+  --ponti-gradient-card: linear-gradient(135deg, rgba(26, 42, 108, 0.8) 0%, rgba(26, 100, 156, 0.9) 100%);
+  --ponti-gradient-teal: linear-gradient(135deg, #1a7a7a 0%, #1a9a9a 100%);
+  --ponti-card-border: 1px solid var(--ponti-overlay-border);
+
+  /* Módulo */
+  --modulo-num-bg: rgba(26, 122, 122, 0.5);
+  --modulo-num-color: var(--ponti-tertiary);
+  --modulo-num-border: var(--ponti-tertiary);
+  --modulo-titulo-size: 1.15rem;
+  --modulo-meta-size: 0.85rem;
+  --modulo-meta-opacity: 0.6;
+  --modulo-chevron-size: 0.9rem;
+  --modulo-chevron-opacity: 0.7;
+
+  /* Bloque */
+  --bloque-badge-color: var(--ponti-accent);
+  --bloque-badge-border: var(--ponti-accent);
+  --bloque-badge-size: 0.75rem;
+  --bloque-titulo-size: 1rem;
+  --bloque-chevron-size: 0.85rem;
+  --bloque-chevron-opacity: 0.6;
+  --bloque-meta-size: 0.85rem;
+  --bloque-meta-opacity: 0.85;
+  --bloque-tematica-title-size: 0.9rem;
+  --bloque-tematica-item-size: 0.87rem;
+  --bloque-tematica-item-opacity: 0.85;
+  --bloque-tematica-marker-color: var(--ponti-tertiary);
+  --bloque-item-line-height: 1.4;
+
+  /* Typography */
+  --font-size-h1: calc(2rem + 2vw);
+  --font-size-h2: calc(1.3rem + 0.9vw);
+  --font-size-h3: calc(1.2rem + 0.6vw);
+  --font-size-h4: calc(1rem + 0.3vw);
+  --font-size-p: calc(0.9rem + 0.2vw);
+  --font-size-badge: 1.15rem;
+  --font-size-copy-message: 16px;
+  --font-weight-regular: 300;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+  --line-height-p: 1.3;
+
+  /* Spacing */
+  --badge-padding: 0.8rem;
+  --badge-padding-bottom: 0.7rem;
+  --badge-border-radius: 0.5rem;
+  --modulo-item-radius: 0.75rem;
+  --modulo-header-padding: 1.25rem 1.5rem;
+  --modulo-body-padding: 0 1rem 1rem;
+  --modulo-num-size: 2.5rem;
+  --modulo-num-radius: 0.5rem;
+  --modulo-num-font-size: 1rem;
+  --bloque-item-radius: 0.6rem;
+  --bloque-header-padding: 0.9rem 1rem 0.7rem;
+  --bloque-body-padding: 0.25rem 1rem 1rem;
+  --bloque-badge-padding: 0.25rem 0.65rem;
+  --bloque-badge-radius: 2rem;
+  --copy-message-padding: 30px 45px;
+  --copy-message-border-radius: 8px;
+
+  /* Logo sizes */
+  --logo-sm: 100px;
+  --logo-md: 150px;
+  --logo-lg: 350px;
+  --logo-eg: 160px;
+
+  /* Card heights */
+  --card-height-90: 90vh;
+  --card-height-95: 95vh;
+
+  /* Transitions */
+  --transition-default: 0.3s ease;
+  --transition-color: 0.2s ease;
+
+  /* Shadows */
+  --copy-message-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --copy-message-bg: rgba(25, 40, 82, 0.8);
+
+  /* Background images */
+  --bg-ponti: url('images/pontitosi/ponti-blur.webp');
+  --bg-ponti-blur: url('images/pontitosi/ponti-blur-2.webp');
+  --bg-ponti-img: url('images/pontitosi/ponti.webp');
+  --bg-ponti-inverted: url('images/pontitosi/ponti-invertido-2.webp');
+  --bg-ponti-main: url('images/pontitosi/bg.webp');
+}
+
+
+/* ------------------------------------------------------------
+   Banner sticky
+   ------------------------------------------------------------ */
+.ponti-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1040;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background: var(--ponti-gradient-card);
+  border: var(--ponti-card-border);
+  border-radius: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.ponti-banner-btn-teal {
+  background: linear-gradient(135deg, #1a8a8a 0%, #0f5f5f 100%);
+  border: 1px solid rgba(26, 138, 138, 0.5);
+  color: white;
+  text-decoration: none;
+  padding: 0.4rem 0.75rem 0.35rem;
+  border-radius: var(--badge-border-radius);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.ponti-banner-btn-teal:hover {
+  background: linear-gradient(135deg, #20a0a0 0%, #1a7a7a 100%);
+  border-color: rgba(26, 138, 138, 0.9);
+  box-shadow: 0 4px 16px rgba(26, 138, 138, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  color: white;
+  text-decoration: none;
+}
+
+.ponti-banner-btn-teal:active {
+  background: linear-gradient(135deg, #0f5f5f 0%, #0a3f3f 100%);
+  border-color: rgba(15, 95, 95, 0.9);
+  box-shadow: 0 2px 6px rgba(26, 138, 138, 0.2);
+  transform: scale(0.97);
+  color: white;
+  text-decoration: none;
+}
+
+.ponti-banner-btn-teal:focus-visible {
+  outline: 2px solid rgba(26, 138, 138, 0.8);
+  outline-offset: 3px;
+  color: white;
+  text-decoration: none;
+}
+
+
+.ponti-banner-btn {
+  background: linear-gradient(135deg, #f07040 0%, #c94f20 100%);
+  border: 1px solid rgba(240, 112, 64, 0.5);
+  color: white;
+  text-decoration: none;
+  padding: 0.4rem 0.75rem 0.35rem;
+  border-radius: var(--badge-border-radius);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+
+.ponti-banner-btn:hover {
+  background: linear-gradient(135deg, #f58555 0%, #e05a25 100%);
+  border-color: rgba(240, 112, 64, 0.9);
+  box-shadow: 0 4px 16px rgba(240, 112, 64, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  color: white;
+  text-decoration: none;
+}
+
+.ponti-banner-btn:active {
+  background: linear-gradient(135deg, #c94f20 0%, #a03a10 100%);
+  border-color: rgba(200, 80, 30, 0.9);
+  box-shadow: 0 2px 6px rgba(240, 112, 64, 0.2);
+  transform: scale(0.97);
+  color: white;
+  text-decoration: none;
+}
+
+.ponti-banner-btn:focus-visible {
+  outline: 2px solid rgba(240, 112, 64, 0.8);
+  outline-offset: 3px;
+  color: white;
+  text-decoration: none;
+}
+
+.ponti-banner-btn.lg {
+  font-size: var(--font-size-badge);
+  padding: var(--badge-padding) 1.25rem;
+  padding-bottom: var(--badge-padding-bottom) !important;
+}
+
+}
+
+
+/* ------------------------------------------------------------
+   Base
+   ------------------------------------------------------------ */
+body.ponti::before,
+body.ponti::after {
+  background-image: none !important;
+  opacity: 0 !important;
+}
+
+body {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+}
+
+body.ponti strong {
+  font-weight: 600;
+}
+
+body.ponti p,
+body.ponti h2,
+body.ponti h3 {
+  font-weight: 300;
+}
+
+body.ponti {
+  padding-top: 0;
+  margin: 0;
+  height: 100vh;
+  background: var(--bg-ponti-main) center center / cover no-repeat fixed;
+  color: white;
+}
+
+body.ponti .card,
+body.ponti .badge {
+  background: var(--ponti-gradient-card);
+  border: var(--ponti-card-border);
+  color: white;
+}
+
+body.ponti img[src$=".svg"] {
+  filter: brightness(0) invert(1);
+}
+
+body.ponti.blur {
+  background: var(--ponti-gradient);
+}
+
+
+/* ------------------------------------------------------------
+   Typography
+   ------------------------------------------------------------ */
+h1,
+.display-3 {
+  font-size: var(--font-size-h1);
+}
+
+h2,
+.h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3,
+.h3 {
+  font-size: var(--font-size-h3);
+}
+
+h4,
+.h4 {
+  font-size: var(--font-size-h4);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-medium);
+}
+
+p {
+  font-size: var(--font-size-p);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-p);
+  margin-bottom: 0.5rem !important;
+  hyphens: auto;
+}
+
+.card p {
+  margin-bottom: 0 !important;
+}
+
+.doc-especialidad {
+  color: white;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: -0.5rem !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 1rem;
+}
+
+.smaller {
+  font-size: 85%;
+}
+
+
+/* ------------------------------------------------------------
+   Colors
+   ------------------------------------------------------------ */
+.ponti-text {
+  color: white;
+}
+
+.ponti-text-secondary {
+  color: white;
+}
+
+.ponti-text-tertiary {
+  color: white;
+}
+
+.ponti-text-accent {
+  color: var(--ponti-accent);
+}
+
+.ponti-bg {
+  background: var(--ponti-gradient-card);
+  color: white;
+}
+
+.ponti-bg-secondary {
+  background: var(--ponti-gradient);
+  color: white;
+}
+
+.ponti-bg-tertiary {
+  background: var(--ponti-gradient-teal);
+  color: white;
+}
+
+
+/* ------------------------------------------------------------
+   Layout — Cards
+   ------------------------------------------------------------ */
+.card-height-90 {
+  min-height: var(--card-height-90);
+}
+
+.card-height-95 {
+  min-height: var(--card-height-95);
+}
+
+.z-index-1 {
+  z-index: 1;
+}
+
+
+/* ------------------------------------------------------------
+   Layout — Logos
+   ------------------------------------------------------------ */
+.logo-sm {
+  max-width: var(--logo-sm);
+}
+
+.logo-md {
+  max-width: var(--logo-md);
+}
+
+.logo-lg {
+  max-width: var(--logo-lg);
+}
+
+.logo-eg {
+  max-width: var(--logo-eg);
+}
+
+
+/* ------------------------------------------------------------
+   Background images
+   ------------------------------------------------------------ */
+.ponti-img-bg {
+  background-image: var(--bg-ponti-img);
+  background-size: cover;
+}
+
+.ponti-inv-img-bg {
+  background-image: var(--bg-ponti-img);
+  background-position: center right;
+}
+
+.ponti-inverted-img-bg {
+  background-image: var(--bg-ponti-inverted);
+  background-size: 140%;
+  background-position: left bottom;
+}
+
+
+/* ------------------------------------------------------------
+   Components — Badge
+   ------------------------------------------------------------ */
+.badge {
+  border-radius: var(--badge-border-radius);
+  padding: var(--badge-padding);
+  padding-bottom: var(--badge-padding-bottom) !important;
+  font-size: var(--font-size-badge);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+/* ------------------------------------------------------------
+   Components — Módulos accordion
+   ------------------------------------------------------------ */
+.modulo-item {
+  background: var(--ponti-overlay-darker);
+  border: var(--ponti-card-border);
+  border-radius: var(--modulo-item-radius);
+  overflow: hidden;
+}
+
+.modulo-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: var(--modulo-header-padding);
+  background: none;
+  border: none;
+  color: var(--ponti-white);
+  cursor: pointer;
+  text-align: left;
+}
+
+.modulo-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.modulo-titulo {
+  font-size: var(--modulo-titulo-size);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  hyphens: none;
+}
+
+.modulo-meta {
+  font-size: var(--modulo-meta-size);
+  opacity: var(--modulo-meta-opacity);
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.modulo-chevron {
+  flex-shrink: 0;
+  font-size: var(--modulo-chevron-size);
+  opacity: var(--modulo-chevron-opacity);
+}
+
+.modulo-body {
+  padding: var(--modulo-body-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Bloques dentro del módulo */
+.bloque-item {
+  background: var(--ponti-overlay-darker);
+  border: var(--ponti-card-border);
+  border-radius: var(--bloque-item-radius);
+  overflow: hidden;
+}
+
+.bloque-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: var(--bloque-header-padding);
+  background: none;
+  border: none;
+  color: var(--ponti-white);
+  cursor: pointer;
+  text-align: left;
+}
+
+.bloque-badge {
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid var(--bloque-badge-border);
+  color: var(--bloque-badge-color);
+  font-size: var(--bloque-badge-size);
+  font-weight: var(--font-weight-bold);
+  padding: var(--bloque-badge-padding);
+  border-radius: var(--bloque-badge-radius);
+  white-space: nowrap;
+  font-family: monospace;
+}
+
+.bloque-titulo {
+  flex: 1;
+  font-size: var(--bloque-titulo-size);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  hyphens: none;
+}
+
+.bloque-chevron {
+  flex-shrink: 0;
+  font-size: var(--bloque-chevron-size);
+  opacity: var(--bloque-chevron-opacity);
+}
+
+.bloque-body {
+  padding: var(--bloque-body-padding);
+}
+
+.bloque-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 1rem;
+  font-size: var(--bloque-meta-size);
+  opacity: var(--bloque-meta-opacity);
+  font-weight: 400;
+}
+
+.bloque-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.bloque-meta span i {
+  font-size: 1em;
+  line-height: 1;
+  position: relative;
+  top: -0.1em;
+}
+
+.bloque-tematica-title {
+  font-size: var(--bloque-tematica-title-size);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 1rem !important;
+  padding-bottom: 0.5rem;
+}
+
+.bloque-tematica-list {
+  padding-left: 0.5rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.bloque-tematica-list li {
+  font-size: var(--bloque-tematica-item-size);
+  opacity: var(--bloque-tematica-item-opacity);
+  line-height: var(--bloque-item-line-height);
+  font-weight: 400;
+}
+
+.bloque-tematica-list li::marker {
+  color: var(--ponti-white);
+}
+
+/* ------------------------------------------------------------
+   ------------------------------------------------------------ */
+.contact-link {
+  display: inline-block;
+  transition: transform var(--transition-default);
+}
+
+.contact-link:hover {
+  transform: scale(1.025);
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.contact-link.icon:hover {
+  transform: scale(1.25);
+}
+
+.link-ext {
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+}
+
+.link-ext:hover {
+  text-decoration: none;
+}
+
+.download-icon {
+  font-size: 3rem;
+  display: block;
+}
+
+
+/* ------------------------------------------------------------
+   Components — Copy span
+   ------------------------------------------------------------ */
+.copy-span {
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color var(--transition-color);
+}
+
+.copy-span:hover {
+  color: white;
+}
+
+--ponti-active: #ff7518;
+}
+
+.copy-span:active {
+  color: var(--ponti-active);
+}
+
+.copy-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--copy-message-bg);
+  color: white;
+  padding: var(--copy-message-padding);
+  border-radius: var(--copy-message-border-radius);
+  font-size: var(--font-size-copy-message);
+  box-shadow: var(--copy-message-shadow);
+  z-index: 9999;
+}
+
+
+/* ------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------ */
+@media (max-width: 1024px) {
+  .ponti-inverted-img-bg {
+    background-size: auto 100%;
+    background-position: left bottom;
+  }
+}
+
+@media (max-width: 768px) {
+  body.ponti {
+    background-image: var(--bg-ponti-blur);
+  }
+
+  .text-center,
+  .justify-content-center {
+    text-align: center !important;
+  }
+
+  .text-end {
+    text-align: end !important;
+  }
+
+  .card-height-95 {
+    height: 100%;
+  }
+
+  h1,
+  .display-3 {
+    font-size: calc(1.75rem + 0.75vw);
+  }
+
+  .logo-xl,
+  .logo-md,
+  .logo-sm,
+  .logo-lg {
+    width: 80%;
+  }
+
+  .logo-eg,
+  .logo-eg-md {
+    width: 110%;
+  }
+
+  .badge {
+    padding: 0.7rem;
+    padding-bottom: 0.6rem !important;
+    font-size: calc(0.75rem + 0.5vw);
+  }
+
+  .badge p {
+    font-size: 0.9rem;
+  }
+
+  .badge .btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   Font weight utilities (from styles.css)
+   ------------------------------------------------------------ */
+.fw-extralight {
+  font-weight: 200 !important;
+}
+
+.fw-light {
+  font-weight: 300 !important;
+}
+
+.fw-normal {
+  font-weight: 400 !important;
+}
+
+.fw-semibold {
+  font-weight: 600 !important;
+}
+
+.fw-bold {
+  font-weight: 700 !important;
+}
+
+.fw-lighter {
+  font-weight: lighter !important;
+}
+
+
+/* ------------------------------------------------------------
+   Floating WhatsApp (from styles.css)
+   ------------------------------------------------------------ */
+.floating-whatsapp {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 1050;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+  filter: drop-shadow(rgba(0, 0, 0, 0.35) 0px 6px 8px);
+  transition: transform 0.25s ease, filter 0.25s ease;
+  text-decoration: none;
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-4px) scale(1.12);
+  filter: drop-shadow(rgba(0, 0, 0, 0.45) 0px 10px 14px);
+}
+
+.floating-whatsapp svg {
+  width: 50px;
+  height: 50px;
+}
+
+
+/* ------------------------------------------------------------
+   Hover scale (from styles.css)
+   ------------------------------------------------------------ */
+.hover-scale {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+
+/* ------------------------------------------------------------
+   Loading screen (from styles.css)
+   ------------------------------------------------------------ */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-ponti-main) center center / cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease-out;
+}
+
+.loading-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-logo {
+  width: 120px;
+  height: auto;
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}

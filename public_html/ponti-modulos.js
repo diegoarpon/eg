@@ -125,7 +125,7 @@ const modulos = [
       {
         num: 8,
         titulo: "Nutrición, Suplementación y Micología",
-        fecha: "Agosto",
+        fecha: "AGO",
         docente: "Victoria Cruz · Lucas Ponti · Dra. Verónica Tosi · Marcelo Rodríguez",
         claseHS: 8,
         asincHS: 6,
@@ -305,13 +305,26 @@ function formatFecha(fecha) {
               .replace(/(\d+)\s+(\w+)/g, (_, d, m) => `${d} ${meses[m.toLowerCase()] || m}`);
 }
 
+function formatFechas(bloques) {
+  const parsed = bloques.map(b => {
+    const match = b.fecha.match(/(\d+)\s+(\w+)/);
+    if (match) return { dia: match[1], mes: meses[match[2].toLowerCase()] || match[2] };
+    return { dia: b.fecha, mes: '' };
+  });
+  return parsed.map((f, i) => {
+    const next = parsed[i + 1];
+    if (next && next.mes === f.mes) return f.dia;
+    return `${f.dia} ${f.mes}`;
+  }).join(' / ');
+}
+
 function renderModulos() {
   const container = document.getElementById('modulos-container');
   if (!container) return;
 
   container.innerHTML = modulos.map((mod, modIdx) => {
     const bloquesCount = mod.bloques.length;
-    const fechas = mod.bloques.map(b => formatFecha(b.fecha)).join(' / ');
+    const fechas = formatFechas(mod.bloques);
     const bloquesLabel = bloquesCount === 1 ? '1 bloque' : `${bloquesCount} bloques`;
     const meta = `<span>${bloquesLabel}</span><span>${fechas}</span>`;
 

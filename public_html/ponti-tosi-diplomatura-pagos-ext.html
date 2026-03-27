@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" class="ponti-img-bg">
+<html lang="es">
 
 <head>
 	<meta charset="utf-8">
@@ -85,8 +85,7 @@
 	<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="msapplication-config" content="favicon/browserconfig.xml">
-	<meta name="theme-color" content="#00515F">
-	<meta name="format-detection" content="telephone=no">
+	<meta name="theme-color" content="#1a2a6c">
 
 	<!-- Styles and Scripts -->
 	<script src="https://kit.fontawesome.com/176f1a7098.js" crossorigin="anonymous" defer></script>
@@ -106,38 +105,67 @@
 		gtag('config', 'G-3MCL8PE3XL');
 	</script>
 	<script>
-		function copyWithFeedback(text, button) {
-			navigator.clipboard.writeText(text).then(() => {
-				showCopyMessage();
-			}).catch(() => {
-				const textArea = document.createElement('textarea');
-				textArea.value = text;
-				document.body.appendChild(textArea);
-				textArea.select();
-				document.execCommand('copy');
-				document.body.removeChild(textArea);
-				showCopyMessage();
-			});
+		const sounds = {
+			ding: (ctx) => {
+				const osc = ctx.createOscillator(), gain = ctx.createGain();
+				osc.connect(gain); gain.connect(ctx.destination);
+				osc.type = 'sine'; osc.frequency.value = 1400;
+				gain.gain.setValueAtTime(0.2, ctx.currentTime);
+				gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.6);
+				osc.start(); osc.stop(ctx.currentTime + 0.6);
+			}
+		};
+
+		function playSound(name) {
+			try {
+				const ctx = new (window.AudioContext || window.webkitAudioContext)();
+				sounds[name](ctx);
+			} catch(e) {}
 		}
 
-		function showCopyMessage() {
-			const message = document.createElement('div');
-			message.textContent = 'Copiado!';
-			message.className = 'copy-message';
-			document.body.appendChild(message);
-			setTimeout(() => {
-				message.remove();
-			}, 2000);
+		function copyWithFeedback(text, el) {
+			const doCopy = () => {
+				const tip = document.createElement('span');
+				tip.textContent = '¡Copiado!';
+				tip.className = 'copy-tip';
+				el.appendChild(tip);
+				setTimeout(() => tip.remove(), 1500);
+				playSound('ding');
+			};
+			navigator.clipboard.writeText(text).then(doCopy).catch(() => {
+				const ta = document.createElement('textarea');
+				ta.value = text;
+				document.body.appendChild(ta);
+				ta.select();
+				document.execCommand('copy');
+				document.body.removeChild(ta);
+				doCopy();
+			});
 		}
 	</script>
 </head>
 
-<body class="bg-black ponti blur h-100">
+<body class="ponti h-100">
+	<div class="ponti-bg-fixed"></div>
+	<div class="ponti-banner d-none">
+		<span class="d-none d-md-inline"><i class="fa-light fa-circle-check me-2"></i>Inscripciones abiertas / Comienza
+			el 25 de abril</span>
+		<div class="d-flex gap-2">
+			<a href="https://wa.me/5491153282835?text=Hola%2C%20me%20quiero%20inscribir%20en%20la%20Diplomatura%20en%20Dermatolog%C3%ADa%20Funcional%20y%20Psiconeuroinmunoendocrinolog%C3%ADa.%20%C2%BFCu%C3%A1les%20son%20los%20pasos%3F"
+				target="_blank" class="ponti-banner-btn"><span class="d-none d-sm-inline">Inscribíte</span><span
+					class="d-inline d-sm-none"><i class="fa-light fa-pen-to-square me-1"></i>Inscripciones</span></a>
+			<a href="https://wa.me/5491153282835?text=Hola%2C%20quisiera%20saber%20m%C3%A1s%20sobre%20la%20Diplomatura%20en%20Dermatolog%C3%ADa%20Funcional%20y%20PNIE"
+				target="_blank" class="ponti-banner-btn-teal d-inline d-md-none"><i class="fab fa-whatsapp me-1"></i>Más
+				info</a>
+			<a href="https://wa.me/5491153282835?text=Hola%2C%20quisiera%20saber%20m%C3%A1s%20sobre%20la%20Diplomatura%20en%20Dermatolog%C3%ADa%20Funcional%20y%20PNIE"
+				target="_blank" class="ponti-banner-btn-teal d-none d-lg-inline">¿tenés dudas? Contactános</a>
+		</div>
+	</div>
 	<div class="loading-screen">
 		<img src="images/logo-eg-icon.svg" alt="EG Marketing" class="loading-logo">
 	</div>
 
-	<section class="pt-3 pt-sm-5 position-relative h-100">
+	<section class="position-relative h-100 pt-3 pt-sm-4">
 
 		<!-- Hero Section -->
 		<div class="container position-relative mb-2">
@@ -158,24 +186,27 @@
 
 					<div class="row mt-auto ponti-text-secondary pt-5">
 						<div class="col">
-							<p class="badge ponti-bg-secondary text-white mb-4 text-center">Curso Online</p>
-							<h4 class="fw-bold text-uppercase mb-4">6 encuentros <span class="fw-extralight">/<br
-										class="d-block d-sm-none"></span> Sábados a las 10 hs</h4>
-							<h1 class="display-5 fw-bold mb-4 lh-1">Dermatología<br class="d-block d-sm-none">
-								Funcional<br>
-								con Orientación en<br>
-								Psiconeuroinmunoendocrinología</h1>
-							<h2 class="fw-extralight mb-5">Directores <span class="fw-lighter">/<br
-										class="d-block d-lg-none"></span> <span class="fw-bold"><span
-										class="fw-normal">Dr.</span>
-									Lucas
-									Ponti</span>
+							<h4 class="fw-bold text-uppercase mb-4">
+								<span class="me-3 fecha-badge d-sm-inline mb-2 mb-sm-0"><i
+										class="fa-light fa-calendar me-2"></i><span class="d-none d-sm-inline">Abril →
+										Diciembre 2026</span><span class="d-inline d-sm-none">ABR → DIC
+										2026</span></span>
+								<span class="badge ponti-bg-secondary text-white">Curso Online</span>
+							</h4>
+							<h1 class="display-3 fw-bold mb-4 lh-1"><span
+									class="ponti-text-accent">Diplomatura</span><br>
+								en Dermatología Funcional<br class="d-none d-lg-block">
+								<span class="d-none d-lg-inline">y Psiconeuroinmunoendocrinología</span><span
+									class="d-inline d-lg-none"> y PNIE</span>
+							</h1>
+							<h2 class="fw-extralight mb-3">Directores <span class="fw-lighter">/</span>
+								<br class="d-block d-lg-none">
+								<span class="fw-bold"><span class="fw-normal">Dr.</span> Lucas Ponti</span>
 								<span class="fw-lighter">/</span>
 								<br class="d-block d-sm-none">
 								<span class="fw-bold"><span class="fw-normal">Dra.</span> Verónica Tosi</span>
 							</h2>
-							<h3 class="display-3 fw-bold mb-4 lh-1 text-white">Medios de Pago</h3>
-
+							<h3 class="display-3 fw-extralight mb-0">Medios de Pago</h3>
 						</div>
 					</div>
 				</div>
@@ -204,52 +235,39 @@
 						<div class="col-12 col-md-6 col-lg-4">
 							<div class="mb-3">
 								<h4>Valor total del Curso</h4>
-								<h3 class="fw-light">USD <span class="fw-semibold">1000</span>
-
-								</h3>
-							</div>
-							<div class="mb-5">
-								<a href="https://wa.me/5491153282835?text=Hola%2C%20estuve%20recorriendo%20su%20web%20y%20me%20gustar%C3%ADa%20hacerles%20una%20consulta%20sobre%3A"
-									target="_blank"
-									class="badge ponti-bg-secondary text-white text-center text-decoration-none hover-scale">¿querés
-									más info?</a>
+								<h3 class="fw-light">USD <span class="fw-semibold">1000</span></h3>
 							</div>
 							<div class="mb-5 mb-md-0">
-								<p class="mb-4 d-none d-sm-block">Haciendo click en la info se copia automáticamente
-									<i class="fa-light fa-arrow-right ms-2 align-middle"></i>
-								</p>
-								<p class="mb-4 d-blobk d-sm-none">Tocando en la info se copia automáticamente
-								</p>
-
+								<p class="mb-5">Una vez completado el pago, por favor envianos el comprobante.</p>
+								<a href="https://wa.me/5491153282835?text=Ya%20abon%C3%A9%20la%20diplomatura.%20Este%20es%20el%20comprobante%3A" target="_blank" class="ponti-banner-btn-teal">Enviar comprobante</a>
 							</div>
 						</div>
 						<div class="col-12 col-md-6 col-lg-4">
 							<div class="mb-5">
 								<h4>TRANSFERENCIA BANCARIA <br>EN DÓLARES</h4>
 								<p>Banco Patagonia (ARG) - SWIFT Code: <span
-										onclick="copyWithFeedback('BSUDARBA', this)" class="copy-span">BSUDARBA</span>
+										onclick="copyWithFeedback('BSUDARBA', this)" class="copy-span fw-semibold">BSUDARBA <i class="fa-light fa-clone"></i></span>
 								</p>
 								<p>Caja de Ahorro en Dólares: N° <br><span
 										onclick="copyWithFeedback('377133005476000', this)"
-										class="copy-span">377-133005476 000</span></p>
+										class="copy-span fw-semibold">377-133005476 000 <i class="fa-light fa-clone"></i></span></p>
 								<p>CBU: <span onclick="copyWithFeedback('0340377609133005476008', this)"
-										class="copy-span">0340 3776 0913 3005 4760 08</span></p>
+										class="copy-span fw-semibold">0340 3776 0913 3005 4760 08 <i class="fa-light fa-clone"></i></span></p>
 							</div>
 							<div class="mb-5">
 								<p>Banco Santander (URU) - SWIFT Code: <span
-										onclick="copyWithFeedback('BSCHUYMM', this)" class="copy-span">BSCHUYMM</span>
+										onclick="copyWithFeedback('BSCHUYMM', this)" class="copy-span fw-semibold">BSCHUYMM <i class="fa-light fa-clone"></i></span>
 								</p>
 								<p>Cuenta N°: <span onclick="copyWithFeedback('0070005200402652', this)"
-										class="copy-span">0070 - 005200402652</span></p>
+										class="copy-span fw-semibold">0070 - 005200402652 <i class="fa-light fa-clone"></i></span></p>
 							</div>
 						</div>
 						<div class="col-12 col-md-6 col-lg-4">
-
 							<div class="">
 								<h4>PARA PAGOS CON PAYPAL</h4>
 								<p>Dirigido al email <br><span
 										onclick="copyWithFeedback('cobranza@maimonides.edu', this)"
-										class="copy-span">cobranza@maimonides.edu</span></p>
+										class="copy-span fw-semibold">cobranza@maimonides.edu <i class="fa-light fa-clone"></i></span></p>
 							</div>
 						</div>
 					</div>
@@ -294,13 +312,11 @@
 								<a href="https://www.egmarketing.com.ar"
 									class="ponti-text-secondary text-decoration-none contact-link"><i
 										class="fa-light fa-globe-pointer fa-1x ponti-text-secondary align-middle me-2"></i>egmarketing.com.ar</a>
-
 							</div>
 							<div class="mb-3">
 								<a href="mailto:info@egmarketing.com.ar"
 									class="ponti-text-secondary text-decoration-none contact-link"><i
 										class="fa-light fa-envelope fa-1x ponti-text-secondary align-middle me-2"></i>info@egmarketing.com.ar</a>
-
 							</div>
 							<div class="mb-3">
 								<a href="https://wa.me/5491153282835?text=Hola%2C%20estuve%20recorriendo%20su%20web%20y%20me%20gustar%C3%ADa%20hacerles%20una%20consulta%20sobre%3A"
@@ -313,7 +329,6 @@
 								<a href="https://www.instagram.com/egmarketing_/" target="_blank"
 									class="ponti-text-secondary text-decoration-none contact-link"><i
 										class="fab fa-instagram fa-1x ponti-text-secondary align-middle me-2"></i>@egmarketing_</a>
-
 							</div>
 						</div>
 					</div>

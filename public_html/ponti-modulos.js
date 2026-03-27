@@ -7,7 +7,7 @@ const modulos = [
         num: 1,
         titulo: "Apertura y Presentación",
         fecha: "25 abril",
-        docente: "Dr. Lucas Ponti, Dra. Verónica Tosi, Edith Groshaus",
+        docente: "Dr. Lucas Ponti / Dra. Verónica Tosi / Edith Groshaus",
         claseHS: 3,
         asincHS: 6,
         tematicas: [
@@ -21,7 +21,7 @@ const modulos = [
         num: 2,
         titulo: "Conceptos Básicos de Dermatología Funcional",
         fecha: "16 mayo",
-        docente: "Dr. Lucas Ponti, Dra. Verónica Tosi",
+        docente: "Dr. Lucas Ponti / Dra. Verónica Tosi",
         claseHS: 3,
         asincHS: 6,
         tematicas: [
@@ -56,7 +56,7 @@ const modulos = [
         num: 4,
         titulo: "Inflamación, Estrés y Piel",
         fecha: "13 junio",
-        docente: "Dr. Lucas Ponti, Dra. Verónica Tosi",
+        docente: "Dr. Lucas Ponti / Dra. Verónica Tosi",
         claseHS: 3,
         asincHS: 6,
         tematicas: [
@@ -326,11 +326,12 @@ function renderModulos() {
       return `
                         <div class="bloque-item">
                           <button class="bloque-header" aria-expanded="${expanded}" onclick="toggleBloque(this)">
-                            <span class="bloque-badge">Bloque ${bloque.num}</span>
+                            <span class="bloque-badge"><span class="d-none d-sm-inline">Bloque </span><span class="d-inline d-sm-none">BLQ </span>${bloque.num}</span>
                             <span class="bloque-titulo">${bloque.titulo}</span>
                             <i class="fa-light ${chevron} bloque-chevron"></i>
                           </button>
                           <div class="bloque-body"${hiddenAttr}>
+                            <div class="bloque-body-inner">
                             <div class="bloque-meta">
                               <span><i class="fa-light fa-calendar"></i> ${bloque.fecha}</span>
                               <span><i class="fa-light fa-user"></i> ${bloque.docente}</span>
@@ -341,6 +342,7 @@ function renderModulos() {
                             <ul class="bloque-tematica-list">
                               ${bloque.tematicas.map(t => `<li>${t}</li>`).join('\n                              ')}
                             </ul>
+                            </div>
                           </div>
                         </div>`;
     }).join('\n');
@@ -348,13 +350,13 @@ function renderModulos() {
     return `
               <div class="col-12 col-md-6 col-lg-4">
               <div class="modulo-item">
-                <button class="modulo-header" aria-expanded="true">
+                <div class="modulo-header" aria-expanded="true">
                   <span class="display-4">${mod.num}</span>
                   <div class="modulo-info">
                     <span class="modulo-titulo">${mod.titulo}</span>
                     <span class="modulo-meta">${meta}</span>
                   </div>
-                </button>
+                </div>
                 <div class="modulo-body">
                   ${bloquesHTML}
                 </div>

@@ -284,7 +284,9 @@ p {
 }
 
 .doc-nombre {
-  white-space: nowrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  hyphens: none;
 }
 
 .doc-especialidad {

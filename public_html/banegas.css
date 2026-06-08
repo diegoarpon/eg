@@ -354,6 +354,3 @@ header .navbar {
   background: var(--color-header) !important;
 }
 
-header .header-wave path {
-  fill: var(--color-header) !important;
-}

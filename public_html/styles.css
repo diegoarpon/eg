@@ -656,6 +656,10 @@ section>div:first-child {
   cursor: pointer;
 }
 
+.video-testimonial video {
+  display: block;
+}
+
 .video-testimonial .play-overlay {
   position: absolute;
   top: 50%;

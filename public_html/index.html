@@ -506,10 +506,12 @@
 			<div class="row g-4">
 				<div class="col-12 col-lg-3">
 					<div class="rounded-4 p-4 h-100 testimonial-card">
-						<video class="w-100 rounded-3 mb-3" controls preload="metadata" poster="images/natali-naranjo-cover.webp">
-							<source src="videos/natali-naranjo.mp4" type="video/mp4">
-						</video>
-						<p class="fw-semibold mb-0"><span class="fw-extralight">— Dra.</span> Natali Naranjo</p>
+						<div class="video-testimonial" onclick="this.querySelector('video').play();this.querySelector('.play-overlay').style.display='none';this.querySelector('video').setAttribute('controls','')">
+							<video class="w-100 rounded-3" preload="metadata" poster="images/natali-naranjo-cover.webp">
+								<source src="videos/natali-naranjo.mp4" type="video/mp4">
+							</video>
+							<div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+						</div>
 					</div>
 				</div>
 				<div class="col-12 col-lg">
@@ -558,10 +560,12 @@
 			<div class="row g-4 mt-0">
 				<div class="col-12 col-lg-3">
 					<div class="rounded-4 p-4 h-100 testimonial-card">
-						<video class="w-100 rounded-3 mb-3" controls preload="metadata" poster="images/juliana-mariaca-cover.webp">
-							<source src="videos/juliana-mariaca.mp4" type="video/mp4">
-						</video>
-						<p class="fw-semibold mb-0"><span class="fw-extralight">—</span> Juliana Mariaca</p>
+						<div class="video-testimonial" onclick="this.querySelector('video').play();this.querySelector('.play-overlay').style.display='none';this.querySelector('video').setAttribute('controls','')">
+							<video class="w-100 rounded-3" preload="metadata" poster="images/juliana-mariaca-cover.webp">
+								<source src="videos/juliana-mariaca.mp4" type="video/mp4">
+							</video>
+							<div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+						</div>
 					</div>
 				</div>
 				<div class="col-12 col-lg">

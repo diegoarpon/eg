@@ -943,7 +943,23 @@ section>div:first-child {
 
 @media (max-width: 767.98px) {
   .partners-section .fs-30px {
-    font-size: 1.75rem;
+    font-size: 1rem;
+  }
+
+  .partners-section .partner-logo-sm {
+    height: 18px;
+  }
+
+  .partners-section .partner-logo-md {
+    height: 22px;
+  }
+
+  .partners-section .partner-logo-lg {
+    height: 26px;
+  }
+
+  .partners-section .partner-logo-xl {
+    height: 40px;
   }
 
   .subitems {

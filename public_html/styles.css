@@ -550,6 +550,12 @@ section>div:first-child {
   }
 }
 
+@media (max-width: 991.98px) {
+  .hero-text-side {
+    padding: 2rem 1.5rem !important;
+  }
+}
+
 /* Hero section vertical wavy line */
 .hero-text-side::after {
   content: "";

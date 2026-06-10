@@ -530,7 +530,7 @@ section>div:first-child {
 
 /* Text side styling */
 .hero-text-side {
-  padding: 3rem 2rem 3rem 6rem;
+  padding: 3rem 2rem;
   position: relative;
   display: flex;
   align-items: center;
@@ -594,7 +594,7 @@ section>div:first-child {
   }
 
   .hero-text-side {
-    padding: 3rem 1.5rem;
+    padding: 2rem 1rem;
   }
 
 }

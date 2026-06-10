@@ -552,7 +552,7 @@ section>div:first-child {
 
 @media (max-width: 991.98px) {
   .hero-text-side {
-    padding: 2rem 12px !important;
+    padding: 2rem 1rem !important;
   }
 }
 
@@ -594,6 +594,7 @@ section>div:first-child {
   position: relative;
   z-index: 1;
   margin: auto 0;
+  padding: 0;
 }
 
 .hero-section p {

@@ -611,7 +611,7 @@ section>div:first-child {
 }
 
 .hero-content p {
-  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
   line-height: 1.6;
 }
 

@@ -560,8 +560,7 @@ section>div:first-child {
 
 @media (max-width: 991.98px) {
   .hero-text-side {
-    padding: 5rem 1.5rem 2rem 1.5rem !important;
-    padding-left: 1.5rem !important;
+    padding: clamp(4rem, 9vw, 5rem) clamp(1rem, 4vw, 1.5rem) 2rem !important;
   }
 }
 
@@ -607,11 +606,13 @@ section>div:first-child {
 }
 
 .hero-content h1 {
-  line-height: 1.2;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  line-height: 1.15;
 }
 
 .hero-content p {
-  line-height: 1.4;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  line-height: 1.6;
 }
 
 .hero-section p {
@@ -1514,25 +1515,7 @@ section>div:first-child {
 }
 
 /* Responsive adjustments */
-@media (max-width: 992px) {
-  .hero-section h1 {
-    font-size: 4rem;
-  }
 
-  .hero-section p {
-    font-size: 1.25rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-section h1 {
-    font-size: 2.8rem;
-  }
-
-  .hero-section p {
-    font-size: 1rem;
-  }
-}
 
 /* Relative font weight increase */
 strong {

@@ -505,7 +505,7 @@
 				<div class="col-12 col-lg-3">
 					<div class="rounded-4 p-4 testimonial-card">
 						<div class="video-testimonial"
-							onclick="this.querySelector('video').play();this.querySelector('.play-overlay').style.display='none';this.querySelector('video').setAttribute('controls','')">
+							onclick="var v=this.querySelector('video');var o=this.querySelector('.play-overlay');v.setAttribute('controls','');o.style.display='none';v.play();">
 							<video class="w-100 rounded-3" preload="metadata" poster="images/natali-naranjo-cover.webp">
 								<source src="videos/natali-naranjo.mp4" type="video/mp4">
 							</video>
@@ -578,7 +578,7 @@
 				<div class="col-12 col-lg-3">
 					<div class="rounded-4 p-4 testimonial-card">
 						<div class="video-testimonial"
-							onclick="this.querySelector('video').play();this.querySelector('.play-overlay').style.display='none';this.querySelector('video').setAttribute('controls','')">
+							onclick="var v=this.querySelector('video');var o=this.querySelector('.play-overlay');v.setAttribute('controls','');o.style.display='none';v.play();">
 							<video class="w-100 rounded-3" preload="metadata"
 								poster="images/juliana-mariaca-cover.webp">
 								<source src="videos/juliana-mariaca.mp4" type="video/mp4">

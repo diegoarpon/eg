@@ -748,10 +748,6 @@ section>div:first-child {
     display: none;
   }
 
-  .testimonial-card .testimonial-avatar-footer {
-    display: block !important;
-  }
-
   .btn-pill {
     margin-bottom: 3rem;
   }

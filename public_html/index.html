@@ -455,6 +455,7 @@
 	<section class="py-5">
 		<div class="container">
 			<h3 class="display-5 fw-semibold mb-5 text-center">Lo que dicen nuestros clientes</h3>
+			<!-- Row 1: Natali video | Dipasquale | Milagros video -->
 			<div class="row g-4">
 				<div class="col-12 col-lg-3">
 					<div class="rounded-4 p-4 testimonial-card">
@@ -465,26 +466,6 @@
 							</video>
 							<div class="play-overlay"><i class="fa-solid fa-play"></i></div>
 						</div>
-					</div>
-				</div>
-				<div class="col-12 col-lg">
-					<div class="rounded-4 p-4 testimonial-card">
-						<div class="d-flex align-items-center gap-3 mb-3">
-							<img src="images/alexis-fernandez -sassone.png" alt="Dr. Alexis Fernandez Sassone"
-								class="rounded-circle bg-white d-none" width="100" height="100"
-								style="object-fit: cover; min-width: 100px;" />
-							<p class="fw-semibold mb-0">“Con EG Marketing vivimos una experiencia superadora
-								que cambió nuestra manera de trabajar y perfeccionó nuestra atención al cliente.</p>
-						</div>
-						<p class="fw-extralight mb-3" style="font-size: 1.1rem;">
-							Pudimos mejorar cada uno de los
-							sistemas que componen nuestra clínica trabajando en detalle en cada proceso y hoy lo vemos
-							<strong>reflejado en la sonrisa de nuestros pacientes</strong>, pero también de nuestro
-							personal a cargo.<br><br>
-							Espero que más profesionales puedan tener el lujo de contar con <strong>una opinión externa
-								de esta calidad</strong> y disfrutar después de los resultados en su consultorio.”
-						</p>
-						<p class="fw-semibold mb-0 d-flex align-items-center gap-3"><img src="images/alexis-fernandez -sassone.png" alt="Dr. Alexis Fernandez Sassone" class="rounded-circle bg-white testimonial-avatar-footer" width="48" height="48" style="object-fit: cover; min-width: 48px;" /><span><span class="fw-extralight">Dr.</span> Alexis Fernandez Sassone</span></p>
 					</div>
 				</div>
 				<div class="col-12 col-lg">
@@ -508,7 +489,42 @@
 						<p class="fw-semibold mb-0 d-flex align-items-center gap-3"><img src="images/marisa-dipasquale.png" alt="Dra. Marisa Dipasquale" class="rounded-circle bg-white testimonial-avatar-footer" width="48" height="48" style="object-fit: cover; min-width: 48px;" /><span><span class="fw-extralight">Dra.</span> Marisa Dipasquale</span></p>
 					</div>
 				</div>
+				<div class="col-12 col-lg-3">
+					<div class="rounded-4 p-4 testimonial-card">
+						<div class="video-testimonial"
+							onclick="var v=this.querySelector('video');var o=this.querySelector('.play-overlay');v.setAttribute('controls','');o.style.display='none';v.play();">
+							<video class="w-100 rounded-3" preload="metadata" poster="images/milagros-alcorta-cover.webp">
+								<source src="videos/milagros-alcorta.mp4" type="video/mp4">
+							</video>
+							<div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+						</div>
+					</div>
+				</div>
 			</div>
+			<!-- Row 2: Sassone fluid -->
+			<div class="row g-4 mt-0">
+				<div class="col-12">
+					<div class="rounded-4 p-4 testimonial-card">
+						<div class="d-flex align-items-center gap-3 mb-3">
+							<img src="images/alexis-fernandez -sassone.png" alt="Dr. Alexis Fernandez Sassone"
+								class="rounded-circle bg-white d-none" width="100" height="100"
+								style="object-fit: cover; min-width: 100px;" />
+							<p class="fw-semibold mb-0">“Con EG Marketing vivimos una experiencia superadora
+								que cambió nuestra manera de trabajar y perfeccionó nuestra atención al cliente.</p>
+						</div>
+						<p class="fw-extralight mb-3" style="font-size: 1.1rem;">
+							Pudimos mejorar cada uno de los
+							sistemas que componen nuestra clínica trabajando en detalle en cada proceso y hoy lo vemos
+							<strong>reflejado en la sonrisa de nuestros pacientes</strong>, pero también de nuestro
+							personal a cargo.<br><br>
+							Espero que más profesionales puedan tener el lujo de contar con <strong>una opinión externa
+								de esta calidad</strong> y disfrutar después de los resultados en su consultorio.”
+						</p>
+						<p class="fw-semibold mb-0 d-flex align-items-center gap-3"><img src="images/alexis-fernandez -sassone.png" alt="Dr. Alexis Fernandez Sassone" class="rounded-circle bg-white testimonial-avatar-footer" width="48" height="48" style="object-fit: cover; min-width: 48px;" /><span><span class="fw-extralight">Dr.</span> Alexis Fernandez Sassone</span></p>
+					</div>
+				</div>
+			</div>
+			<!-- Row 3: sin cambios -->
 			<div class="row g-4 mt-0">
 				<div class="col-12 col-lg">
 					<div class="rounded-4 p-4 testimonial-card">

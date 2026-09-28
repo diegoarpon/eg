@@ -108,6 +108,46 @@ a {
 }
 
 /* ============================================================
+   TYPOGRAPHY ARCHETYPE (Inspirado en Franceclat & Sección 01)
+   Regla General: Todos los títulos en Montserrat 200, clamp(1.85rem, 3.2vw, 3.15rem),
+   line-height 1.2, letter-spacing -0.02em, con acentos .text-contrast en gold 700.
+   Todas las bajadas en Montserrat 300 con altura de línea relajada.
+   ============================================================ */
+.section-main-title,
+.manifesto-headline,
+.decisions-main-title,
+.modules-main-title,
+.deliverables-main-title,
+.testimonials-main-title,
+.facilitator-name,
+.edition-main-title,
+.faq-main-title {
+  font-family: var(--font);
+  font-size: clamp(1.85rem, 3.2vw, 3.15rem);
+  font-weight: 200;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+.section-lead,
+.decisions-lead,
+.modules-lead,
+.deliverables-lead,
+.testimonials-lead,
+.edition-lead {
+  font-size: clamp(0.95rem, 1.15vw, 1.125rem);
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--white-60);
+}
+
+.text-contrast {
+  font-weight: 700;
+  color: var(--gold);
+}
+
+/* ============================================================
    HEADER / NAV EDITORIAL
    ============================================================ */
 .site-header {
@@ -758,9 +798,9 @@ a {
 }
 
 .manifesto-headline {
-  font-size: clamp(1.75rem, 3.2vw, 3rem);
+  font-size: clamp(1.85rem, 3.2vw, 3.15rem);
   font-weight: 200;
-  line-height: 1.25;
+  line-height: 1.2;
   letter-spacing: -0.02em;
   color: var(--white);
   max-width: 24ch;
@@ -854,11 +894,11 @@ a {
 }
 
 .decisions-main-title {
-  font-size: clamp(2rem, 3.4vw, 3.25rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  font-size: clamp(1.85rem, 3.2vw, 3.15rem);
+  font-weight: 200;
+  letter-spacing: -0.02em;
   color: var(--white);
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 .decisions-lead {
@@ -1087,11 +1127,11 @@ a {
 }
 
 .modules-main-title {
-  font-size: clamp(2rem, 3.4vw, 3.25rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  font-size: clamp(1.85rem, 3.2vw, 3.15rem);
+  font-weight: 200;
+  letter-spacing: -0.02em;
   color: var(--white);
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 .modules-lead {
@@ -1286,11 +1326,11 @@ a {
 }
 
 .deliverables-main-title {
-  font-size: clamp(2rem, 3.4vw, 3.25rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  font-size: clamp(1.85rem, 3.2vw, 3.15rem);
+  font-weight: 200;
+  letter-spacing: -0.02em;
   color: var(--white);
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 .deliverables-lead {
@@ -1442,11 +1482,11 @@ a {
 }
 
 .testimonials-main-title {
-  font-size: clamp(2rem, 3.4vw, 3.25rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  font-size: clamp(1.85rem, 3.2vw, 3.15rem);
+  font-weight: 200;
+  letter-spacing: -0.02em;
   color: var(--white);
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 .testimonials-lead {
@@ -1758,11 +1798,11 @@ a {
 }
 
 .facilitator-name {
-  font-size: clamp(2rem, 3.4vw, 3.25rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  font-size: clamp(1.85rem, 3.2vw, 3.15rem);
+  font-weight: 200;
+  letter-spacing: -0.02em;
   color: var(--white);
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 .facilitator-role {
@@ -1890,11 +1930,11 @@ a {
 }
 
 .edition-main-title {
-  font-size: clamp(2rem, 3.4vw, 3.25rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  font-size: clamp(1.85rem, 3.2vw, 3.15rem);
+  font-weight: 200;
+  letter-spacing: -0.02em;
   color: var(--white);
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 .edition-lead {
@@ -2057,11 +2097,11 @@ a {
 }
 
 .faq-main-title {
-  font-size: clamp(2rem, 3.4vw, 3.25rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
+  font-size: clamp(1.85rem, 3.2vw, 3.15rem);
+  font-weight: 200;
+  letter-spacing: -0.02em;
   color: var(--white);
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 .faq-accordion {

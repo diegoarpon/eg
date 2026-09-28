@@ -44,8 +44,6 @@
         <span class="dot-sep">·</span>
         <a href="#decisiones" class="nav-link">DECISIONES</a>
         <span class="dot-sep">·</span>
-        <a href="#modulos" class="nav-link">PROGRAMA</a>
-        <span class="dot-sep">·</span>
         <a href="#entregables" class="nav-link">ENTREGABLES</a>
         <span class="dot-sep">·</span>
         <a href="#testimonios" class="nav-link">TESTIMONIOS</a>
@@ -341,13 +339,13 @@
 
       </div>
 
-      <!-- Pie de sección con transición al temario -->
+      <!-- Pie de sección con transición a herramientas -->
       <div class="decisions-footer" data-reveal data-delay="2">
         <span class="decisions-footer__text">
-          Estas 6 decisiones se articulan en los 3 módulos troncales de la jornada presencial.
+          Estas 6 decisiones se articulan en herramientas concretas de aplicación inmediata.
         </span>
-        <a href="#modulos" class="btn-text-link">
-          <span>Ver los 3 Módulos</span>
+        <a href="#entregables" class="btn-text-link">
+          <span>Ver las Herramientas Operativas</span>
           <span class="arrow-down">↓</span>
         </a>
       </div>
@@ -355,11 +353,8 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════
-       SECCIÓN 03: EL PROGRAMA / LOS 3 MÓDULOS TRONCALES
-       Estructura arquitectónica de 3 columnas con hairlines
-  ══════════════════════════════════════════════════════════ -->
-  <section class="modules-section" id="modulos">
+  <!-- SECCIÓN: PROGRAMA ACADÉMICO (Oculta temporalmente según indicación) -->
+  <section class="modules-section" id="modulos" style="display: none;" aria-hidden="true">
     <div class="modules-container">
 
       <!-- Header de sección con micro-etiqueta -->
@@ -502,7 +497,7 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════════════
-       SECCIÓN 04: ENTREGABLES Y HERRAMIENTAS
+       SECCIÓN 03: ENTREGABLES Y HERRAMIENTAS
        Grilla 4x1 de herramientas operativas de aplicación inmediata
   ══════════════════════════════════════════════════════════ -->
   <section class="deliverables-section" id="entregables">
@@ -510,7 +505,7 @@
 
       <div class="deliverables-header" data-reveal>
         <div class="section-meta-header">
-          <span class="label-tag label-tag--gold">04</span>
+          <span class="label-tag label-tag--gold">03</span>
           <span class="sep-slash">/</span>
           <span class="label-tag">HERRAMIENTAS OPERATIVAS</span>
         </div>
@@ -600,8 +595,8 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════════════
-       SECCIÓN 05: VOCES DE LA 1ª EDICIÓN (TESTIMONIOS EDITORIALES)
-       Inspirado en la gramática arquitectónica de Franceclat
+       SECCIÓN 04: VOCES DE LA 1ª EDICIÓN (TESTIMONIOS)
+       Cadencia asimétrica izquierda-derecha inspirada en Franceclat
   ══════════════════════════════════════════════════════════ -->
   <section class="testimonials-section" id="testimonios">
     <div class="testimonials-container">
@@ -610,7 +605,7 @@
       <div class="testimonials-header-grid" data-reveal>
         <div class="testimonials-header-left">
           <div class="section-meta-header">
-            <span class="label-tag label-tag--gold">05</span>
+            <span class="label-tag label-tag--gold">04</span>
             <span class="sep-slash">/</span>
             <span class="label-tag">VOCES DE LA 1ª EDICIÓN</span>
           </div>
@@ -625,62 +620,46 @@
         </div>
       </div>
 
-      <!-- Tiras Editoriales Continuas (Estilo Franceclat ConversationItem) -->
-      <div class="testimonials-list" data-reveal data-delay="1">
+      <!-- Cadencia Alternada: Izquierda -> Derecha -> Izquierda -> Derecha -->
+      <div class="testimonials-flow" data-reveal data-delay="1">
 
-        <!-- 01 · Dra. Monica Giaccolla -->
-        <article class="testimonial-row">
-          <div class="testimonial-row__meta">
-            <span class="testimonial-row__index">01 <span class="sep-slash">/</span> 04</span>
-            <h3 class="testimonial-row__author">Dra. Monica Giaccolla</h3>
-            <span class="testimonial-row__role">Consultorio Propio</span>
-          </div>
-          <div class="testimonial-row__body">
-            <blockquote class="testimonial-row__quote">
+        <!-- 01 · Izquierda: Dra. Monica Giaccolla -->
+        <article class="testimonial-cadence testimonial-cadence--left">
+          <div class="testimonial-cadence__inner">
+            <blockquote class="testimonial-quote-text">
               «El Método es fundamental para todo profesional de la salud que tenga un espacio propio, porque va más allá de lo económico. Es dar el valor a nuestros años de formación. Me encantaría repetirlo y seguro lo recomendaré.»
             </blockquote>
+            <cite class="testimonial-author-name">— Dra. Monica Giaccolla</cite>
           </div>
         </article>
 
-        <!-- 02 · Luciana Abraciano -->
-        <article class="testimonial-row">
-          <div class="testimonial-row__meta">
-            <span class="testimonial-row__index">02 <span class="sep-slash">/</span> 04</span>
-            <h3 class="testimonial-row__author">Luciana Abraciano</h3>
-            <span class="testimonial-row__role">Práctica Médica</span>
-          </div>
-          <div class="testimonial-row__body">
-            <blockquote class="testimonial-row__quote">
+        <!-- 02 · Derecha: Luciana Abraciano -->
+        <article class="testimonial-cadence testimonial-cadence--right">
+          <div class="testimonial-cadence__inner">
+            <blockquote class="testimonial-quote-text">
               «Siempre pensé que este tipo de cosas requerían una inversión que no estaba lista para afrontar. Hoy me cambió ese pensamiento. Cuesta saber por dónde empezar, y siento que me va a servir para ordenarme. Se nota que lo hacen con pasión.»
             </blockquote>
+            <cite class="testimonial-author-name">— Luciana Abraciano</cite>
           </div>
         </article>
 
-        <!-- 03 · Daniela Noriega -->
-        <article class="testimonial-row">
-          <div class="testimonial-row__meta">
-            <span class="testimonial-row__index">03 <span class="sep-slash">/</span> 04</span>
-            <h3 class="testimonial-row__author">Daniela Noriega</h3>
-            <span class="testimonial-row__role">Participante</span>
-          </div>
-          <div class="testimonial-row__body">
-            <blockquote class="testimonial-row__quote">
+        <!-- 03 · Izquierda: Daniela Noriega -->
+        <article class="testimonial-cadence testimonial-cadence--left">
+          <div class="testimonial-cadence__inner">
+            <blockquote class="testimonial-quote-text">
               «Muchas gracias por la experiencia. Se notó la dedicación que pusieron en hacernos sentir bien en toda la jornada.»
             </blockquote>
+            <cite class="testimonial-author-name">— Daniela Noriega</cite>
           </div>
         </article>
 
-        <!-- 04 · Ana Carolina Facchin -->
-        <article class="testimonial-row">
-          <div class="testimonial-row__meta">
-            <span class="testimonial-row__index">04 <span class="sep-slash">/</span> 04</span>
-            <h3 class="testimonial-row__author">Ana Carolina Facchin</h3>
-            <span class="testimonial-row__role">Participante</span>
-          </div>
-          <div class="testimonial-row__body">
-            <blockquote class="testimonial-row__quote">
+        <!-- 04 · Derecha: Ana Carolina Facchin -->
+        <article class="testimonial-cadence testimonial-cadence--right">
+          <div class="testimonial-cadence__inner">
+            <blockquote class="testimonial-quote-text">
               «Gracias por diseñar El Método y ponerlo a nuestro alcance ⭐️»
             </blockquote>
+            <cite class="testimonial-author-name">— Ana Carolina Facchin</cite>
           </div>
         </article>
 
@@ -690,21 +669,21 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════════════
-       SECCIÓN 06: FACILITADORA — EDITH GROSHAUS & EG MARKETING
+       SECCIÓN 05: FACILITADORA — EDITH GROSHAUS & EG MARKETING
        Fotografía real en ponencia + Manifiesto y trayectoria
   ══════════════════════════════════════════════════════════ -->
   <section class="facilitator-section" id="edith-groshaus">
     <div class="facilitator-container">
 
       <div class="section-meta-header" data-reveal>
-        <span class="label-tag label-tag--gold">06</span>
+        <span class="label-tag label-tag--gold">05</span>
         <span class="sep-slash">/</span>
         <span class="label-tag">DIRECCIÓN & FACILITACIÓN</span>
       </div>
 
       <div class="facilitator-grid">
 
-        <!-- Columna Izquierda: Retrato y Cita -->
+        <!-- Columna Izquierda: Retrato compacto (sin frase atribuida) -->
         <div class="facilitator-photo-column" data-reveal data-delay="1">
           <div class="facilitator-photo-frame">
             <img
@@ -713,13 +692,6 @@
               class="facilitator-img"
               loading="lazy"
             >
-          </div>
-
-          <div class="facilitator-quote-card">
-            <p class="facilitator-quote-text">
-              “El acto médico es una vocación de servicio, pero el consultorio es una empresa. Cuando ordenás los números y la experiencia, ganás libertad para ejercer con excelencia.”
-            </p>
-            <span class="facilitator-quote-author">Edith Groshaus</span>
           </div>
         </div>
 
@@ -772,7 +744,7 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════════════
-       SECCIÓN 07: COORDENADAS Y LOGÍSTICA
+       SECCIÓN 06: COORDENADAS Y LOGÍSTICA
        Datos operativos y entorno del encuentro presencial
   ══════════════════════════════════════════════════════════ -->
   <section class="logistics-section" id="coordenadas">
@@ -780,7 +752,7 @@
 
       <div class="logistics-header" data-reveal>
         <div class="section-meta-header">
-          <span class="label-tag label-tag--gold">07</span>
+          <span class="label-tag label-tag--gold">06</span>
           <span class="sep-slash">/</span>
           <span class="label-tag">LOGÍSTICA & ENTORNO</span>
         </div>
@@ -842,7 +814,7 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════════════
-       SECCIÓN 08: PREGUNTAS FRECUENTES
+       SECCIÓN 07: PREGUNTAS FRECUENTES
        Acordeón editorial minimalista
   ══════════════════════════════════════════════════════════ -->
   <section class="faq-section" id="faq">
@@ -850,7 +822,7 @@
 
       <div class="faq-header" data-reveal>
         <div class="section-meta-header">
-          <span class="label-tag label-tag--gold">08</span>
+          <span class="label-tag label-tag--gold">07</span>
           <span class="sep-slash">/</span>
           <span class="label-tag">RESOLUCIÓN DE DUDAS</span>
         </div>
@@ -932,7 +904,7 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════════════
-       SECCIÓN 09: CIERRE EDITORIAL & LLAMADO A LA ACCIÓN
+       SECCIÓN 08: CIERRE EDITORIAL & LLAMADO A LA ACCIÓN
        Atmósfera envolvente con resplandor ámbar
   ══════════════════════════════════════════════════════════ -->
   <section class="closing-cta-section" id="reserva">
@@ -972,7 +944,7 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════════════
-       SECCIÓN 09: FOOTER EDITORIAL ARQUITECTÓNICO
+       FOOTER EDITORIAL ARQUITECTÓNICO
   ══════════════════════════════════════════════════════════ -->
   <footer class="site-footer">
     <div class="footer-container">
@@ -997,7 +969,6 @@
             <li><a href="#portada">Portada</a></li>
             <li><a href="#manifiesto">El Enfoque</a></li>
             <li><a href="#decisiones">6 Decisiones</a></li>
-            <li><a href="#modulos">Los 3 Módulos</a></li>
             <li><a href="#entregables">Entregables</a></li>
             <li><a href="#testimonios">Testimonios</a></li>
             <li><a href="#edith-groshaus">Edith Groshaus</a></li>

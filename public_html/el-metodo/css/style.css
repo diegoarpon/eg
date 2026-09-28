@@ -1396,13 +1396,16 @@ a {
 
 /* ============================================================
    SECCIÓN 05: TESTIMONIOS (VOCES DE LA 1ª EDICIÓN)
-   Diseño editorial abierto, sin cajas rígidas ni exceso de bordes
+   Gramática arquitectónica y editorial inspirada en Franceclat
+   - Header asimétrico en 12 columnas
+   - Tiras horizontales continuas con hairlines ultrafinas
+   - Tipografía statement de gran escala y resplandor radial sutil
    ============================================================ */
 .testimonials-section {
   position: relative;
-  padding: clamp(5.5rem, 11vh, 9.5rem) 0;
+  padding: clamp(6rem, 12vh, 10rem) 0;
   border-top: 1px solid var(--hairline);
-  background-color: var(--bg-main);
+  background-color: var(--bg-deep);
   overflow: hidden;
 }
 
@@ -1414,87 +1417,147 @@ a {
   padding: 0 clamp(1.5rem, 4vw, 4.5rem);
 }
 
-.testimonials-header {
-  margin-bottom: clamp(3rem, 6vh, 4.5rem);
-  max-width: 58ch;
-}
-
-.testimonials-main-title {
-  font-size: clamp(2rem, 3.2vw, 3.25rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  color: var(--white);
-  line-height: 1.15;
-  margin-bottom: 1rem;
-}
-
-.testimonials-lead {
-  font-size: clamp(0.95rem, 1.15vw, 1.125rem);
-  font-weight: 300;
-  line-height: 1.65;
-  color: var(--white-60);
-}
-
-.testimonials-grid {
+/* Header Asimétrico 12 Columnas */
+.testimonials-header-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 2rem;
+  margin-bottom: clamp(3.5rem, 7vh, 5.5rem);
 }
 
-@media (min-width: 768px) {
-  .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: clamp(3rem, 5vw, 6rem);
-    row-gap: clamp(3rem, 5vh, 4.5rem);
+@media (min-width: 1024px) {
+  .testimonials-header-grid {
+    grid-template-columns: 7fr 5fr;
+    gap: clamp(3rem, 6vw, 8rem);
+    align-items: flex-end;
   }
 }
 
-.testimonial-card {
+.testimonials-header-left {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  position: relative;
 }
 
-.testimonial-mark {
-  font-size: 2.75rem;
-  line-height: 1;
-  color: var(--gold);
-  font-family: serif;
-  opacity: 0.55;
-  margin-bottom: 0.5rem;
-  user-select: none;
+.testimonials-display-title {
+  font-size: clamp(2rem, 3.6vw, 3.75rem);
+  font-weight: 200;
+  letter-spacing: -0.025em;
+  color: var(--white);
+  line-height: 1.15;
+  max-width: 22ch;
 }
 
-.testimonial-quote {
-  font-size: clamp(0.95rem, 1.15vw, 1.1rem);
+.testimonials-header-right {
+  display: flex;
+  align-items: flex-end;
+}
+
+.testimonials-intro-p {
+  font-size: clamp(0.95rem, 1.15vw, 1.15rem);
   font-weight: 300;
-  line-height: 1.8;
+  line-height: 1.75;
+  color: var(--white-60);
+  max-width: 44ch;
+}
+
+/* Lista de Tiras Editoriales (Franceclat ConversationItem style) */
+.testimonials-list {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.testimonial-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: clamp(2.5rem, 4.5vh, 3.75rem) clamp(1rem, 2vw, 2.5rem);
+  border-top: 1px solid var(--hairline);
+  transition: background-color 0.4s var(--ease);
+  overflow: hidden;
+}
+
+/* Resplandor radial atmosférico en hover fiel a Franceclat */
+.testimonial-row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 90% 120% at 20% 50%,
+    rgba(216, 149, 16, 0.08) 0%,
+    rgba(4, 33, 37, 0.45) 45%,
+    transparent 85%
+  );
+  opacity: 0;
+  transition: opacity 0.5s var(--ease);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.testimonial-row:hover::before {
+  opacity: 1;
+}
+
+@media (min-width: 900px) {
+  .testimonial-row {
+    grid-template-columns: 320px 1fr;
+    gap: clamp(2.5rem, 4vw, 5rem);
+    align-items: flex-start;
+  }
+}
+
+.testimonial-row__meta {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.testimonial-row__index {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--white-35);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-row__author {
+  font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  line-height: 1.3;
+}
+
+.testimonial-row__role {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.testimonial-row__body {
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-row__quote {
+  font-size: clamp(1.2rem, 1.85vw, 1.8rem);
+  font-weight: 200;
+  line-height: 1.5;
+  letter-spacing: -0.015em;
   color: var(--white-85);
   font-style: italic;
-  margin-bottom: 1.75rem;
+  max-width: 48ch;
+  transition: color 0.4s var(--ease);
 }
 
-.testimonial-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.testimonial-name {
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+.testimonial-row:hover .testimonial-row__quote {
   color: var(--white);
-  text-transform: uppercase;
-}
-
-.testimonial-tag {
-  font-size: 0.62rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  color: var(--gold);
-  text-transform: uppercase;
 }
 
 /* ============================================================

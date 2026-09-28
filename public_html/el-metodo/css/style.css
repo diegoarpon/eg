@@ -781,7 +781,7 @@ a {
 .manifesto-section {
   position: relative;
   padding: clamp(5.5rem, 11vh, 9.5rem) 0;
-  border-top: 1px solid var(--hairline);
+  border-top: none;
   background-color: var(--bg-deep);
   overflow: hidden;
 }
@@ -903,7 +903,7 @@ a {
 .decisions-section {
   position: relative;
   padding: clamp(5.5rem, 11vh, 9.5rem) 0;
-  border-top: 1px solid var(--hairline);
+  border-top: none;
   background-color: var(--bg-main);
   overflow: hidden;
 }
@@ -1056,7 +1056,7 @@ a {
   gap: 1.5rem;
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 1px solid var(--hairline);
+  border-top: none;
 }
 
 @media (min-width: 768px) {
@@ -1129,7 +1129,7 @@ a {
 .modules-section {
   position: relative;
   padding: clamp(5.5rem, 11vh, 9.5rem) 0;
-  border-top: 1px solid var(--hairline);
+  border-top: none;
   background-color: var(--bg-deep);
   overflow: hidden;
 }
@@ -1346,7 +1346,7 @@ a {
 .deliverables-section {
   position: relative;
   padding: clamp(5.5rem, 11vh, 9.5rem) 0;
-  border-top: 1px solid var(--hairline);
+  border-top: none;
   background-color: var(--bg-main);
   overflow: hidden;
 }
@@ -1486,7 +1486,7 @@ a {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gold);
-  border-top: 1px solid var(--hairline);
+  border-top: none;
   padding-top: 1rem;
   width: 100%;
 }
@@ -1501,7 +1501,7 @@ a {
 .testimonials-section {
   position: relative;
   padding: clamp(6rem, 12vh, 10rem) 0;
-  border-top: 1px solid var(--hairline);
+  border-top: none;
   background-color: var(--bg-deep);
   overflow: hidden;
 }
@@ -1560,8 +1560,8 @@ a {
 /* Carrusel Automático Editorial Fancy */
 .testimonial-carousel-wrap {
   position: relative;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: none;
+  border-bottom: none;
   background: radial-gradient(
     ellipse 85% 65% at 50% 50%,
     rgba(216, 149, 16, 0.06) 0%,
@@ -1659,7 +1659,7 @@ a {
   gap: 1.5rem;
   margin-top: clamp(2.5rem, 5vh, 4rem);
   padding-top: 1.75rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: none;
 }
 
 @media (min-width: 768px) {
@@ -1781,7 +1781,7 @@ a {
 .facilitator-section {
   position: relative;
   padding: clamp(5.5rem, 11vh, 9.5rem) 0;
-  border-top: 1px solid var(--hairline);
+  border-top: none;
   background-color: var(--bg-deep);
   overflow: hidden;
 }
@@ -1941,7 +1941,7 @@ a {
   align-items: center;
   gap: 1.25rem;
   padding-top: 1.5rem;
-  border-top: 1px solid var(--hairline);
+  border-top: none;
 }
 
 .facilitator-eg-logo {
@@ -1969,10 +1969,17 @@ a {
    orientar a la derecha el resto del texto, en su columna.
    Tipografía idéntica y unificada con el resto del sitio.
    ============================================================ */
+/* ============================================================
+   SECCIÓN 06: EL SEGUNDO TALLER PRESENCIAL
+   Puesta tipográfica pura de alta gama inspirada en editorial de lujo
+   - Sin cajas rígidas ni bordes horizontales
+   - Jerarquía tipográfica basada en escala, peso y cadencia
+   - Destacado editorial para Coffee Break & Networking
+   ============================================================ */
 .second-edition-section {
   position: relative;
   padding: clamp(6rem, 12vh, 10rem) 0;
-  border-top: 1px solid var(--hairline);
+  border-top: none;
   background-color: var(--bg-main);
   overflow: hidden;
 }
@@ -2018,7 +2025,7 @@ a {
   flex-direction: column;
   gap: 0;
   width: 100%;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: none;
 }
 
 @media (min-width: 900px) {
@@ -2028,50 +2035,60 @@ a {
   }
 }
 
-/* Tiras continuas sin cajas rígidas */
-.edition-stream-item {
-  position: relative;
+/* Composición tipográfica sin cajas ni bordes horizontales */
+.edition-typo-layout {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  padding: clamp(2rem, 3.5vh, 2.75rem) 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  transition: padding-left 0.4s var(--ease), background-color 0.4s var(--ease);
+  gap: clamp(3rem, 5.5vh, 4.25rem);
 }
 
-.edition-stream-item:hover {
-  padding-left: 0.75rem;
+.edition-typo-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.edition-stream-kicker {
+.edition-typo-kicker {
   font-size: 0.65rem;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--gold);
 }
 
-.edition-stream-content {
+.edition-typo-body {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.5rem;
 }
 
-.edition-stream-headline {
-  font-size: clamp(1.35rem, 2vw, 1.85rem);
-  font-weight: 600;
-  letter-spacing: -0.015em;
+.edition-typo-display {
+  font-size: clamp(1.6rem, 2.6vw, 2.35rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
   color: var(--white);
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
-.edition-stream-subhead {
-  font-size: clamp(0.9rem, 1.05vw, 1.05rem);
+.edition-typo-sub {
+  font-weight: 200;
+  color: var(--white-85);
+}
+
+.edition-typo-detail {
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
   font-weight: 400;
   color: var(--gold-bright);
+  letter-spacing: -0.01em;
 }
 
-.edition-stream-desc {
+.edition-typo-sep {
+  color: var(--white-35);
+  margin: 0 0.35rem;
+  font-weight: 300;
+}
+
+.edition-typo-note {
   font-size: clamp(0.875rem, 0.98vw, 0.975rem);
   font-weight: 300;
   line-height: 1.7;
@@ -2080,65 +2097,50 @@ a {
   margin-top: 0.25rem;
 }
 
-/* DESTACADO ESPECIAL: Coffee Break & Networking */
-.edition-highlight-banner {
+/* Destacado tipográfico: Coffee Break & Networking */
+.edition-networking-lockup {
   position: relative;
-  margin: clamp(2rem, 3.5vh, 2.75rem) 0;
-  padding: clamp(2rem, 3.5vh, 2.75rem) clamp(1.5rem, 2.8vw, 2.75rem);
-  border-radius: 4px;
-  overflow: hidden;
-  background: linear-gradient(
-    135deg,
-    rgba(216, 149, 16, 0.12) 0%,
-    rgba(4, 33, 37, 0.88) 55%,
-    rgba(3, 20, 23, 0.96) 100%
+  background: radial-gradient(
+    ellipse at 15% 50%,
+    rgba(216, 149, 16, 0.1) 0%,
+    rgba(4, 33, 37, 0.5) 75%,
+    transparent 100%
   );
-  border: 1px solid rgba(216, 149, 16, 0.38);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  padding: clamp(2rem, 3.5vh, 2.75rem);
+  border-radius: 4px;
+  border: none;
 }
 
-.edition-highlight-glow {
-  position: absolute;
-  top: -40%;
-  right: -20%;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(216, 149, 16, 0.2) 0%, transparent 70%);
-  pointer-events: none;
+.edition-networking-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.edition-highlight-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+.edition-networking-kicker {
   font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 0.85rem;
 }
 
-.highlight-sparkle {
-  color: var(--gold);
-  font-size: 0.85rem;
-}
-
-.edition-highlight-headline {
-  font-size: clamp(1.3rem, 1.9vw, 1.75rem);
-  font-weight: 600;
+.edition-networking-title {
+  font-size: clamp(1.35rem, 2.1vw, 1.85rem);
+  font-weight: 400;
   letter-spacing: -0.015em;
   color: var(--white);
-  line-height: 1.3;
-  margin-bottom: 0.75rem;
+  line-height: 1.25;
 }
 
-.edition-highlight-desc {
-  font-size: clamp(0.9rem, 1vw, 1rem);
+.edition-networking-desc {
+  font-size: clamp(0.9rem, 1.02vw, 1rem);
   font-weight: 300;
   line-height: 1.75;
   color: var(--white-85);
   max-width: 52ch;
+  margin: 0;
 }
 
 /* ============================================================

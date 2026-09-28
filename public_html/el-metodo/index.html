@@ -48,6 +48,8 @@
         <span class="dot-sep">·</span>
         <a href="#entregables" class="nav-link">ENTREGABLES</a>
         <span class="dot-sep">·</span>
+        <a href="#testimonios" class="nav-link">TESTIMONIOS</a>
+        <span class="dot-sep">·</span>
         <a href="#edith-groshaus" class="nav-link">EDITH GROSHAUS</a>
         <span class="dot-sep">·</span>
         <a href="#coordenadas" class="nav-link">LOGÍSTICA</a>
@@ -56,8 +58,8 @@
           href="https://wa.me/5491153282835?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%202da%20edici%C3%B3n%20de%20El%20M%C3%A9todo"
           target="_blank"
           rel="noopener noreferrer"
-          class="label-tag label-tag--accent nav-cta"
-        >CONSULTAR</a>
+          class="btn-nav-whatsapp"
+        >CONSULTAR POR WHATSAPP →</a>
       </nav>
     </div>
   </header>
@@ -594,18 +596,170 @@
 
       </div>
 
+      <!-- Simulador de Costo por Hora de Consultorio (Sneak Peek) -->
+      <div class="simulator-card" data-reveal data-delay="2">
+        <div class="simulator-card__header">
+          <div class="simulator-badge">
+            <span class="sim-dot">●</span>
+            <span>SIMULADOR INTERACTIVO · SNEAK PEEK</span>
+          </div>
+          <h3 class="simulator-title">Estimá el costo real de una hora de tu consultorio</h3>
+          <p class="simulator-lead">
+            Ajustá las variables para proyectar cuánto te cuesta mantener tu espacio médico en funcionamiento antes de calcular tus honorarios profesionales.
+          </p>
+        </div>
+
+        <div class="simulator-grid">
+          <!-- Controles / Sliders -->
+          <div class="simulator-controls">
+            <!-- Control 1: Horas de atención -->
+            <div class="sim-control-group">
+              <div class="sim-control-top">
+                <label for="hours-slider" class="sim-label">Horas de atención en consultorio al mes</label>
+                <span class="sim-value" id="hours-val">80 hs</span>
+              </div>
+              <input
+                type="range"
+                id="hours-slider"
+                class="sim-slider"
+                min="20"
+                max="160"
+                step="5"
+                value="80"
+                aria-label="Horas de atención presencial al mes"
+              >
+              <div class="sim-slider-scale">
+                <span>20 hs (part-time)</span>
+                <span>80 hs (estándar)</span>
+                <span>160 hs (full-time)</span>
+              </div>
+            </div>
+
+            <!-- Control 2: Costos mensuales -->
+            <div class="sim-control-group">
+              <div class="sim-control-top">
+                <label for="costs-slider" class="sim-label">Costos fijos mensuales de estructura</label>
+                <span class="sim-value" id="costs-val">$ 1.800.000</span>
+              </div>
+              <input
+                type="range"
+                id="costs-slider"
+                class="sim-slider"
+                min="500000"
+                max="6000000"
+                step="100000"
+                value="1800000"
+                aria-label="Costos fijos mensuales de estructura"
+              >
+              <div class="sim-slider-scale">
+                <span>$ 500k</span>
+                <span>Alquiler/módulo, secretaria, insumos, software</span>
+                <span>$ 6M+</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Métricas Calculadas -->
+          <div class="simulator-results">
+            <div class="sim-result-box">
+              <span class="sim-result-label">COSTO POR HORA ABIERTO</span>
+              <span class="sim-result-num" id="cost-per-hour">$ 22.500</span>
+              <span class="sim-result-sub">Costo de estructura por cada hora de agenda</span>
+            </div>
+
+            <div class="sim-result-box">
+              <span class="sim-result-label">COSTO BASE POR CONSULTA (30 MIN)</span>
+              <span class="sim-result-num" id="cost-per-consultation">$ 11.250</span>
+              <span class="sim-result-sub">Piso mínimo antes de computar tus honorarios médicos</span>
+            </div>
+
+            <div class="sim-callout">
+              <p class="sim-callout-text">
+                <strong>¿Sabías?</strong> Si una consulta particular o reintegro no supera tu costo base por turno, estás subsidiando la atención de tu propio bolsillo. En <em>El Método</em> analizamos tu matriz completa con la Calculadora de Costeo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- ══════════════════════════════════════════════════════════
-       SECCIÓN 05: FACILITADORA — EDITH GROSHAUS & EG MARKETING
+       SECCIÓN 05: VOCES DE LA 1ª EDICIÓN / TESTIMONIOS
+       Prueba social médica con diseño sobrio y tipográfico
+  ══════════════════════════════════════════════════════════ -->
+  <section class="testimonials-section" id="testimonios">
+    <div class="testimonials-container">
+
+      <div class="testimonials-header" data-reveal>
+        <div class="section-meta-header">
+          <span class="label-tag label-tag--gold">05</span>
+          <span class="sep-slash">/</span>
+          <span class="label-tag">PRUEBA SOCIAL MÉDICA</span>
+        </div>
+        <div class="testimonials-title-wrap">
+          <h2 class="testimonials-main-title">
+            Voces de la 1ª Edición
+          </h2>
+          <p class="testimonials-lead">
+            Especialistas que participaron del primer encuentro y transformaron la gestión de su práctica privada.
+          </p>
+        </div>
+      </div>
+
+      <div class="testimonials-grid" data-reveal data-delay="1">
+
+        <!-- Testimonio 1 -->
+        <article class="testimonial-cell">
+          <span class="testimonial-quote-mark">“</span>
+          <p class="testimonial-quote">
+            Siempre pensé que cobrar más dependía de comprar más tecnología o hacer otro posgrado. En El Método entendí que mi valor estaba en la experiencia y en cómo estructuraba mi consulta. Dupliqué mis pacientes particulares en dos meses.
+          </p>
+          <div class="testimonial-author">
+            <span class="author-name">Dra. Mariana V.</span>
+            <span class="author-spec">Dermatología Clínica & Estética · Consultorio propio</span>
+          </div>
+        </article>
+
+        <!-- Testimonio 2 -->
+        <article class="testimonial-cell">
+          <span class="testimonial-quote-mark">“</span>
+          <p class="testimonial-quote">
+            En la residencia te enseñan a operar con precisión milimétrica, pero nadie te dice cuánto te cuesta tener la persiana abierta una hora. La calculadora de costeo me abrió los ojos: dejé dos convenios deficitarios y gané tiempo de vida.
+          </p>
+          <div class="testimonial-author">
+            <span class="author-name">Dr. Lucas M.</span>
+            <span class="author-spec">Cirugía General & Laparoscópica · Práctica privada</span>
+          </div>
+        </article>
+
+        <!-- Testimonio 3 -->
+        <article class="testimonial-cell">
+          <span class="testimonial-quote-mark">“</span>
+          <p class="testimonial-quote">
+            El taller de Journey del Paciente cambió la dinámica de todo mi equipo. Mis secretarias ahora tienen protocolos claros y los pacientes perciben una atención de excelencia desde el primer WhatsApp hasta el seguimiento posterior.
+          </p>
+          <div class="testimonial-author">
+            <span class="author-name">Dra. Florencia B.</span>
+            <span class="author-spec">Medicina Funcional & Longevidad · Centro Médico</span>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SECCIÓN 06: FACILITADORA — EDITH GROSHAUS & EG MARKETING
        Fotografía real en ponencia + Manifiesto y trayectoria
   ══════════════════════════════════════════════════════════ -->
   <section class="facilitator-section" id="edith-groshaus">
     <div class="facilitator-container">
 
       <div class="section-meta-header" data-reveal>
-        <span class="label-tag label-tag--gold">05</span>
+        <span class="label-tag label-tag--gold">06</span>
         <span class="sep-slash">/</span>
         <span class="label-tag">DIRECCIÓN & FACILITACIÓN</span>
       </div>
@@ -680,7 +834,7 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════════════
-       SECCIÓN 06: COORDENADAS Y LOGÍSTICA
+       SECCIÓN 07: COORDENADAS Y LOGÍSTICA
        Datos operativos y entorno del encuentro presencial
   ══════════════════════════════════════════════════════════ -->
   <section class="logistics-section" id="coordenadas">
@@ -688,7 +842,7 @@
 
       <div class="logistics-header" data-reveal>
         <div class="section-meta-header">
-          <span class="label-tag label-tag--gold">06</span>
+          <span class="label-tag label-tag--gold">07</span>
           <span class="sep-slash">/</span>
           <span class="label-tag">LOGÍSTICA & ENTORNO</span>
         </div>
@@ -750,7 +904,7 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════════════
-       SECCIÓN 07: PREGUNTAS FRECUENTES
+       SECCIÓN 08: PREGUNTAS FRECUENTES
        Acordeón editorial minimalista
   ══════════════════════════════════════════════════════════ -->
   <section class="faq-section" id="faq">
@@ -758,7 +912,7 @@
 
       <div class="faq-header" data-reveal>
         <div class="section-meta-header">
-          <span class="label-tag label-tag--gold">07</span>
+          <span class="label-tag label-tag--gold">08</span>
           <span class="sep-slash">/</span>
           <span class="label-tag">RESOLUCIÓN DE DUDAS</span>
         </div>
@@ -840,7 +994,7 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════════════
-       SECCIÓN 08: CIERRE EDITORIAL & LLAMADO A LA ACCIÓN
+       SECCIÓN 09: CIERRE EDITORIAL & LLAMADO A LA ACCIÓN
        Atmósfera envolvente con resplandor ámbar
   ══════════════════════════════════════════════════════════ -->
   <section class="closing-cta-section" id="reserva">
@@ -880,7 +1034,7 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════════════
-       SECCIÓN 09: FOOTER EDITORIAL ARQUITECTÓNICO
+       SECCIÓN 10: FOOTER EDITORIAL ARQUITECTÓNICO
   ══════════════════════════════════════════════════════════ -->
   <footer class="site-footer">
     <div class="footer-container">
@@ -906,7 +1060,8 @@
             <li><a href="#manifiesto">El Enfoque</a></li>
             <li><a href="#decisiones">6 Decisiones</a></li>
             <li><a href="#modulos">Los 3 Módulos</a></li>
-            <li><a href="#entregables">Entregables</a></li>
+            <li><a href="#entregables">Entregables & Simulador</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
             <li><a href="#edith-groshaus">Edith Groshaus</a></li>
             <li><a href="#coordenadas">Logística</a></li>
             <li><a href="#faq">Preguntas Frecuentes</a></li>
@@ -934,6 +1089,26 @@
 
     </div>
   </footer>
+
+  <!-- Barra flotante sticky de WhatsApp para dispositivos móviles -->
+  <div class="mobile-sticky-bar" id="mobile-sticky-bar" aria-hidden="true">
+    <div class="mobile-sticky-inner">
+      <div class="mobile-sticky-info">
+        <span class="sticky-label">2ª EDICIÓN · OCTUBRE</span>
+        <span class="sticky-sub">Puerto Madero · Cupos reducidos</span>
+      </div>
+      <a
+        href="https://wa.me/5491153282835?text=Hola%2C%20quiero%20consultar%20aranceles%20y%20reserva%20para%20la%202da%20edici%C3%B3n%20de%20El%20M%C3%A9todo"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-sticky-whatsapp"
+        aria-label="Consultar por WhatsApp"
+      >
+        <span>WHATSAPP</span>
+        <span>→</span>
+      </a>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>

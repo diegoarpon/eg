@@ -805,92 +805,81 @@
 
   <!-- ══════════════════════════════════════════════════════════
        SECCIÓN 06: EL SEGUNDO TALLER PRESENCIAL
-       Puesta asimétrica editorial inspirada en Franceclat
-       - Smooth positioning del bloque de títulos a la izquierda
-       - Inicio de la información desfasado tras el cierre del bloque
-       - Destacado prominente de Coffee Break & Networking
+       Regla General: Título, bajada. Luego que termina la bajada,
+       orientar a la derecha el resto del texto, en su columna.
   ══════════════════════════════════════════════════════════ -->
   <section class="second-edition-section" id="coordenadas">
     <div class="second-edition-container">
 
-      <div class="edition-asymmetric-layout">
+      <!-- 1. Título y bajada a la izquierda (tipografía uniforme) -->
+      <div class="edition-header-block" data-reveal>
+        <div class="section-meta-header">
+          <span class="label-tag label-tag--gold">06</span>
+          <span class="sep-slash">/</span>
+          <span class="label-tag">2º TALLER PRESENCIAL</span>
+        </div>
+        <div class="edition-title-wrap">
+          <h2 class="section-main-title edition-main-title">
+            El Segundo Taller Presencial
+          </h2>
+          <p class="section-lead edition-lead">
+            Una única jornada matutina de 4 horas intensivas de inmersión práctica, pensada para integrarse sin fricción a tu agenda médica semanal.
+          </p>
+        </div>
+      </div>
 
-        <!-- Columna Izquierda: Títulos y bajada con smooth positioning sticky -->
-        <div class="edition-left-block" data-reveal>
-          <div class="edition-sticky-anchor">
-            <div class="section-meta-header">
-              <span class="label-tag label-tag--gold">06</span>
-              <span class="sep-slash">/</span>
-              <span class="label-tag">2º TALLER PRESENCIAL</span>
-            </div>
-            <h2 class="edition-main-title">
-              El Segundo Taller Presencial
-            </h2>
-            <p class="edition-lead">
-              Una única jornada matutina de 4 horas intensivas de inmersión práctica, pensada para integrarse sin fricción a tu agenda médica semanal.
+      <!-- 2. Luego que termina la bajada, orientar a la derecha el resto del texto, en su columna -->
+      <div class="edition-content-right" data-reveal data-delay="1" data-parallax-scroll>
+
+        <!-- Tira 01: Fecha y Horario -->
+        <div class="edition-stream-item">
+          <span class="edition-stream-kicker">CUÁNDO & HORARIO</span>
+          <div class="edition-stream-content">
+            <h3 class="edition-stream-headline">Finales de Octubre 2026</h3>
+            <p class="edition-stream-subhead">Sábado de 9:00 a 13:00 hs · 4 horas intensivas</p>
+            <p class="edition-stream-desc">
+              Dinámica puntual y ejecutiva: clases concisas, cálculo real de aranceles individuales y devolución técnica sobre tu consultorio.
             </p>
-
-            <div class="edition-meta-badge" aria-hidden="true">
-              <span class="edition-badge-dot"></span>
-              <span class="edition-badge-text">2ª EDICIÓN · OCTUBRE 2026 · PUERTO MADERO</span>
-            </div>
           </div>
         </div>
 
-        <!-- Columna Derecha: Arranca cuando termina el bloque de la izquierda -->
-        <div class="edition-right-block" data-reveal data-delay="1" data-parallax-scroll>
-
-          <!-- Tira 01: Fecha y Horario -->
-          <div class="edition-stream-item">
-            <span class="edition-stream-kicker">CUÁNDO & HORARIO</span>
-            <div class="edition-stream-content">
-              <h3 class="edition-stream-headline">Finales de Octubre 2026</h3>
-              <p class="edition-stream-subhead">Sábado de 9:00 a 13:00 hs · 4 horas intensivas</p>
-              <p class="edition-stream-desc">
-                Dinámica puntual y ejecutiva: clases concisas, cálculo real de aranceles individuales y devolución técnica sobre tu consultorio.
-              </p>
-            </div>
-          </div>
-
-          <!-- Tira 02: Ubicación -->
-          <div class="edition-stream-item">
-            <span class="edition-stream-kicker">DÓNDE</span>
-            <div class="edition-stream-content">
-              <h3 class="edition-stream-headline">I Central Market · Puerto Madero</h3>
-              <p class="edition-stream-subhead">Macacha Güemes 322 · Dique 4 · CABA</p>
-              <p class="edition-stream-desc">
-                Espacio exclusivo frente a los diques, accesible, con estacionamiento cercano y máxima privacidad para el trabajo en profundidad.
-              </p>
-            </div>
-          </div>
-
-          <!-- Tira 03: DESTACADO ESPECIAL: Coffee Break & Networking -->
-          <div class="edition-highlight-banner">
-            <div class="edition-highlight-glow" aria-hidden="true"></div>
-            <div class="edition-highlight-badge">
-              <span class="highlight-sparkle">✦</span>
-              <span>EXPERIENCIA PRESENCIAL INCLUIDA</span>
-            </div>
-            <h3 class="edition-highlight-headline">
-              Coffee Break Premium & Networking entre Colegas
-            </h3>
-            <p class="edition-highlight-desc">
-              Un momento distendido y cuidado para pausar, compartir realidades clínicas, comparar costos reales de consultorio y entablar vínculos de derivación y confianza profesional entre médicos propietarios.
+        <!-- Tira 02: Ubicación -->
+        <div class="edition-stream-item">
+          <span class="edition-stream-kicker">DÓNDE</span>
+          <div class="edition-stream-content">
+            <h3 class="edition-stream-headline">I Central Market · Puerto Madero</h3>
+            <p class="edition-stream-subhead">Macacha Güemes 322 · Dique 4 · CABA</p>
+            <p class="edition-stream-desc">
+              Espacio exclusivo frente a los diques, accesible, con estacionamiento cercano y máxima privacidad para el trabajo en profundidad.
             </p>
           </div>
+        </div>
 
-          <!-- Tira 04: Formato & Dinámica de Mesa -->
-          <div class="edition-stream-item">
-            <span class="edition-stream-kicker">FORMATO & CUPO</span>
-            <div class="edition-stream-content">
-              <h3 class="edition-stream-headline">Cupos Estrictamente Reducidos</h3>
-              <p class="edition-stream-subhead">Mesa de trabajo personalizada</p>
-              <p class="edition-stream-desc">
-                Capacidad acotada para garantizar que cada profesional resuelva sus números y su mapa de experiencia con feedback directo.
-              </p>
-            </div>
+        <!-- Tira 03: DESTACADO ESPECIAL: Coffee Break & Networking -->
+        <div class="edition-highlight-banner">
+          <div class="edition-highlight-glow" aria-hidden="true"></div>
+          <div class="edition-highlight-badge">
+            <span class="highlight-sparkle">✦</span>
+            <span>EXPERIENCIA PRESENCIAL INCLUIDA</span>
           </div>
+          <h3 class="edition-highlight-headline">
+            Coffee Break Premium & Networking entre Colegas
+          </h3>
+          <p class="edition-highlight-desc">
+            Un momento distendido y cuidado para pausar, compartir realidades clínicas, comparar costos reales de consultorio y entablar vínculos de derivación y confianza profesional entre médicos propietarios.
+          </p>
+        </div>
 
+        <!-- Tira 04: Formato & Dinámica de Mesa -->
+        <div class="edition-stream-item">
+          <span class="edition-stream-kicker">FORMATO & CUPO</span>
+          <div class="edition-stream-content">
+            <h3 class="edition-stream-headline">Cupos Estrictamente Reducidos</h3>
+            <p class="edition-stream-subhead">Mesa de trabajo personalizada</p>
+            <p class="edition-stream-desc">
+              Capacidad acotada para garantizar que cada profesional resuelva sus números y su mapa de experiencia con feedback directo.
+            </p>
+          </div>
         </div>
 
       </div>

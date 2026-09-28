@@ -1758,9 +1758,9 @@ a {
 }
 
 .facilitator-name {
-  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-size: clamp(2rem, 3.4vw, 3.25rem);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   color: var(--white);
   line-height: 1.15;
 }
@@ -1857,11 +1857,9 @@ a {
 
 /* ============================================================
    SECCIÓN 06: EL SEGUNDO TALLER PRESENCIAL
-   Puesta asimétrica editorial inspirada en Franceclat
-   - Layout asimétrico 12-columnas (5fr / 7fr)
-   - Smooth positioning sticky en el bloque izquierdo de títulos
-   - Inicio desfasado en columna derecha tras el cierre del título
-   - Destacado prominente de Coffee Break & Networking
+   Regla General: Título, bajada. Luego que termina la bajada,
+   orientar a la derecha el resto del texto, en su columna.
+   Tipografía idéntica y unificada con el resto del sitio.
    ============================================================ */
 .second-edition-section {
   position: relative;
@@ -1879,99 +1877,46 @@ a {
   padding: 0 clamp(1.5rem, 4vw, 4.5rem);
 }
 
-.edition-asymmetric-layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  align-items: start;
+/* 1. Título y bajada a la izquierda (tipografía uniforme) */
+.edition-header-block {
+  margin-bottom: clamp(3rem, 5.5vh, 4.5rem);
 }
 
-@media (min-width: 1024px) {
-  .edition-asymmetric-layout {
-    grid-template-columns: 5fr 7fr;
-    gap: clamp(4rem, 7vw, 8rem);
-  }
-}
-
-/* Columna Izquierda: Smooth positioning sticky */
-.edition-left-block {
-  position: relative;
-}
-
-@media (min-width: 1024px) {
-  .edition-left-block {
-    position: sticky;
-    top: 120px;
-  }
-}
-
-.edition-sticky-anchor {
+.edition-title-wrap {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  max-width: 44ch;
+  gap: 1rem;
+  max-width: 58ch;
 }
 
 .edition-main-title {
-  font-size: clamp(2.2rem, 3.8vw, 3.6rem);
+  font-size: clamp(2rem, 3.4vw, 3.25rem);
   font-weight: 700;
   letter-spacing: -0.025em;
   color: var(--white);
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 .edition-lead {
-  font-size: clamp(0.975rem, 1.15vw, 1.15rem);
+  font-size: clamp(0.95rem, 1.15vw, 1.125rem);
   font-weight: 300;
-  line-height: 1.7;
+  line-height: 1.65;
   color: var(--white-60);
 }
 
-.edition-meta-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 0.55rem 1rem;
-  border-radius: 999px;
-  background: rgba(216, 149, 16, 0.08);
-  border: 1px solid rgba(216, 149, 16, 0.25);
-  margin-top: 1rem;
-  width: fit-content;
-}
-
-.edition-badge-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: var(--gold);
-  box-shadow: 0 0 10px var(--gold);
-  animation: pulse-gold 2.5s infinite ease-in-out;
-}
-
-@keyframes pulse-gold {
-  0%, 100% { opacity: 0.4; transform: scale(0.9); }
-  50% { opacity: 1; transform: scale(1.2); }
-}
-
-.edition-badge-text {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  color: var(--gold);
-  text-transform: uppercase;
-}
-
-/* Columna Derecha: Arranca cuando termina el bloque de la izquierda */
-.edition-right-block {
+/* 2. Luego que termina la bajada, orientar a la derecha el resto del texto, en su columna */
+.edition-content-right {
   display: flex;
   flex-direction: column;
   gap: 0;
+  width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-@media (min-width: 1024px) {
-  .edition-right-block {
-    margin-top: clamp(6.5rem, 14vh, 10.5rem);
+@media (min-width: 900px) {
+  .edition-content-right {
+    margin-left: auto;
+    max-width: clamp(560px, 58vw, 820px);
   }
 }
 

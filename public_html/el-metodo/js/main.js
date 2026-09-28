@@ -282,4 +282,49 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
+  // ─── Menú Móvil Fullscreen (Franceclat Style) ───────────────
+  const headerBurger = document.getElementById('headerBurger');
+  const mobileNav = document.getElementById('mobileNav');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta');
+
+  function toggleMobileMenu(forceOpen) {
+    if (!mobileNav || !headerBurger) return;
+    const isOpen = forceOpen !== undefined ? forceOpen : !mobileNav.classList.contains('is-open');
+
+    if (isOpen) {
+      headerBurger.classList.add('is-open');
+      headerBurger.setAttribute('aria-expanded', 'true');
+      headerBurger.setAttribute('aria-label', 'Cerrar menú de navegación');
+      mobileNav.classList.add('is-open');
+      mobileNav.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    } else {
+      headerBurger.classList.remove('is-open');
+      headerBurger.setAttribute('aria-expanded', 'false');
+      headerBurger.setAttribute('aria-label', 'Abrir menú de navegación');
+      mobileNav.classList.remove('is-open');
+      mobileNav.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (headerBurger && mobileNav) {
+    headerBurger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMobileMenu();
+    });
+
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        toggleMobileMenu(false);
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) {
+        toggleMobileMenu(false);
+      }
+    });
+  }
+
 });

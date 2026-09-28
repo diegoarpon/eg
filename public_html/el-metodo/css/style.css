@@ -180,17 +180,23 @@ a {
 }
 
 /* ============================================================
-   HEADER / NAV EDITORIAL
+   HEADER / NAV EDITORIAL (inspirado en Franceclat)
    ============================================================ */
 .site-header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 50;
+  z-index: 1001;
   border-bottom: none;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  transition: background-color 0.4s var(--ease), backdrop-filter 0.4s var(--ease);
+}
+
+.site-header--scrolled {
+  position: fixed;
+  background-color: rgba(3, 21, 24, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .site-header__inner {
@@ -211,6 +217,222 @@ a {
 .site-header__nav {
   display: none;
   align-items: center;
+}
+
+/* Botón Burger mobile fiel a Franceclat */
+.header-burger {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.55rem;
+  height: 32px;
+  padding: 0 0.75rem;
+  background-color: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 3px;
+  color: var(--white);
+  font-family: var(--font);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  z-index: 1002;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.header-burger:hover {
+  border-color: var(--gold);
+}
+
+.burger-lines-box {
+  width: 13px;
+  height: 9px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.burger-line {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--white);
+  transition: transform 0.3s cubic-bezier(0.25, 0, 0, 1), opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.burger-label--close {
+  display: none;
+}
+
+/* Estado abierto (.is-open) */
+.header-burger.is-open {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: #020b0d;
+}
+
+.header-burger.is-open .burger-line {
+  background-color: #020b0d;
+}
+
+.header-burger.is-open .burger-line--top {
+  transform: translateY(3.75px) rotate(45deg);
+}
+
+.header-burger.is-open .burger-line--mid {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.header-burger.is-open .burger-line--bot {
+  transform: translateY(-3.75px) rotate(-45deg);
+}
+
+.header-burger.is-open .burger-label--menu {
+  display: none;
+}
+
+.header-burger.is-open .burger-label--close {
+  display: inline;
+  font-weight: 700;
+}
+
+/* Drawer / Menú Móvil Fullscreen (Franceclat Style) */
+.mobile-nav-drawer {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  z-index: 1000;
+  pointer-events: none;
+  visibility: hidden;
+  transition: visibility 0.65s cubic-bezier(0.25, 0, 0, 1);
+  overflow: hidden;
+}
+
+.mobile-nav-drawer.is-open {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.mobile-nav-backdrop {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 160% 130% at 15% 90%,
+    rgba(7, 53, 59, 0.98) 0%,
+    rgba(4, 33, 37, 0.98) 50%,
+    #020b0d 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transform: translateY(-100%);
+  transition: transform 0.65s cubic-bezier(0.25, 0, 0, 1);
+}
+
+.mobile-nav-drawer.is-open .mobile-nav-backdrop {
+  transform: translateY(0);
+}
+
+.mobile-nav-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 2.25rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease 0.15s, transform 0.5s ease 0.15s;
+  overflow-y: auto;
+}
+
+.mobile-nav-drawer.is-open .mobile-nav-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-nav-top-meta {
+  display: flex;
+  align-items: center;
+  padding-bottom: 0.5rem;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1.25rem 0;
+}
+
+.mobile-nav-item {
+  width: 100%;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem 0;
+  text-decoration: none;
+  color: var(--white);
+  font-family: var(--font);
+  font-size: clamp(1.1rem, 3.8vw, 1.4rem);
+  font-weight: 300;
+  letter-spacing: -0.015em;
+  transition: color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.mobile-nav-num {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.85;
+}
+
+.mobile-nav-text {
+  transition: color 0.3s var(--ease);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:active {
+  color: var(--gold-bright);
+  transform: translateX(4px);
+}
+
+.mobile-nav-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: none;
+}
+
+.mobile-nav-cta {
+  width: 100%;
+  justify-content: center;
+  padding: 1.1rem 1.5rem;
+}
+
+.mobile-nav-meta {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white-35);
+  text-align: center;
 }
 
 /* ============================================================
@@ -307,6 +529,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  will-change: transform;
 }
 
 .pillar-img {
@@ -315,7 +538,18 @@ a {
   height: clamp(1.4rem, 3vw, 2.6rem);
   object-fit: contain;
   object-position: left center;
-  filter: drop-shadow(0 2px 10px rgba(216, 149, 16, 0.2));
+  filter: drop-shadow(0 4px 14px rgba(216, 149, 16, 0.25));
+  transition: transform 0.4s var(--ease), filter 0.4s var(--ease);
+}
+
+/* Animación de flotación orgánica para los títulos con D */
+@keyframes pillarDTitleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 .pillar-bajada {
@@ -538,31 +772,102 @@ a {
 }
 
 /* ============================================================
-   RESPONSIVE: MOBILE ADJUSTMENTS (< 1024px)
+   RESPONSIVE: MOBILE & TABLET (< 1024px)
+   - Header fijo con botón Burger fiel a Franceclat
+   - Las 3 columnas del Hero se mantienen
+   - Los títulos con D (DOMINÁ, DISEÑÁ, DIFERENCIATE) flotan
    ============================================================ */
 @media (max-width: 1023px) {
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+    background: rgba(3, 21, 24, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .site-header__inner {
+    padding: 0.85rem 1.25rem;
+  }
+
+  .site-header__nav {
+    display: none !important;
+  }
+
+  .header-burger {
+    display: inline-flex;
+  }
+
   .hero-container {
-    padding: 5rem 1.25rem 1.75rem;
+    padding: 5.25rem 1.25rem 1.75rem;
     gap: 1.75rem;
   }
 
+  /* Las 3 columnas se mantienen y los títulos con D flotan */
   .hero-pillars-band {
-    gap: 0.5rem;
-    padding-bottom: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(0.35rem, 1.8vw, 0.85rem);
+    padding-bottom: 1.25rem;
+    position: relative;
+    z-index: 5;
   }
 
   .pillar-col {
-    gap: 0.35rem;
-    padding-right: 0.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 0 0.15rem;
+    position: relative;
+  }
+
+  .pillar-img-frame {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: clamp(2.2rem, 7vw, 3rem);
+    animation: pillarDTitleFloat 5s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .pillar-col--1 .pillar-img-frame {
+    animation-delay: 0s;
+  }
+
+  .pillar-col--2 .pillar-img-frame {
+    animation-delay: 1.65s;
+  }
+
+  .pillar-col--3 .pillar-img-frame {
+    animation-delay: 3.3s;
   }
 
   .pillar-img {
-    height: clamp(1rem, 3.8vw, 1.6rem);
+    height: clamp(1.6rem, 5.8vw, 2.4rem);
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: left center;
+    filter: drop-shadow(0 8px 18px rgba(216, 149, 16, 0.42)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
+    transition: transform 0.4s var(--ease), filter 0.4s var(--ease);
+  }
+
+  .pillar-col:active .pillar-img {
+    transform: scale(1.05) translateY(-2px);
+    filter: drop-shadow(0 12px 24px rgba(216, 149, 16, 0.6));
   }
 
   .pillar-bajada {
-    font-size: clamp(0.48rem, 1.8vw, 0.65rem);
-    letter-spacing: 0.03em;
+    font-size: clamp(0.5rem, 1.85vw, 0.65rem);
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.35;
+    opacity: 0.88;
   }
 
   .hero-main-stage {
@@ -603,27 +908,6 @@ a {
 }
 
 /* ============================================================
-   RESPONSIVE: TABLET (≥ 768px)
-   ============================================================ */
-@media (min-width: 768px) {
-  .site-header__nav {
-    display: flex;
-  }
-
-  .hero-container {
-    padding: 6.5rem 2.5rem 2.5rem;
-  }
-
-  .pillar-img {
-    height: clamp(1.6rem, 2.8vw, 2.2rem);
-  }
-
-  .pillar-bajada {
-    font-size: 0.7rem;
-  }
-}
-
-/* ============================================================
    RESPONSIVE: DESKTOP (≥ 1024px)
    Fiel a rendez-vous.franceclat.fr:
    - 3 Columnas de pilares arriba con sus bajadas
@@ -631,6 +915,18 @@ a {
    - Derecha: Botón arriba a la derecha + H1 de autor abajo
    ============================================================ */
 @media (min-width: 1024px) {
+  .site-header__nav {
+    display: flex;
+  }
+
+  .header-burger {
+    display: none;
+  }
+
+  .mobile-nav-drawer {
+    display: none;
+  }
+
   .hero-stage {
     min-height: 100dvh;
     padding-bottom: 0;

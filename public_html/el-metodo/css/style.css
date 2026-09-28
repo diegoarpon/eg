@@ -1856,17 +1856,22 @@ a {
 }
 
 /* ============================================================
-   SECCIÓN 06: COORDENADAS Y LOGÍSTICA
+   SECCIÓN 06: EL SEGUNDO TALLER PRESENCIAL
+   Puesta asimétrica editorial inspirada en Franceclat
+   - Layout asimétrico 12-columnas (5fr / 7fr)
+   - Smooth positioning sticky en el bloque izquierdo de títulos
+   - Inicio desfasado en columna derecha tras el cierre del título
+   - Destacado prominente de Coffee Break & Networking
    ============================================================ */
-.logistics-section {
+.second-edition-section {
   position: relative;
-  padding: clamp(5.5rem, 11vh, 9.5rem) 0;
+  padding: clamp(6rem, 12vh, 10rem) 0;
   border-top: 1px solid var(--hairline);
   background-color: var(--bg-main);
   overflow: hidden;
 }
 
-.logistics-container {
+.second-edition-container {
   position: relative;
   z-index: 2;
   max-width: 1680px;
@@ -1874,111 +1879,213 @@ a {
   padding: 0 clamp(1.5rem, 4vw, 4.5rem);
 }
 
-.logistics-header {
-  margin-bottom: clamp(3rem, 6vh, 4.5rem);
-}
-
-.logistics-title-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 58ch;
-}
-
-.logistics-main-title {
-  font-size: clamp(2rem, 3.4vw, 3.25rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  color: var(--white);
-  line-height: 1.15;
-}
-
-.logistics-lead {
-  font-size: clamp(0.95rem, 1.15vw, 1.125rem);
-  font-weight: 300;
-  line-height: 1.65;
-  color: var(--white-60);
-}
-
-.logistics-grid {
+.edition-asymmetric-layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1px;
-  background-color: var(--hairline);
-  border: 1px solid var(--hairline);
-}
-
-@media (min-width: 640px) {
-  .logistics-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  gap: 3rem;
+  align-items: start;
 }
 
 @media (min-width: 1024px) {
-  .logistics-grid {
-    grid-template-columns: repeat(4, 1fr);
+  .edition-asymmetric-layout {
+    grid-template-columns: 5fr 7fr;
+    gap: clamp(4rem, 7vw, 8rem);
   }
 }
 
-.logistic-cell {
-  background-color: var(--bg-main);
-  padding: clamp(2rem, 2.5vw, 3rem);
+/* Columna Izquierda: Smooth positioning sticky */
+.edition-left-block {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .edition-left-block {
+    position: sticky;
+    top: 120px;
+  }
+}
+
+.edition-sticky-anchor {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  position: relative;
-  transition: background-color 0.4s var(--ease);
+  gap: 1.25rem;
+  max-width: 44ch;
 }
 
-.logistic-cell::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: transparent;
-  transition: background-color 0.4s var(--ease);
+.edition-main-title {
+  font-size: clamp(2.2rem, 3.8vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--white);
+  line-height: 1.1;
 }
 
-.logistic-cell:hover {
-  background-color: #052b31;
+.edition-lead {
+  font-size: clamp(0.975rem, 1.15vw, 1.15rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--white-60);
 }
 
-.logistic-cell:hover::before {
+.edition-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background: rgba(216, 149, 16, 0.08);
+  border: 1px solid rgba(216, 149, 16, 0.25);
+  margin-top: 1rem;
+  width: fit-content;
+}
+
+.edition-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
   background-color: var(--gold);
+  box-shadow: 0 0 10px var(--gold);
+  animation: pulse-gold 2.5s infinite ease-in-out;
 }
 
-.logistic-tag {
-  font-size: 0.55rem;
+@keyframes pulse-gold {
+  0%, 100% { opacity: 0.4; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.edition-badge-text {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+/* Columna Derecha: Arranca cuando termina el bloque de la izquierda */
+.edition-right-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 1024px) {
+  .edition-right-block {
+    margin-top: clamp(6.5rem, 14vh, 10.5rem);
+  }
+}
+
+/* Tiras continuas sin cajas rígidas */
+.edition-stream-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: clamp(2rem, 3.5vh, 2.75rem) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: padding-left 0.4s var(--ease), background-color 0.4s var(--ease);
+}
+
+.edition-stream-item:hover {
+  padding-left: 0.75rem;
+}
+
+.edition-stream-kicker {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.edition-stream-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.edition-stream-headline {
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--white);
+  line-height: 1.25;
+}
+
+.edition-stream-subhead {
+  font-size: clamp(0.9rem, 1.05vw, 1.05rem);
+  font-weight: 400;
+  color: var(--gold-bright);
+}
+
+.edition-stream-desc {
+  font-size: clamp(0.875rem, 0.98vw, 0.975rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--white-60);
+  max-width: 52ch;
+  margin-top: 0.25rem;
+}
+
+/* DESTACADO ESPECIAL: Coffee Break & Networking */
+.edition-highlight-banner {
+  position: relative;
+  margin: clamp(2rem, 3.5vh, 2.75rem) 0;
+  padding: clamp(2rem, 3.5vh, 2.75rem) clamp(1.5rem, 2.8vw, 2.75rem);
+  border-radius: 4px;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(216, 149, 16, 0.12) 0%,
+    rgba(4, 33, 37, 0.88) 55%,
+    rgba(3, 20, 23, 0.96) 100%
+  );
+  border: 1px solid rgba(216, 149, 16, 0.38);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.edition-highlight-glow {
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(216, 149, 16, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.edition-highlight-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.85rem;
 }
 
-.logistic-title {
-  font-size: clamp(1.2rem, 1.45vw, 1.55rem);
-  font-weight: 700;
+.highlight-sparkle {
+  color: var(--gold);
+  font-size: 0.85rem;
+}
+
+.edition-highlight-headline {
+  font-size: clamp(1.3rem, 1.9vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
   color: var(--white);
-  line-height: 1.25;
-  margin-bottom: 0.4rem;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
 }
 
-.logistic-subtitle {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--gold-bright);
-  margin-bottom: 1rem;
-}
-
-.logistic-desc {
-  font-size: 0.825rem;
+.edition-highlight-desc {
+  font-size: clamp(0.9rem, 1vw, 1rem);
   font-weight: 300;
-  line-height: 1.65;
-  color: var(--white-60);
-  margin-top: auto;
+  line-height: 1.75;
+  color: var(--white-85);
+  max-width: 52ch;
 }
 
 /* ============================================================

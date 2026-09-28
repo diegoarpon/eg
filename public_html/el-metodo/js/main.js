@@ -255,4 +255,31 @@ document.addEventListener('DOMContentLoaded', () => {
     goToSlide(0);
   }
 
+  // ─── Subtle Parallax Scroll para secciones asimétricas (Franceclat) ───
+  const parallaxTargets = document.querySelectorAll('[data-parallax-scroll]');
+  if (parallaxTargets.length && window.matchMedia('(min-width: 1024px)').matches) {
+    let ticking = false;
+
+    function updateParallax() {
+      const vh = window.innerHeight;
+
+      parallaxTargets.forEach(target => {
+        const rect = target.getBoundingClientRect();
+        if (rect.top < vh && rect.bottom > 0) {
+          const relativeY = (rect.top - vh * 0.4) * 0.055;
+          target.style.transform = `translate3d(0, ${relativeY.toFixed(1)}px, 0)`;
+        }
+      });
+
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
 });

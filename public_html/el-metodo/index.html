@@ -28,6 +28,9 @@
 </head>
 <body>
 
+  <!-- Textura de grano editorial inspirada en Franceclat -->
+  <div class="editorial-grain-overlay" aria-hidden="true"></div>
+
   <!-- ══════════════════════════════════════════════════════════
        HEADER / NAV EDITORIAL (inspirado en Franceclat)
   ══════════════════════════════════════════════════════════ -->
@@ -601,68 +604,125 @@
   <section class="testimonials-section" id="testimonios">
     <div class="testimonials-container">
 
-      <!-- Header Asimétrico estilo Franceclat -->
-      <div class="testimonials-header-grid" data-reveal>
-        <div class="testimonials-header-left">
-          <div class="section-meta-header">
-            <span class="label-tag label-tag--gold">04</span>
-            <span class="sep-slash">/</span>
-            <span class="label-tag">VOCES DE LA 1ª EDICIÓN</span>
-          </div>
-          <h2 class="testimonials-display-title">
+      <!-- Header de Sección Restaurado (tipografía consistente con el resto de las secciones) -->
+      <div class="testimonials-header" data-reveal>
+        <div class="section-meta-header">
+          <span class="label-tag label-tag--gold">04</span>
+          <span class="sep-slash">/</span>
+          <span class="label-tag">VOCES DE LA 1ª EDICIÓN</span>
+        </div>
+        <div class="testimonials-title-wrap">
+          <h2 class="testimonials-main-title">
             Lo que ocurre cuando un médico se detiene a pensar su práctica.
           </h2>
-        </div>
-        <div class="testimonials-header-right">
-          <p class="testimonials-intro-p">
+          <p class="testimonials-lead">
             Testimonios de profesionales de la salud que formaron parte del primer encuentro presencial y transformaron la visión estratégica de su consultorio.
           </p>
         </div>
       </div>
 
-      <!-- Cadencia Alternada: Izquierda -> Derecha -> Izquierda -> Derecha -->
-      <div class="testimonials-flow" data-reveal data-delay="1">
+      <!-- Carrusel Automático Editorial Fancy -->
+      <div class="testimonial-carousel-wrap" data-reveal data-delay="1">
+        <div
+          class="testimonial-carousel"
+          id="testimonialCarousel"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Voces de la 1ª Edición"
+        >
+          <!-- Stage de Diapositivas -->
+          <div class="carousel-stage">
 
-        <!-- 01 · Izquierda: Dra. Monica Giaccolla -->
-        <article class="testimonial-cadence testimonial-cadence--left">
-          <div class="testimonial-cadence__inner">
-            <blockquote class="testimonial-quote-text">
-              «El Método es fundamental para todo profesional de la salud que tenga un espacio propio, porque va más allá de lo económico. Es dar el valor a nuestros años de formación. Me encantaría repetirlo y seguro lo recomendaré.»
-            </blockquote>
-            <cite class="testimonial-author-name">— Dra. Monica Giaccolla</cite>
+            <!-- Slide 01 · Dra. Monica Giaccolla -->
+            <article class="carousel-slide is-active" data-index="0" role="group" aria-roledescription="slide" aria-label="1 de 4">
+              <div class="carousel-slide__inner">
+                <span class="carousel-quote-glyph" aria-hidden="true">“</span>
+                <blockquote class="carousel-quote-body">
+                  «El Método es fundamental para todo profesional de la salud que tenga un espacio propio, porque va más allá de lo económico. Es dar el valor a nuestros años de formación. Me encantaría repetirlo y seguro lo recomendaré.»
+                </blockquote>
+                <cite class="carousel-author-tag">— Dra. Monica Giaccolla</cite>
+              </div>
+            </article>
+
+            <!-- Slide 02 · Luciana Abraciano -->
+            <article class="carousel-slide" data-index="1" role="group" aria-roledescription="slide" aria-label="2 de 4" aria-hidden="true">
+              <div class="carousel-slide__inner">
+                <span class="carousel-quote-glyph" aria-hidden="true">“</span>
+                <blockquote class="carousel-quote-body">
+                  «Siempre pensé que este tipo de cosas requerían una inversión que no estaba lista para afrontar. Hoy me cambió ese pensamiento. Cuesta saber por dónde empezar, y siento que me va a servir para ordenarme. Se nota que lo hacen con pasión.»
+                </blockquote>
+                <cite class="carousel-author-tag">— Luciana Abraciano</cite>
+              </div>
+            </article>
+
+            <!-- Slide 03 · Daniela Noriega -->
+            <article class="carousel-slide" data-index="2" role="group" aria-roledescription="slide" aria-label="3 de 4" aria-hidden="true">
+              <div class="carousel-slide__inner">
+                <span class="carousel-quote-glyph" aria-hidden="true">“</span>
+                <blockquote class="carousel-quote-body">
+                  «Muchas gracias por la experiencia. Se notó la dedicación que pusieron en hacernos sentir bien en toda la jornada.»
+                </blockquote>
+                <cite class="carousel-author-tag">— Daniela Noriega</cite>
+              </div>
+            </article>
+
+            <!-- Slide 04 · Ana Carolina Facchin -->
+            <article class="carousel-slide" data-index="3" role="group" aria-roledescription="slide" aria-label="4 de 4" aria-hidden="true">
+              <div class="carousel-slide__inner">
+                <span class="carousel-quote-glyph" aria-hidden="true">“</span>
+                <blockquote class="carousel-quote-body">
+                  «Gracias por diseñar El Método y ponerlo a nuestro alcance ⭐️»
+                </blockquote>
+                <cite class="carousel-author-tag">— Ana Carolina Facchin</cite>
+              </div>
+            </article>
+
           </div>
-        </article>
 
-        <!-- 02 · Derecha: Luciana Abraciano -->
-        <article class="testimonial-cadence testimonial-cadence--right">
-          <div class="testimonial-cadence__inner">
-            <blockquote class="testimonial-quote-text">
-              «Siempre pensé que este tipo de cosas requerían una inversión que no estaba lista para afrontar. Hoy me cambió ese pensamiento. Cuesta saber por dónde empezar, y siento que me va a servir para ordenarme. Se nota que lo hacen con pasión.»
-            </blockquote>
-            <cite class="testimonial-author-name">— Luciana Abraciano</cite>
+          <!-- Barra de Control Editorial: Progreso Segmentado + Contador + Flechas -->
+          <div class="carousel-controls-bar">
+            <!-- Barra de tiempo segmentada interactiva -->
+            <div class="carousel-progress-track" aria-label="Línea de tiempo de testimonios">
+              <button class="carousel-segment is-active" data-slide-target="0" aria-label="Ver testimonio 1 de 4">
+                <span class="carousel-segment__fill"></span>
+              </button>
+              <button class="carousel-segment" data-slide-target="1" aria-label="Ver testimonio 2 de 4">
+                <span class="carousel-segment__fill"></span>
+              </button>
+              <button class="carousel-segment" data-slide-target="2" aria-label="Ver testimonio 3 de 4">
+                <span class="carousel-segment__fill"></span>
+              </button>
+              <button class="carousel-segment" data-slide-target="3" aria-label="Ver testimonio 4 de 4">
+                <span class="carousel-segment__fill"></span>
+              </button>
+            </div>
+
+            <!-- Contador y Flechas minimalistas -->
+            <div class="carousel-actions-row">
+              <div class="carousel-counter" aria-live="polite">
+                <span class="carousel-counter__current">01</span>
+                <span class="carousel-counter__sep">/</span>
+                <span class="carousel-counter__total">04</span>
+              </div>
+
+              <div class="carousel-arrows">
+                <button class="carousel-arrow carousel-arrow--prev" id="carouselPrev" aria-label="Testimonio anterior">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                  </svg>
+                </button>
+                <button class="carousel-arrow carousel-arrow--next" id="carouselNext" aria-label="Siguiente testimonio">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
-        </article>
 
-        <!-- 03 · Izquierda: Daniela Noriega -->
-        <article class="testimonial-cadence testimonial-cadence--left">
-          <div class="testimonial-cadence__inner">
-            <blockquote class="testimonial-quote-text">
-              «Muchas gracias por la experiencia. Se notó la dedicación que pusieron en hacernos sentir bien en toda la jornada.»
-            </blockquote>
-            <cite class="testimonial-author-name">— Daniela Noriega</cite>
-          </div>
-        </article>
-
-        <!-- 04 · Derecha: Ana Carolina Facchin -->
-        <article class="testimonial-cadence testimonial-cadence--right">
-          <div class="testimonial-cadence__inner">
-            <blockquote class="testimonial-quote-text">
-              «Gracias por diseñar El Método y ponerlo a nuestro alcance ⭐️»
-            </blockquote>
-            <cite class="testimonial-author-name">— Ana Carolina Facchin</cite>
-          </div>
-        </article>
-
+        </div>
       </div>
 
     </div>

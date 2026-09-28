@@ -93,4 +93,166 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: true });
 
+  // ─── Carrusel Automático Editorial de Testimonios ─────────
+  const carouselEl = document.getElementById('testimonialCarousel');
+  if (carouselEl) {
+    const slides = carouselEl.querySelectorAll('.carousel-slide');
+    const segments = carouselEl.querySelectorAll('.carousel-segment');
+    const counterCurrent = carouselEl.querySelector('.carousel-counter__current');
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    const SLIDE_DURATION = 6000; // 6 segundos de lectura por testimonio
+    let autoplayTimer = null;
+    let isPaused = false;
+    let isVisible = false;
+
+    function goToSlide(index) {
+      if (index >= totalSlides) index = 0;
+      if (index < 0) index = totalSlides - 1;
+
+      // Actualizar slides activos
+      slides.forEach((slide, i) => {
+        const isActive = i === index;
+        slide.classList.toggle('is-active', isActive);
+        slide.setAttribute('aria-hidden', !isActive);
+      });
+
+      // Actualizar línea de tiempo interactiva
+      segments.forEach((seg, i) => {
+        const fill = seg.querySelector('.carousel-segment__fill');
+        seg.classList.remove('is-active', 'is-viewed');
+
+        if (fill) {
+          fill.style.transition = 'none';
+          fill.style.width = '0%';
+        }
+
+        if (i < index) {
+          seg.classList.add('is-viewed');
+          if (fill) fill.style.width = '100%';
+        } else if (i === index) {
+          if (fill) {
+            void fill.offsetWidth; // Force reflow para disparar la animación
+            seg.classList.add('is-active');
+            fill.style.transition = `width ${SLIDE_DURATION}ms linear`;
+            fill.style.width = '100%';
+          }
+        }
+      });
+
+      // Actualizar contador
+      if (counterCurrent) {
+        counterCurrent.textContent = String(index + 1).padStart(2, '0');
+      }
+
+      currentIndex = index;
+      resetTimer();
+    }
+
+    function nextSlide() {
+      goToSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentIndex - 1);
+    }
+
+    function startTimer() {
+      clearTimeout(autoplayTimer);
+      if (isPaused || !isVisible) return;
+      autoplayTimer = setTimeout(() => {
+        nextSlide();
+      }, SLIDE_DURATION);
+    }
+
+    function resetTimer() {
+      clearTimeout(autoplayTimer);
+      startTimer();
+    }
+
+    // Eventos de botones prev/next
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+      });
+    }
+
+    // Salto directo al clickear los segmentos
+    segments.forEach((seg, idx) => {
+      seg.addEventListener('click', () => {
+        goToSlide(idx);
+      });
+    });
+
+    // Pausar en hover para lectura cómoda
+    carouselEl.addEventListener('mouseenter', () => {
+      isPaused = true;
+      clearTimeout(autoplayTimer);
+      const activeSeg = segments[currentIndex];
+      const fill = activeSeg ? activeSeg.querySelector('.carousel-segment__fill') : null;
+      if (fill) {
+        const computedWidth = window.getComputedStyle(fill).width;
+        fill.style.transition = 'none';
+        fill.style.width = computedWidth;
+      }
+    });
+
+    carouselEl.addEventListener('mouseleave', () => {
+      isPaused = false;
+      const activeSeg = segments[currentIndex];
+      const fill = activeSeg ? activeSeg.querySelector('.carousel-segment__fill') : null;
+      if (fill) {
+        fill.style.transition = `width ${SLIDE_DURATION}ms linear`;
+        fill.style.width = '100%';
+      }
+      resetTimer();
+    });
+
+    // Gestos táctiles Swipe en móviles
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carouselEl.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carouselEl.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const swipeDistance = touchEndX - touchStartX;
+      if (Math.abs(swipeDistance) > 40) {
+        if (swipeDistance < 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+    }, { passive: true });
+
+    // Observar visibilidad en viewport para no consumir recursos innecesariamente
+    const carouselObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isVisible = entry.isIntersecting;
+        if (isVisible) {
+          startTimer();
+        } else {
+          clearTimeout(autoplayTimer);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    carouselObserver.observe(carouselEl);
+
+    // Inicialización del primer slide
+    goToSlide(0);
+  }
+
 });

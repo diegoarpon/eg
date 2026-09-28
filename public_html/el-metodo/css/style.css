@@ -51,6 +51,18 @@ body {
   overflow-x: hidden;
 }
 
+/* Textura táctil de grano editorial (inspirada en Franceclat) */
+.editorial-grain-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.038;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -1395,11 +1407,11 @@ a {
 }
 
 /* ============================================================
-   SECCIÓN 05: TESTIMONIOS (VOCES DE LA 1ª EDICIÓN)
-   Gramática arquitectónica y editorial inspirada en Franceclat
-   - Header asimétrico en 12 columnas
-   - Tiras horizontales continuas con hairlines ultrafinas
-   - Tipografía statement de gran escala y resplandor radial sutil
+   SECCIÓN 04: TESTIMONIOS (VOCES DE LA 1ª EDICIÓN)
+   Carrusel editorial automatizado de alta fidelidad
+   - Tipografía statement con glifo editorial de gran escala
+   - Línea de tiempo segmentada con animación de progreso
+   - Transiciones suaves con cubic-bezier y controles táctiles
    ============================================================ */
 .testimonials-section {
   position: relative;
@@ -1417,151 +1429,249 @@ a {
   padding: 0 clamp(1.5rem, 4vw, 4.5rem);
 }
 
-/* Header Asimétrico 12 Columnas */
-.testimonials-header-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  margin-bottom: clamp(3.5rem, 7vh, 5.5rem);
+/* Header de Sección Restaurado (tipografía consistente con el resto de las secciones) */
+.testimonials-header {
+  margin-bottom: clamp(3.5rem, 6vh, 5rem);
 }
 
-@media (min-width: 1024px) {
-  .testimonials-header-grid {
-    grid-template-columns: 7fr 5fr;
-    gap: clamp(3rem, 6vw, 8rem);
-    align-items: flex-end;
-  }
-}
-
-.testimonials-header-left {
+.testimonials-title-wrap {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+  max-width: 68ch;
 }
 
-.testimonials-display-title {
-  font-size: clamp(2rem, 3.6vw, 3.75rem);
-  font-weight: 200;
+.testimonials-main-title {
+  font-size: clamp(2rem, 3.4vw, 3.25rem);
+  font-weight: 700;
   letter-spacing: -0.025em;
   color: var(--white);
   line-height: 1.15;
-  max-width: 22ch;
 }
 
-.testimonials-header-right {
-  display: flex;
-  align-items: flex-end;
-}
-
-.testimonials-intro-p {
-  font-size: clamp(0.95rem, 1.15vw, 1.15rem);
+.testimonials-lead {
+  font-size: clamp(0.95rem, 1.15vw, 1.125rem);
   font-weight: 300;
-  line-height: 1.75;
+  line-height: 1.65;
   color: var(--white-60);
-  max-width: 44ch;
 }
 
-/* Flujo de Testimonios con Cadencia Asimétrica Izquierda / Derecha (Inspirado en Franceclat) */
-.testimonials-flow {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.testimonial-cadence {
+/* Carrusel Automático Editorial Fancy */
+.testimonial-carousel-wrap {
   position: relative;
-  display: flex;
-  width: 100%;
-  padding: clamp(3.5rem, 6.5vh, 5.5rem) 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  transition: background-color 0.4s var(--ease);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: radial-gradient(
+    ellipse 85% 65% at 50% 50%,
+    rgba(216, 149, 16, 0.06) 0%,
+    rgba(3, 20, 23, 0.5) 60%,
+    transparent 100%
+  );
+  padding: clamp(3.5rem, 7vh, 5.5rem) clamp(1rem, 3.5vw, 4rem);
+  border-radius: 2px;
 }
 
-.testimonial-cadence::before {
-  content: "";
+.testimonial-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* Stage de Diapositivas */
+.carousel-stage {
+  position: relative;
+  min-height: clamp(230px, 32vh, 320px);
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.carousel-slide {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    ellipse 80% 100% at 50% 50%,
-    rgba(216, 149, 16, 0.04) 0%,
-    transparent 75%
-  );
-  opacity: 0;
-  transition: opacity 0.5s var(--ease);
-  pointer-events: none;
-}
-
-.testimonial-cadence:hover::before {
-  opacity: 1;
-}
-
-.testimonial-cadence__inner {
-  position: relative;
-  z-index: 2;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition:
+    opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.75s;
 }
 
-/* Alternancia Izquierda */
-.testimonial-cadence--left {
-  justify-content: flex-start;
+.carousel-slide.is-active {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+  z-index: 2;
 }
 
-.testimonial-cadence--left .testimonial-cadence__inner {
-  max-width: clamp(520px, 66vw, 860px);
-  margin-left: 0;
-  margin-right: auto;
-  text-align: left;
+.carousel-slide__inner {
+  position: relative;
+  max-width: 960px;
 }
 
-/* Alternancia Derecha */
-.testimonial-cadence--right {
-  justify-content: flex-end;
+.carousel-quote-glyph {
+  display: block;
+  font-family: var(--font-display, "Montserrat", sans-serif);
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  font-weight: 200;
+  line-height: 0.65;
+  color: var(--gold);
+  opacity: 0.32;
+  margin-bottom: 0.85rem;
+  user-select: none;
 }
 
-.testimonial-cadence--right .testimonial-cadence__inner {
-  max-width: clamp(520px, 66vw, 860px);
-  margin-left: auto;
-  margin-right: 0;
-  text-align: left;
-  padding-left: clamp(0rem, 3vw, 4rem);
-}
-
-@media (max-width: 768px) {
-  .testimonial-cadence--left .testimonial-cadence__inner,
-  .testimonial-cadence--right .testimonial-cadence__inner {
-    max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-  }
-}
-
-.testimonial-quote-text {
+.carousel-quote-body {
   font-family: var(--font-body);
-  font-size: clamp(1.25rem, 2.1vw, 2.1rem);
+  font-size: clamp(1.3rem, 2.25vw, 2.2rem);
   font-weight: 200;
   line-height: 1.45;
   letter-spacing: -0.015em;
-  color: var(--white-90);
-  margin: 0;
-  transition: color 0.4s var(--ease);
-}
-
-.testimonial-cadence:hover .testimonial-quote-text {
   color: var(--white);
+  margin: 0;
 }
 
-.testimonial-author-name {
+.carousel-author-tag {
   display: inline-block;
-  font-size: clamp(0.8rem, 0.95vw, 0.92rem);
-  font-weight: 500;
-  letter-spacing: 0.14em;
+  font-size: clamp(0.85rem, 0.95vw, 0.95rem);
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--gold);
+  margin-top: clamp(1.5rem, 3vh, 2.25rem);
   font-style: normal;
+}
+
+/* Barra de Controles y Progreso */
+.carousel-controls-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: clamp(2.5rem, 5vh, 4rem);
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 768px) {
+  .carousel-controls-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Línea de tiempo segmentada interactiva */
+.carousel-progress-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  flex: 1;
+  max-width: 460px;
+}
+
+.carousel-segment {
+  appearance: none;
+  background: rgba(255, 255, 255, 0.1);
+  height: 3px;
+  border: none;
+  border-radius: 2px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.carousel-segment:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.carousel-segment__fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+.carousel-segment.is-viewed .carousel-segment__fill {
+  width: 100%;
+}
+
+.carousel-segment.is-active .carousel-segment__fill {
+  width: 100%;
+  transition: width 6s linear;
+}
+
+/* Fila de Acciones: Contador y Flechas */
+.carousel-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.carousel-counter {
+  font-family: var(--font-display, "Montserrat", sans-serif);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--white-40);
+  font-weight: 500;
+}
+
+.carousel-counter__current {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.carousel-counter__sep {
+  margin: 0 0.35rem;
+  color: var(--white-20);
+}
+
+.carousel-arrows {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.carousel-arrow {
+  appearance: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(4, 33, 37, 0.6);
+  color: var(--white-85);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(8px);
+}
+
+.carousel-arrow:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(216, 149, 16, 0.12);
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(216, 149, 16, 0.25);
+}
+
+.carousel-arrow:active {
+  transform: scale(0.96);
 }
 
 /* ============================================================

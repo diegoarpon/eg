@@ -93,36 +93,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: true });
 
-  // ─── Simulador Interactivo de Costo de Consultorio ─────────
-  const hoursSlider = document.getElementById('hours-slider');
-  const costsSlider = document.getElementById('costs-slider');
-  const hoursValEl = document.getElementById('hours-val');
-  const costsValEl = document.getElementById('costs-val');
-  const costPerHourEl = document.getElementById('cost-per-hour');
-  const costPerConsultEl = document.getElementById('cost-per-consultation');
-
-  if (hoursSlider && costsSlider && hoursValEl && costsValEl && costPerHourEl && costPerConsultEl) {
-    const formatCurrency = (val) => {
-      return '$ ' + Math.round(val).toLocaleString('es-AR');
-    };
-
-    const updateSimulator = () => {
-      const hours = parseFloat(hoursSlider.value);
-      const costs = parseFloat(costsSlider.value);
-
-      hoursValEl.textContent = `${hours} hs`;
-      costsValEl.textContent = formatCurrency(costs);
-
-      const perHour = costs / hours;
-      const perConsultation = perHour / 2; // Asumiendo turno estándar de 30 minutos
-
-      costPerHourEl.textContent = formatCurrency(perHour);
-      costPerConsultEl.textContent = formatCurrency(perConsultation);
-    };
-
-    hoursSlider.addEventListener('input', updateSimulator);
-    costsSlider.addEventListener('input', updateSimulator);
-    updateSimulator(); // Inicializar
-  }
-
 });

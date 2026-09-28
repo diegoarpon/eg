@@ -240,6 +240,7 @@ a {
   position: relative;
   height: 100%;
   border-right: none;
+  background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-deep) 100%);
   transition: opacity 0.8s var(--ease);
 }
 
@@ -247,32 +248,17 @@ a {
   border-right: none;
 }
 
-/* Resplandores atmosféricos coordinados con los colores de marca */
+/* Gradiente diagonal en cada columna con los dos colores más oscuros (#042125 y #031518) */
 .hero-panel--1 {
-  background: radial-gradient(
-    ellipse 130% 70% at 20% 90%,
-    rgba(4, 33, 37, 0.9) 0%,
-    rgba(3, 21, 24, 0.4) 60%,
-    transparent 100%
-  );
+  background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-deep) 100%);
 }
 
 .hero-panel--2 {
-  background: radial-gradient(
-    ellipse 140% 75% at 50% 70%,
-    rgba(216, 149, 16, 0.16) 0%,
-    rgba(4, 33, 37, 0.6) 45%,
-    transparent 90%
-  );
+  background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-deep) 100%);
 }
 
 .hero-panel--3 {
-  background: radial-gradient(
-    ellipse 130% 70% at 80% 85%,
-    rgba(7, 53, 59, 0.7) 0%,
-    rgba(3, 21, 24, 0.5) 60%,
-    transparent 100%
-  );
+  background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-deep) 100%);
 }
 
 /* ============================================================

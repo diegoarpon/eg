@@ -104,7 +104,7 @@ a {
   left: 0;
   width: 100%;
   z-index: 50;
-  border-bottom: 1px solid var(--hairline);
+  border-bottom: none;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -155,7 +155,7 @@ a {
 .hero-panel {
   position: relative;
   height: 100%;
-  border-right: 1px solid var(--hairline);
+  border-right: none;
   transition: opacity 0.8s var(--ease);
 }
 
@@ -216,14 +216,14 @@ a {
   grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
   padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--hairline);
+  border-bottom: none;
 }
 
 .pillar-col {
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
-  border-right: 1px solid var(--hairline);
+  border-right: none;
   padding-right: 0.5rem;
 }
 
@@ -307,8 +307,8 @@ a {
   display: flex;
   align-items: center;
   gap: 0.85rem;
-  border-top: 1px solid var(--hairline);
-  padding-top: 0.75rem;
+  border-top: none;
+  padding-top: 0.25rem;
   width: 100%;
   max-width: 440px;
 }
@@ -435,7 +435,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem 1.5rem;
-  border-top: 1px solid var(--hairline);
+  border-top: none;
   background: rgba(3, 21, 24, 0.75);
   backdrop-filter: blur(10px);
 }
@@ -461,9 +461,10 @@ a {
 }
 
 .strip-divider {
-  width: 1px;
-  height: 1.8rem;
-  background-color: var(--hairline);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--gold-ambient);
 }
 
 /* ============================================================
@@ -583,7 +584,7 @@ a {
     grid-template-columns: repeat(3, 1fr);
     gap: clamp(2.5rem, 4.5vw, 5.5rem);
     padding-bottom: 2rem;
-    border-bottom: 1px solid var(--hairline);
+    border-bottom: none;
   }
 
   .pillar-col {
@@ -1394,7 +1395,110 @@ a {
 }
 
 /* ============================================================
-   SECCIÓN 05: FACILITADORA (EDITH GROSHAUS & EG MARKETING)
+   SECCIÓN 05: TESTIMONIOS (VOCES DE LA 1ª EDICIÓN)
+   Diseño editorial abierto, sin cajas rígidas ni exceso de bordes
+   ============================================================ */
+.testimonials-section {
+  position: relative;
+  padding: clamp(5.5rem, 11vh, 9.5rem) 0;
+  border-top: 1px solid var(--hairline);
+  background-color: var(--bg-main);
+  overflow: hidden;
+}
+
+.testimonials-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 4.5rem);
+}
+
+.testimonials-header {
+  margin-bottom: clamp(3rem, 6vh, 4.5rem);
+  max-width: 58ch;
+}
+
+.testimonials-main-title {
+  font-size: clamp(2rem, 3.2vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.testimonials-lead {
+  font-size: clamp(0.95rem, 1.15vw, 1.125rem);
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--white-60);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: clamp(3rem, 5vw, 6rem);
+    row-gap: clamp(3rem, 5vh, 4.5rem);
+  }
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.testimonial-mark {
+  font-size: 2.75rem;
+  line-height: 1;
+  color: var(--gold);
+  font-family: serif;
+  opacity: 0.55;
+  margin-bottom: 0.5rem;
+  user-select: none;
+}
+
+.testimonial-quote {
+  font-size: clamp(0.95rem, 1.15vw, 1.1rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--white-85);
+  font-style: italic;
+  margin-bottom: 1.75rem;
+}
+
+.testimonial-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.testimonial-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.testimonial-tag {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   SECCIÓN 06: FACILITADORA (EDITH GROSHAUS & EG MARKETING)
    ============================================================ */
 .facilitator-section {
   position: relative;

@@ -223,7 +223,7 @@
         </div>
 
         <!-- Columna derecha: El problema real y la propuesta -->
-        <div class="manifesto-right" data-reveal data-delay="2">
+        <div class="manifesto-right" data-reveal data-delay="2" data-parallax-scroll>
           <div class="manifesto-prose">
             <p class="lead-text">
               Atendés sin pausa, te capacitás constantemente y entregás lo mejor en cada consulta. Sin embargo, al cerrar el mes suele aparecer la misma sensación: <em>el consultorio te maneja a vos, no vos a él.</em>
@@ -248,15 +248,15 @@
   <section class="decisions-section" id="decisiones">
     <div class="decisions-container">
 
-      <!-- Header de sección -->
-      <div class="decisions-header" data-reveal>
+      <!-- 1. Título y bajada a la izquierda (tipografía uniforme) -->
+      <div class="decisions-header-block" data-reveal>
         <div class="section-meta-header">
           <span class="label-tag label-tag--gold">02</span>
           <span class="sep-slash">/</span>
           <span class="label-tag">ARQUITECTURA ESTRATÉGICA</span>
         </div>
         <div class="decisions-title-wrap">
-          <h2 class="decisions-main-title">
+          <h2 class="section-main-title decisions-main-title">
             6 Decisiones para <span class="text-contrast">dejar de improvisar</span>
           </h2>
           <p class="section-lead decisions-lead">
@@ -265,8 +265,11 @@
         </div>
       </div>
 
-      <!-- Grilla arquitectónica 3x2 con hairlines inspirada en Franceclat -->
-      <div class="decisions-grid" data-reveal data-delay="1">
+      <!-- 2. Luego que termina la bajada, orientar a la derecha el resto del texto, en su columna -->
+      <div class="decisions-content-right" data-reveal data-delay="1" data-parallax-scroll>
+
+        <!-- Grilla arquitectónica con hairlines inspirada en Franceclat -->
+        <div class="decisions-grid">
 
         <!-- 01 · VOLUMEN -->
         <article class="decision-cell">
@@ -351,6 +354,8 @@
           <span>Ver las Herramientas Operativas</span>
           <span class="arrow-down">↓</span>
         </a>
+      </div>
+
       </div>
 
     </div>
@@ -604,15 +609,15 @@
   <section class="testimonials-section" id="testimonios">
     <div class="testimonials-container">
 
-      <!-- Header de Sección Restaurado (tipografía consistente con el resto de las secciones) -->
-      <div class="testimonials-header" data-reveal>
+      <!-- 1. Título y bajada a la izquierda -->
+      <div class="testimonials-header-block" data-reveal>
         <div class="section-meta-header">
           <span class="label-tag label-tag--gold">04</span>
           <span class="sep-slash">/</span>
           <span class="label-tag">VOCES DE LA 1ª EDICIÓN</span>
         </div>
         <div class="testimonials-title-wrap">
-          <h2 class="testimonials-main-title">
+          <h2 class="section-main-title testimonials-main-title">
             Lo que ocurre cuando un médico <span class="text-contrast">se detiene a pensar</span> su práctica.
           </h2>
           <p class="section-lead testimonials-lead">
@@ -621,8 +626,11 @@
         </div>
       </div>
 
-      <!-- Carrusel Automático Editorial Fancy -->
-      <div class="testimonial-carousel-wrap" data-reveal data-delay="1">
+      <!-- 2. Luego que termina la bajada, orientar a la derecha el resto del texto, en su columna -->
+      <div class="testimonials-content-right" data-reveal data-delay="1" data-parallax-scroll>
+
+        <!-- Carrusel Automático Editorial Fancy -->
+        <div class="testimonial-carousel-wrap">
         <div
           class="testimonial-carousel"
           id="testimonialCarousel"
@@ -723,6 +731,8 @@
           </div>
 
         </div>
+      </div>
+
       </div>
 
     </div>
@@ -894,18 +904,27 @@
   <section class="faq-section" id="faq">
     <div class="faq-container">
 
-      <div class="faq-header" data-reveal>
+      <!-- 1. Título y bajada a la izquierda (tipografía uniforme) -->
+      <div class="faq-header-block" data-reveal>
         <div class="section-meta-header">
           <span class="label-tag label-tag--gold">07</span>
           <span class="sep-slash">/</span>
           <span class="label-tag">RESOLUCIÓN DE DUDAS</span>
         </div>
-        <h2 class="faq-main-title">
-          Preguntas <span class="text-contrast">Frecuentes</span>
-        </h2>
+        <div class="faq-title-wrap">
+          <h2 class="section-main-title faq-main-title">
+            Preguntas <span class="text-contrast">Frecuentes</span>
+          </h2>
+          <p class="section-lead faq-lead">
+            Respuestas directas a las consultas más habituales sobre la dinámica presencial, aranceles y aplicación en tu consultorio.
+          </p>
+        </div>
       </div>
 
-      <div class="faq-accordion" data-reveal data-delay="1">
+      <!-- 2. Luego que termina la bajada, orientar a la derecha el resto del texto, en su columna -->
+      <div class="faq-content-right" data-reveal data-delay="1" data-parallax-scroll>
+
+        <div class="faq-accordion">
 
         <!-- FAQ 1 -->
         <div class="faq-item">
@@ -971,6 +990,8 @@
             </div>
           </div>
         </div>
+
+      </div>
 
       </div>
 

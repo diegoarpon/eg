@@ -135,7 +135,8 @@ a {
 .modules-lead,
 .deliverables-lead,
 .testimonials-lead,
-.edition-lead {
+.edition-lead,
+.faq-lead {
   font-size: clamp(0.95rem, 1.15vw, 1.125rem);
   font-weight: 300;
   line-height: 1.65;
@@ -145,6 +146,31 @@ a {
 .text-contrast {
   font-weight: 700;
   color: var(--gold);
+}
+
+/* ============================================================
+   EDITORIAL ASYMMETRIC LAYOUT (Inspirado en Franceclat & Sección 06)
+   Regla General: Título + bajada a la izquierda (header-block).
+   Luego que termina la bajada, el cuerpo de contenidos se orienta
+   a la derecha en su columna (content-right) con smooth parallax.
+   ============================================================ */
+.section-header-block,
+.decisions-header-block,
+.testimonials-header-block,
+.edition-header-block,
+.faq-header-block {
+  margin-bottom: clamp(3rem, 5.5vh, 4.5rem);
+}
+
+.section-title-wrap,
+.decisions-title-wrap,
+.testimonials-title-wrap,
+.edition-title-wrap,
+.faq-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 58ch;
 }
 
 /* ============================================================
@@ -882,15 +908,17 @@ a {
   padding: 0 clamp(1.5rem, 4vw, 4.5rem);
 }
 
+/* 1. Título y bajada a la izquierda */
+.decisions-header-block,
 .decisions-header {
-  margin-bottom: clamp(3rem, 6vh, 4.5rem);
+  margin-bottom: clamp(3rem, 5.5vh, 4.5rem);
 }
 
 .decisions-title-wrap {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 54ch;
+  max-width: 58ch;
 }
 
 .decisions-main-title {
@@ -908,6 +936,21 @@ a {
   color: var(--white-60);
 }
 
+/* 2. Luego que termina la bajada, orientar a la derecha el resto del texto, en su columna */
+.decisions-content-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .decisions-content-right {
+    margin-left: auto;
+    max-width: clamp(620px, 64vw, 940px);
+  }
+}
+
 /* Grilla con hairlines perfectas usando background de 1px */
 .decisions-grid {
   display: grid;
@@ -920,12 +963,6 @@ a {
 @media (min-width: 640px) {
   .decisions-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .decisions-grid {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -1469,16 +1506,17 @@ a {
   padding: 0 clamp(1.5rem, 4vw, 4.5rem);
 }
 
-/* Header de Sección Restaurado (tipografía consistente con el resto de las secciones) */
+/* 1. Título y bajada a la izquierda */
+.testimonials-header-block,
 .testimonials-header {
-  margin-bottom: clamp(3.5rem, 6vh, 5rem);
+  margin-bottom: clamp(3rem, 5.5vh, 4.5rem);
 }
 
 .testimonials-title-wrap {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 68ch;
+  max-width: 62ch;
 }
 
 .testimonials-main-title {
@@ -1494,6 +1532,21 @@ a {
   font-weight: 300;
   line-height: 1.65;
   color: var(--white-60);
+}
+
+/* 2. Luego que termina la bajada, orientar a la derecha el resto del texto, en su columna */
+.testimonials-content-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .testimonials-content-right {
+    margin-left: auto;
+    max-width: clamp(640px, 68vw, 980px);
+  }
 }
 
 /* Carrusel Automático Editorial Fancy */
@@ -2087,13 +2140,22 @@ a {
 .faq-container {
   position: relative;
   z-index: 2;
-  max-width: 1200px;
+  max-width: 1680px;
   margin: 0 auto;
   padding: 0 clamp(1.5rem, 4vw, 4.5rem);
 }
 
+/* 1. Título y bajada a la izquierda (tipografía uniforme) */
+.faq-header-block,
 .faq-header {
-  margin-bottom: clamp(3rem, 6vh, 4.5rem);
+  margin-bottom: clamp(3rem, 5.5vh, 4.5rem);
+}
+
+.faq-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 58ch;
 }
 
 .faq-main-title {
@@ -2102,6 +2164,28 @@ a {
   letter-spacing: -0.02em;
   color: var(--white);
   line-height: 1.2;
+}
+
+.faq-lead {
+  font-size: clamp(0.95rem, 1.15vw, 1.125rem);
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--white-60);
+}
+
+/* 2. Luego que termina la bajada, orientar a la derecha el resto del texto, en su columna */
+.faq-content-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .faq-content-right {
+    margin-left: auto;
+    max-width: clamp(560px, 58vw, 820px);
+  }
 }
 
 .faq-accordion {

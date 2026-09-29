@@ -2449,17 +2449,12 @@ a {
   margin-top: 0.25rem;
 }
 
-/* Destacado tipográfico: Coffee Break & Networking */
+/* Coffee Break & Networking sin highlight */
 .edition-networking-lockup {
   position: relative;
-  background: radial-gradient(
-    ellipse at 15% 50%,
-    rgba(216, 149, 16, 0.1) 0%,
-    rgba(4, 33, 37, 0.5) 75%,
-    transparent 100%
-  );
-  padding: clamp(2rem, 3.5vh, 2.75rem);
-  border-radius: 4px;
+  background: none;
+  padding: 0;
+  border-radius: 0;
   border: none;
 }
 

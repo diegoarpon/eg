@@ -2917,13 +2917,8 @@ a {
 }
 
 .closing-headline .text-contrast {
-  font-weight: inherit;
-  color: inherit;
-  background: none;
-  -webkit-background-clip: border-box;
-  -webkit-text-fill-color: currentColor;
-  filter: none;
-  display: inline;
+  font-weight: 700;
+  color: var(--gold);
 }
 
 .closing-cta-wrap {

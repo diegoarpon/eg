@@ -3080,8 +3080,28 @@ a {
   .footer-bottom-bar {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     text-align: left;
   }
+}
+
+.footer-credit-wrap {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-credit-logo {
+  height: 1.15rem;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.8;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.3s var(--ease);
+  display: block;
+}
+
+.footer-credit-logo:hover {
+  opacity: 1;
 }
 
 /* ============================================================

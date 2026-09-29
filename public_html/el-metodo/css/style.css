@@ -520,21 +520,25 @@ a {
 
 /* 1. Banda de los 3 Pilares */
 .hero-pillars-band {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(1rem, 2.5vw, 3rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: clamp(0.75rem, 2vw, 2.5rem);
   padding-bottom: 1.5rem;
   border-bottom: none;
-  align-items: start;
 }
 
 .pillar-col {
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  align-items: flex-start;
+  text-align: left;
+  gap: 0.45rem;
   border-right: none;
   padding-right: 0;
   min-width: 0;
+  flex: 0 0 auto;
 }
 
 .pillar-col:last-child {
@@ -544,7 +548,7 @@ a {
 
 .pillar-title-frame,
 .pillar-img-frame {
-  width: 100%;
+  width: auto;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -555,30 +559,21 @@ a {
   font-family: var(--font);
   font-style: italic;
   font-weight: 300;
-  font-size: clamp(3.2rem, 5.2vw, 5.8rem);
+  font-size: clamp(2.4rem, 4.4vw, 5.2rem);
   line-height: 0.9;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--gold);
   text-shadow: 0 4px 14px rgba(216, 149, 16, 0.25);
   transition: transform 0.4s var(--ease), text-shadow 0.4s var(--ease);
   display: block;
-  white-space: nowrap;
+  white-space: nowrap !important;
+  text-align: left;
 }
 
-.pillar-title--break {
-  line-height: 0.86;
-  white-space: normal;
-}
-
-.pillar-word-line {
-  display: block;
-  white-space: nowrap;
-}
-
-.pillar-hyphen {
-  display: inline-block;
-  opacity: 0.85;
+/* Guión separador entre pilares en desktop */
+.pillar-sep {
+  display: none;
 }
 
 .pillar-img {
@@ -602,13 +597,16 @@ a {
 }
 
 .pillar-bajada {
-  font-size: clamp(0.62rem, 0.85vw, 0.76rem);
+  font-size: clamp(0.65rem, 0.85vw, 0.82rem);
   font-weight: 600;
   color: var(--gold);
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   line-height: 1.35;
   opacity: 0.92;
+  text-align: left;
+  align-self: flex-start;
+  margin: 0;
 }
 
 /* 2. Escenario Principal */
@@ -872,10 +870,16 @@ a {
   .pillar-col {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.35rem;
     padding: 0;
     position: relative;
     width: 100%;
+  }
+
+  .pillar-sep {
+    display: none !important;
   }
 
   .pillar-title-frame,
@@ -903,25 +907,11 @@ a {
   }
 
   .pillar-title {
-    font-size: clamp(2rem, 8.2vw, 3.4rem);
+    font-size: clamp(2.2rem, 8.4vw, 3.6rem);
     line-height: 0.9;
     text-shadow: 0 8px 18px rgba(216, 149, 16, 0.42), 0 2px 6px rgba(0, 0, 0, 0.6);
-  }
-
-  /* En mobile: DIFERENCIATE completo en un solo renglón, sin corte ni guion */
-  .pillar-title--break {
-    line-height: 0.9;
-    white-space: nowrap;
-    display: block;
-  }
-
-  .pillar-word-line {
-    display: inline !important;
     white-space: nowrap !important;
-  }
-
-  .pillar-hyphen {
-    display: none !important;
+    text-align: left;
   }
 
   .pillar-col:active .pillar-title {
@@ -948,10 +938,13 @@ a {
     font-size: clamp(0.68rem, 2.4vw, 0.78rem);
     font-weight: 600;
     color: var(--gold);
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     line-height: 1.35;
     opacity: 0.95;
+    text-align: left;
+    align-self: flex-start;
+    margin: 0;
   }
 
   .hero-main-stage {
@@ -1036,36 +1029,49 @@ a {
   }
 
   .hero-pillars-band {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp(2rem, 3.5vw, 4.5rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: clamp(0.75rem, 1.5vw, 2.5rem);
     padding-bottom: 2rem;
     border-bottom: none;
-    align-items: start;
   }
 
   .pillar-col {
-    gap: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.45rem;
     border-right: none;
     padding-right: 0;
+    flex: 0 0 auto;
+  }
+
+  .pillar-sep {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(2.6rem, 4.2vw, 5.2rem);
+    line-height: 0.9;
+    color: var(--gold);
+    opacity: 0.7;
+    user-select: none;
+    align-self: flex-start;
+    padding: 0 clamp(0.25rem, 0.75vw, 1rem);
+    height: clamp(2.4rem, 4vw, 4.6rem);
   }
 
   .pillar-title {
-    font-size: clamp(3.6rem, 5.6vw, 6.2rem);
+    font-size: clamp(2.6rem, 4.2vw, 5.2rem);
     line-height: 0.9;
-  }
-
-  .pillar-title--break {
-    line-height: 0.84;
-  }
-
-  .pillar-word-line {
-    display: block;
-    white-space: nowrap;
-  }
-
-  .pillar-hyphen {
-    display: inline-block;
+    letter-spacing: -0.01em;
+    white-space: nowrap !important;
+    text-align: left;
   }
 
   .pillar-img {
@@ -1073,8 +1079,11 @@ a {
   }
 
   .pillar-bajada {
-    font-size: clamp(0.68rem, 0.85vw, 0.82rem);
-    letter-spacing: 0.18em;
+    font-size: clamp(0.66rem, 0.82vw, 0.8rem);
+    letter-spacing: 0.14em;
+    text-align: left;
+    align-self: flex-start;
+    margin: 0;
   }
 
   .hero-main-stage {
@@ -1138,12 +1147,14 @@ a {
   }
 
   .pillar-title {
-    font-size: clamp(4.4rem, 6.4vw, 7.2rem);
+    font-size: clamp(3.2rem, 4.4vw, 5.6rem);
     line-height: 0.88;
+    white-space: nowrap !important;
   }
 
-  .pillar-title--break {
-    line-height: 0.82;
+  .pillar-sep {
+    font-size: clamp(3.2rem, 4.4vw, 5.6rem);
+    height: clamp(3rem, 4.2vw, 5.2rem);
   }
 
   .hero-logo-floating {

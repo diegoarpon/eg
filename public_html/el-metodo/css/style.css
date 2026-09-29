@@ -51,18 +51,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Textura táctil de grano editorial (inspirada en Franceclat) */
-.editorial-grain-overlay {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 999;
-  opacity: 0.038;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-
 img {
   display: block;
   max-width: 100%;
@@ -524,12 +512,27 @@ a {
   padding-right: 0;
 }
 
+.pillar-title-frame,
 .pillar-img-frame {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   will-change: transform;
+}
+
+.pillar-title {
+  font-family: var(--font);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.4rem, 2.5vw, 2.5rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-shadow: 0 4px 14px rgba(216, 149, 16, 0.25);
+  transition: transform 0.4s var(--ease), text-shadow 0.4s var(--ease);
+  white-space: nowrap;
 }
 
 .pillar-img {
@@ -626,8 +629,10 @@ a {
 }
 
 .hero-eg-logo {
-  height: 1.55rem;
+  height: auto;
+  max-height: 1.25rem;
   width: auto;
+  max-width: 135px;
   object-fit: contain;
   opacity: 0.95;
 }
@@ -824,25 +829,39 @@ a {
     position: relative;
   }
 
+  .pillar-title-frame,
   .pillar-img-frame {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    min-height: clamp(2.2rem, 7vw, 3rem);
+    min-height: clamp(2rem, 6.5vw, 2.8rem);
     animation: pillarDTitleFloat 5s ease-in-out infinite;
     will-change: transform;
   }
 
+  .pillar-col--1 .pillar-title-frame,
   .pillar-col--1 .pillar-img-frame {
     animation-delay: 0s;
   }
 
+  .pillar-col--2 .pillar-title-frame,
   .pillar-col--2 .pillar-img-frame {
     animation-delay: 1.65s;
   }
 
+  .pillar-col--3 .pillar-title-frame,
   .pillar-col--3 .pillar-img-frame {
     animation-delay: 3.3s;
+  }
+
+  .pillar-title {
+    font-size: clamp(1.1rem, 4.4vw, 1.85rem);
+    text-shadow: 0 8px 18px rgba(216, 149, 16, 0.42), 0 2px 6px rgba(0, 0, 0, 0.6);
+  }
+
+  .pillar-col:active .pillar-title {
+    transform: scale(1.05) translateY(-2px);
+    text-shadow: 0 12px 24px rgba(216, 149, 16, 0.6);
   }
 
   .pillar-img {
@@ -957,6 +976,10 @@ a {
     gap: 0.75rem;
     border-right: none;
     padding-right: 0;
+  }
+
+  .pillar-title {
+    font-size: clamp(2rem, 3.2vw, 3.2rem);
   }
 
   .pillar-img {
@@ -1138,7 +1161,8 @@ a {
 @media (min-width: 900px) {
   .manifesto-content-right {
     margin-left: auto;
-    max-width: clamp(560px, 58vw, 820px);
+    max-width: clamp(640px, 68vw, 1080px);
+    width: 100%;
   }
 }
 
@@ -1150,7 +1174,8 @@ a {
   font-weight: 300;
   line-height: 1.8;
   color: var(--white-60);
-  max-width: 56ch;
+  max-width: 100%;
+  width: 100%;
 }
 
 .manifesto-prose .lead-text {
@@ -1901,18 +1926,6 @@ a {
   max-width: 960px;
 }
 
-.carousel-quote-glyph {
-  display: block;
-  font-family: var(--font-display, "Montserrat", sans-serif);
-  font-size: clamp(3.5rem, 6vw, 5.5rem);
-  font-weight: 200;
-  line-height: 0.65;
-  color: var(--gold);
-  opacity: 0.32;
-  margin-bottom: 0.85rem;
-  user-select: none;
-}
-
 .carousel-quote-body {
   font-family: var(--font-body);
   font-size: clamp(1.3rem, 2.25vw, 2.2rem);
@@ -2227,8 +2240,10 @@ a {
 }
 
 .facilitator-eg-logo {
-  height: 2rem;
+  height: auto;
+  max-height: 1.5rem;
   width: auto;
+  max-width: 150px;
   object-fit: contain;
 }
 
@@ -2689,8 +2704,10 @@ a {
 }
 
 .footer-logo-eg {
-  height: 1.5rem;
+  height: auto;
+  max-height: 1.25rem;
   width: auto;
+  max-width: 135px;
   object-fit: contain;
 }
 

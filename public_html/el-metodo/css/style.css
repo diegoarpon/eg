@@ -211,7 +211,19 @@ a {
 .site-header__brand {
   display: flex;
   align-items: center;
+  gap: 0.65rem;
   cursor: default;
+}
+
+.header-logo-eg {
+  height: auto;
+  max-height: 1.15rem;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  opacity: 0.95;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .site-header__nav {
@@ -364,6 +376,7 @@ a {
 .mobile-nav-top-meta {
   display: flex;
   align-items: center;
+  gap: 0.65rem;
   padding-bottom: 0.5rem;
 }
 
@@ -1872,21 +1885,16 @@ a {
   position: relative;
   border-top: none;
   border-bottom: none;
-  background: radial-gradient(
-    ellipse 85% 65% at 50% 50%,
-    rgba(216, 149, 16, 0.06) 0%,
-    rgba(3, 20, 23, 0.5) 60%,
-    transparent 100%
-  );
-  padding: clamp(3.5rem, 7vh, 5.5rem) clamp(1rem, 3.5vw, 4rem);
-  border-radius: 2px;
+  background: none;
+  padding: 0;
+  border-radius: 0;
 }
 
 .testimonial-carousel {
   position: relative;
   width: 100%;
-  max-width: 1080px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
 }
 
 /* Stage de Diapositivas */
@@ -1926,7 +1934,7 @@ a {
 
 .carousel-slide__inner {
   position: relative;
-  max-width: 960px;
+  max-width: 100%;
 }
 
 .carousel-quote-body {

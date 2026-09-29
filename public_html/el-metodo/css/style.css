@@ -799,47 +799,6 @@ a {
   max-width: 44ch;
 }
 
-/* ============================================================
-   MOBILE STRIP (Metadatos visibles en mobile)
-   ============================================================ */
-.hero-mobile-strip {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.25rem 1.5rem;
-  border-top: none;
-  background: rgba(3, 21, 24, 0.75);
-  backdrop-filter: blur(10px);
-}
-
-.mobile-strip-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.strip-label {
-  font-size: 0.52rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-  text-transform: uppercase;
-}
-
-.strip-val {
-  font-size: 0.72rem;
-  font-weight: 300;
-  color: var(--white-85);
-}
-
-.strip-divider {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: var(--gold-ambient);
-}
 
 /* ============================================================
    RESPONSIVE: MOBILE & TABLET (< 1024px)
@@ -1149,11 +1108,6 @@ a {
     font-size: clamp(1.35rem, 1.95vw, 2.15rem);
     max-width: 28ch;
     text-align: right;
-  }
-
-  /* Ocultar mobile strip en desktop */
-  .hero-mobile-strip {
-    display: none;
   }
 }
 

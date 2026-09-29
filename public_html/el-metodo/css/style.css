@@ -3095,7 +3095,7 @@ a {
 }
 
 .footer-credit-wrap {
-  display: inline-flex;
+  display: none; /* Oculto por ahora */
   align-items: center;
 }
 

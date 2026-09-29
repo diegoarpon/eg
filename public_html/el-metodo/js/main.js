@@ -327,4 +327,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ============================================================
+     TILES VIDEOS AUTOPLAY OBSERVER
+     ============================================================ */
+  const tileVideos = document.querySelectorAll('.edition-tile__media-wrap video');
+  if (tileVideos.length > 0 && 'IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.play().catch(() => {});
+        } else {
+          entry.target.pause();
+        }
+      });
+    }, { threshold: 0.2 });
+
+    tileVideos.forEach((vid) => videoObserver.observe(vid));
+  }
+
 });

@@ -211,8 +211,34 @@ a {
 .site-header__brand {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  cursor: default;
+  gap: 0.7rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.3s var(--ease);
+}
+
+.site-header__brand:hover {
+  opacity: 0.85;
+}
+
+.header-logo-metodo {
+  height: auto;
+  max-height: 1.35rem;
+  width: auto;
+  max-width: 145px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header-brand-x {
+  font-family: var(--font);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 1;
+  opacity: 0.85;
+  display: inline-block;
 }
 
 .header-logo-eg {
@@ -224,6 +250,16 @@ a {
   opacity: 0.95;
   display: inline-block;
   vertical-align: middle;
+}
+
+.footer-brand-x {
+  font-family: var(--font);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--gold);
+  opacity: 0.8;
+  display: inline-block;
+  margin: 0 0.25rem;
 }
 
 .site-header__nav {
@@ -669,8 +705,9 @@ a {
 .hero-brand-floating {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
   align-items: flex-start;
+  margin: 0;
+  padding: 0;
 }
 
 .hero-logo-floating {
@@ -678,6 +715,7 @@ a {
   max-width: 520px;
   height: auto;
   display: block;
+  vertical-align: bottom;
   /* Logo flotando con aura dorada de iluminación */
   filter: drop-shadow(0 12px 35px rgba(216, 149, 16, 0.35));
   transition: transform 0.5s var(--ease);
@@ -685,33 +723,6 @@ a {
 
 .hero-brand-floating:hover .hero-logo-floating {
   transform: translateY(-4px);
-}
-
-.hero-partner-anchor {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  border-top: none;
-  padding-top: 0.25rem;
-  width: 100%;
-  max-width: 440px;
-}
-
-.partner-label {
-  font-size: 0.52rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  color: var(--gold);
-  white-space: nowrap;
-}
-
-.hero-eg-logo {
-  height: auto;
-  max-height: 1.25rem;
-  width: auto;
-  max-width: 135px;
-  object-fit: contain;
-  opacity: 0.95;
 }
 
 /* Derecha: CTA + Tagline */
@@ -952,9 +963,6 @@ a {
     max-width: clamp(260px, 75vw, 420px);
   }
 
-  .hero-partner-anchor {
-    max-width: clamp(240px, 70vw, 360px);
-  }
 
   .hero-stage-right {
     gap: clamp(2rem, 4.5vh, 2.75rem);
@@ -1089,16 +1097,16 @@ a {
   .hero-stage-left {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     gap: clamp(1.5rem, 2.5vh, 2.25rem);
+    align-self: end;
   }
 
   .hero-logo-floating {
     max-width: 540px;
     width: 100%;
-  }
-
-  .hero-partner-anchor {
-    max-width: 440px;
+    display: block;
+    vertical-align: bottom;
   }
 
   .hero-stage-right {
@@ -1106,8 +1114,9 @@ a {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
+    align-self: end;
     height: 100%;
-    min-height: 340px;
+    min-height: 280px;
     text-align: right;
   }
 
@@ -1116,10 +1125,21 @@ a {
     width: auto;
   }
 
+  .hero-tagline-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+  }
+
   .hero-statement {
     font-size: clamp(1.35rem, 1.95vw, 2.15rem);
     max-width: 28ch;
     text-align: right;
+    margin: 0;
+    padding: 0;
+    line-height: 1.3;
   }
 }
 

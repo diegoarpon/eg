@@ -2690,11 +2690,11 @@ a {
 
 .faq-item {
   border-bottom: 1px solid var(--hairline);
-  transition: background-color 0.3s var(--ease);
+  background: none;
 }
 
 .faq-item.is-open {
-  background-color: rgba(4, 33, 37, 0.45);
+  background: none;
 }
 
 .faq-trigger {

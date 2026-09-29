@@ -675,6 +675,18 @@ a {
   gap: 0.35rem;
 }
 
+.meta-tag {
+  font-family: var(--font);
+  font-size: clamp(0.66rem, 0.82vw, 0.78rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  line-height: 1.2;
+  opacity: 0.95;
+  display: block;
+}
+
 .meta-date {
   font-family: var(--font);
   font-style: italic;

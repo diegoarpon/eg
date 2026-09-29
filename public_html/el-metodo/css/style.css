@@ -464,12 +464,12 @@ a {
     var(--bg-deep);
 }
 
-/* Los 3 paneles de fondo inspirados exactamente en Franceclat */
+/* Los 6 paneles de fondo con gradientes inspirados en Franceclat */
 .hero-panels {
   position: absolute;
   inset: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   pointer-events: none;
   z-index: 1;
 }
@@ -488,15 +488,27 @@ a {
 
 /* Gradiente diagonal en cada columna con sutil progresión tonal */
 .hero-panel--1 {
-  background: linear-gradient(150deg, #052a2f 0%, #03181b 60%, #020f12 100%);
+  background: linear-gradient(145deg, #042429 0%, #021417 60%, #020e10 100%);
 }
 
 .hero-panel--2 {
-  background: linear-gradient(160deg, #063238 0%, #042125 50%, #021114 100%);
+  background: linear-gradient(150deg, #052a2f 0%, #03181b 60%, #020f12 100%);
 }
 
 .hero-panel--3 {
-  background: linear-gradient(170deg, #07383f 0%, #042327 55%, #020e10 100%);
+  background: linear-gradient(155deg, #063238 0%, #042024 55%, #021114 100%);
+}
+
+.hero-panel--4 {
+  background: linear-gradient(165deg, #07383f 0%, #042327 55%, #021114 100%);
+}
+
+.hero-panel--5 {
+  background: linear-gradient(170deg, #063239 0%, #031f23 55%, #021013 100%);
+}
+
+.hero-panel--6 {
+  background: linear-gradient(175deg, #05282e 0%, #03171b 60%, #020f12 100%);
 }
 
 /* ============================================================

@@ -723,7 +723,6 @@ a {
   align-items: flex-start;
   margin: 0;
   padding: 0;
-  margin-bottom: 10px;
 }
 
 .hero-logo-floating {
@@ -732,7 +731,6 @@ a {
   height: auto;
   display: block;
   vertical-align: bottom;
-  margin-bottom: 10px;
   /* Logo estático con resplandor dorado */
   filter: drop-shadow(0 12px 35px rgba(216, 149, 16, 0.35));
 }
@@ -1101,7 +1099,6 @@ a {
     width: 100%;
     display: block;
     vertical-align: bottom;
-    margin-bottom: 10px;
   }
 
   .hero-stage-right {
@@ -1161,7 +1158,6 @@ a {
 
   .hero-logo-floating {
     max-width: 600px;
-    margin-bottom: 10px;
   }
 
   .hero-statement {

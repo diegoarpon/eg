@@ -723,8 +723,11 @@ a {
   align-items: flex-start;
   margin: 0;
   padding: 0;
+  margin-bottom: 10px;
 }
 
+.hero-brand-floating img,
+.hero-logo,
 .hero-logo-floating {
   width: 100%;
   max-width: 520px;
@@ -966,6 +969,8 @@ a {
     gap: clamp(1.5rem, 3.5vh, 2.25rem);
   }
 
+  .hero-brand-floating img,
+  .hero-logo,
   .hero-logo-floating {
     max-width: clamp(260px, 75vw, 420px);
   }
@@ -1094,6 +1099,8 @@ a {
     align-self: end;
   }
 
+  .hero-brand-floating img,
+  .hero-logo,
   .hero-logo-floating {
     max-width: 540px;
     width: 100%;
@@ -1156,6 +1163,8 @@ a {
     white-space: nowrap !important;
   }
 
+  .hero-brand-floating img,
+  .hero-logo,
   .hero-logo-floating {
     max-width: 600px;
   }

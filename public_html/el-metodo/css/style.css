@@ -275,8 +275,8 @@ a {
   gap: 0.55rem;
   height: 32px;
   padding: 0 0.75rem;
-  background-color: #000000;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: var(--bg-main);
+  border: 1px solid rgba(216, 149, 16, 0.3);
   border-radius: 3px;
   color: var(--white);
   font-family: var(--font);
@@ -292,6 +292,7 @@ a {
 }
 
 .header-burger:hover {
+  background-color: var(--bg-glow);
   border-color: var(--gold);
 }
 

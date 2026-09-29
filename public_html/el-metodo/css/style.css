@@ -724,13 +724,8 @@ a {
   height: auto;
   display: block;
   vertical-align: bottom;
-  /* Logo flotando con aura dorada de iluminación */
+  /* Logo estático con resplandor dorado */
   filter: drop-shadow(0 12px 35px rgba(216, 149, 16, 0.35));
-  transition: transform 0.5s var(--ease);
-}
-
-.hero-brand-floating:hover .hero-logo-floating {
-  transform: translateY(-4px);
 }
 
 /* Derecha: CTA + Tagline */

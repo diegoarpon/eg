@@ -683,13 +683,13 @@ a {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #031518;
-  background-color: #ffd214;
+  background-color: var(--gold);
   line-height: 1;
   display: inline-block;
   align-self: flex-start;
   padding: 0.38rem 0.75rem 0.32rem;
   border-radius: 3px;
-  box-shadow: 0 4px 14px rgba(255, 210, 20, 0.3);
+  box-shadow: 0 4px 14px rgba(216, 149, 16, 0.35);
   margin-bottom: 0.35rem;
 }
 
@@ -2891,9 +2891,9 @@ a {
 }
 
 .closing-meta .label-tag--gold {
-  color: #ffd778;
+  color: var(--gold);
   font-weight: 700;
-  text-shadow: 0 0 14px rgba(216, 149, 16, 0.6);
+  text-shadow: 0 0 14px rgba(216, 149, 16, 0.5);
 }
 
 .closing-meta .label-tag {

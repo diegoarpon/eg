@@ -458,7 +458,10 @@ a {
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  background-color: var(--bg-deep);
+  background:
+    radial-gradient(ellipse 90% 70% at 75% 25%, rgba(7, 55, 62, 0.45) 0%, transparent 70%),
+    radial-gradient(circle at 20% 80%, rgba(216, 149, 16, 0.05) 0%, transparent 60%),
+    var(--bg-deep);
 }
 
 /* Los 3 paneles de fondo inspirados exactamente en Franceclat */
@@ -475,7 +478,7 @@ a {
   position: relative;
   height: 100%;
   border-right: none;
-  background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-deep) 100%);
+  background: linear-gradient(150deg, #05292e 0%, #03171a 60%, #020f12 100%);
   transition: opacity 0.8s var(--ease);
 }
 
@@ -483,17 +486,17 @@ a {
   border-right: none;
 }
 
-/* Gradiente diagonal en cada columna con los dos colores más oscuros (#042125 y #031518) */
+/* Gradiente diagonal en cada columna con sutil progresión tonal */
 .hero-panel--1 {
-  background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-deep) 100%);
+  background: linear-gradient(150deg, #052a2f 0%, #03181b 60%, #020f12 100%);
 }
 
 .hero-panel--2 {
-  background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-deep) 100%);
+  background: linear-gradient(160deg, #063238 0%, #042125 50%, #021114 100%);
 }
 
 .hero-panel--3 {
-  background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-deep) 100%);
+  background: linear-gradient(170deg, #07383f 0%, #042327 55%, #020e10 100%);
 }
 
 /* ============================================================
@@ -1156,7 +1159,10 @@ a {
   position: relative;
   padding: clamp(5.5rem, 11vh, 9.5rem) 0;
   border-top: none;
-  background-color: var(--bg-deep);
+  background:
+    radial-gradient(ellipse 70% 60% at 85% 40%, rgba(7, 53, 59, 0.5) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(216, 149, 16, 0.04) 0%, transparent 60%),
+    linear-gradient(165deg, #020e11 0%, #042125 50%, #031518 100%);
   overflow: hidden;
 }
 
@@ -1271,7 +1277,10 @@ a {
   position: relative;
   padding: clamp(5.5rem, 11vh, 9.5rem) 0;
   border-top: none;
-  background-color: var(--bg-main);
+  background:
+    radial-gradient(circle at 15% 15%, rgba(7, 55, 62, 0.6) 0%, transparent 60%),
+    radial-gradient(ellipse 65% 50% at 85% 85%, rgba(216, 149, 16, 0.05) 0%, transparent 55%),
+    linear-gradient(145deg, #03171a 0%, #05262c 50%, #021114 100%);
   overflow: hidden;
 }
 
@@ -1342,13 +1351,13 @@ a {
 }
 
 .decision-cell {
-  background-color: var(--bg-main);
+  background: linear-gradient(165deg, rgba(5, 36, 41, 0.92) 0%, rgba(3, 20, 23, 0.96) 100%);
   padding: clamp(2rem, 3vw, 3.25rem);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   transition:
-    background-color 0.4s var(--ease),
+    background 0.4s var(--ease),
     transform 0.4s var(--ease);
   position: relative;
 }
@@ -1365,7 +1374,7 @@ a {
 }
 
 .decision-cell:hover {
-  background-color: #052a2f;
+  background: linear-gradient(165deg, rgba(8, 48, 55, 0.96) 0%, rgba(4, 28, 32, 0.98) 100%);
 }
 
 .decision-cell:hover::before {
@@ -1714,7 +1723,10 @@ a {
   position: relative;
   padding: clamp(5.5rem, 11vh, 9.5rem) 0;
   border-top: none;
-  background-color: var(--bg-main);
+  background:
+    radial-gradient(ellipse 75% 55% at 50% 10%, rgba(7, 53, 59, 0.5) 0%, transparent 70%),
+    radial-gradient(circle at 85% 85%, rgba(216, 149, 16, 0.05) 0%, transparent 50%),
+    linear-gradient(170deg, #021114 0%, #042429 50%, #03161a 100%);
   overflow: hidden;
 }
 
@@ -1773,13 +1785,15 @@ a {
 }
 
 .deliverable-cell {
-  background-color: var(--bg-main);
+  background: linear-gradient(165deg, rgba(5, 36, 41, 0.92) 0%, rgba(3, 20, 23, 0.96) 100%);
   padding: clamp(2rem, 2.5vw, 3rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  transition: background-color 0.4s var(--ease);
+  transition:
+    background 0.4s var(--ease),
+    transform 0.4s var(--ease);
 }
 
 .deliverable-cell::before {
@@ -1794,7 +1808,7 @@ a {
 }
 
 .deliverable-cell:hover {
-  background-color: #052b31;
+  background: linear-gradient(165deg, rgba(8, 48, 55, 0.96) 0%, rgba(4, 28, 32, 0.98) 100%);
 }
 
 .deliverable-cell:hover::before {
@@ -1869,7 +1883,10 @@ a {
   position: relative;
   padding: clamp(6rem, 12vh, 10rem) 0;
   border-top: none;
-  background-color: var(--bg-deep);
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(7, 53, 59, 0.5) 0%, transparent 75%),
+    radial-gradient(circle at 10% 25%, rgba(216, 149, 16, 0.04) 0%, transparent 50%),
+    linear-gradient(155deg, #020f12 0%, #042226 50%, #021013 100%);
   overflow: hidden;
 }
 
@@ -2132,7 +2149,10 @@ a {
   position: relative;
   padding: clamp(5.5rem, 11vh, 9.5rem) 0;
   border-top: none;
-  background-color: var(--bg-deep);
+  background:
+    radial-gradient(circle at 75% 30%, rgba(7, 55, 62, 0.65) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 45% at 20% 80%, rgba(216, 149, 16, 0.05) 0%, transparent 60%),
+    linear-gradient(160deg, #021013 0%, #04252a 55%, #020e10 100%);
   overflow: hidden;
 }
 
@@ -2263,7 +2283,7 @@ a {
 }
 
 .stat-cell {
-  background-color: var(--bg-deep);
+  background: linear-gradient(160deg, rgba(6, 35, 40, 0.9) 0%, rgba(3, 19, 22, 0.96) 100%);
   padding: 1.5rem 1.25rem;
   display: flex;
   flex-direction: column;
@@ -2332,7 +2352,10 @@ a {
   position: relative;
   padding: clamp(6rem, 12vh, 10rem) 0;
   border-top: none;
-  background-color: var(--bg-main);
+  background:
+    radial-gradient(ellipse 70% 50% at 25% 25%, rgba(7, 53, 59, 0.55) 0%, transparent 70%),
+    radial-gradient(ellipse 80% 60% at 85% 75%, rgba(216, 149, 16, 0.06) 0%, transparent 65%),
+    linear-gradient(145deg, #031619 0%, #05272d 50%, #021013 100%);
   overflow: hidden;
 }
 
@@ -2627,7 +2650,10 @@ a {
   position: relative;
   padding: clamp(5.5rem, 11vh, 9.5rem) 0;
   border-top: 1px solid var(--hairline);
-  background-color: var(--bg-deep);
+  background:
+    radial-gradient(ellipse 65% 55% at 80% 25%, rgba(7, 53, 59, 0.45) 0%, transparent 70%),
+    radial-gradient(circle at 15% 85%, rgba(216, 149, 16, 0.04) 0%, transparent 55%),
+    linear-gradient(165deg, #020f12 0%, #042125 55%, #020e10 100%);
   overflow: hidden;
 }
 
@@ -2761,12 +2787,14 @@ a {
   position: relative;
   padding: clamp(6.5rem, 14vh, 11rem) 0;
   border-top: 1px solid var(--hairline);
-  background: radial-gradient(
-    ellipse 120% 80% at 50% 100%,
-    rgba(216, 149, 16, 0.22) 0%,
-    rgba(4, 33, 37, 0.85) 45%,
-    var(--bg-deep) 100%
-  );
+  background:
+    radial-gradient(
+      ellipse 120% 80% at 50% 100%,
+      rgba(216, 149, 16, 0.24) 0%,
+      rgba(4, 33, 37, 0.85) 45%,
+      transparent 100%
+    ),
+    linear-gradient(180deg, #020e11 0%, #031518 50%, #020e10 100%);
   overflow: hidden;
 }
 
@@ -2840,7 +2868,7 @@ a {
 .site-footer {
   position: relative;
   border-top: 1px solid var(--hairline);
-  background-color: var(--bg-deep);
+  background: linear-gradient(180deg, #020e11 0%, #010809 100%);
   padding: clamp(4rem, 8vh, 6rem) 0 2.5rem;
 }
 

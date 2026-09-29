@@ -111,7 +111,7 @@ a {
 .edition-main-title,
 .faq-main-title {
   font-family: var(--font);
-  font-size: clamp(1.85rem, 3.2vw, 3.15rem);
+  font-size: clamp(2.1rem, 3.6vw, 3.65rem);
   font-weight: 200;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -510,12 +510,12 @@ a {
   max-width: 1680px;
   width: 100%;
   margin: 0 auto;
-  padding: 5.5rem 1.25rem 2rem;
+  padding: clamp(8.5rem, 14vh, 11rem) 1.25rem 2.25rem;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 2.25rem;
+  gap: 2.75rem;
 }
 
 /* 1. Banda de los 3 Pilares */
@@ -531,7 +531,7 @@ a {
 .pillar-col {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.65rem;
   border-right: none;
   padding-right: 0;
   min-width: 0;
@@ -555,8 +555,8 @@ a {
   font-family: var(--font);
   font-style: italic;
   font-weight: 300;
-  font-size: clamp(2.4rem, 4.4vw, 4.8rem);
-  line-height: 0.92;
+  font-size: clamp(3.2rem, 5.2vw, 5.8rem);
+  line-height: 0.9;
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: var(--gold);
@@ -567,7 +567,7 @@ a {
 }
 
 .pillar-title--break {
-  line-height: 0.88;
+  line-height: 0.86;
   white-space: normal;
 }
 
@@ -853,16 +853,16 @@ a {
   }
 
   .hero-container {
-    padding: 5.25rem 1.25rem 1.75rem;
-    gap: 1.75rem;
+    padding: clamp(7.5rem, 15vh, 9.5rem) 1.25rem 2.25rem;
+    gap: clamp(2.75rem, 5.5vh, 4rem);
   }
 
-  /* En mobile: una debajo de la otra, no en columnas */
+  /* En mobile: una debajo de la otra con generosa separación */
   .hero-pillars-band {
     display: flex;
     flex-direction: column;
-    gap: clamp(1.25rem, 3.8vw, 1.85rem);
-    padding-bottom: 1.5rem;
+    gap: clamp(2.25rem, 6vw, 3rem);
+    padding-bottom: 2rem;
     position: relative;
     z-index: 5;
     width: 100%;
@@ -871,7 +871,7 @@ a {
   .pillar-col {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.65rem;
     padding: 0;
     position: relative;
     width: 100%;
@@ -902,18 +902,25 @@ a {
   }
 
   .pillar-title {
-    font-size: clamp(2.3rem, 10vw, 3.6rem);
+    font-size: clamp(2rem, 8.2vw, 3.4rem);
     line-height: 0.9;
     text-shadow: 0 8px 18px rgba(216, 149, 16, 0.42), 0 2px 6px rgba(0, 0, 0, 0.6);
   }
 
+  /* En mobile: DIFERENCIATE completo en un solo renglón, sin corte ni guion */
   .pillar-title--break {
-    line-height: 0.88;
+    line-height: 0.9;
+    white-space: nowrap;
+    display: block;
   }
 
   .pillar-word-line {
-    display: block;
-    white-space: nowrap;
+    display: inline !important;
+    white-space: nowrap !important;
+  }
+
+  .pillar-hyphen {
+    display: none !important;
   }
 
   .pillar-col:active .pillar-title {
@@ -937,17 +944,23 @@ a {
   }
 
   .pillar-bajada {
-    font-size: clamp(0.7rem, 2.6vw, 0.85rem);
+    font-size: clamp(0.72rem, 2.6vw, 0.88rem);
     font-weight: 500;
     color: var(--gold);
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    line-height: 1.35;
-    opacity: 0.9;
+    line-height: 1.4;
+    opacity: 0.95;
   }
 
   .hero-main-stage {
-    gap: 1.75rem;
+    gap: clamp(2.5rem, 5.5vh, 3.5rem);
+  }
+
+  .hero-stage-left {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3.5vh, 2.25rem);
   }
 
   .hero-logo-floating {
@@ -959,7 +972,7 @@ a {
   }
 
   .hero-stage-right {
-    gap: 1.5rem;
+    gap: clamp(2rem, 4.5vh, 2.75rem);
   }
 
   .hero-tagline-wrap {
@@ -1013,11 +1026,11 @@ a {
   }
 
   .hero-container {
-    padding: clamp(6.5rem, 10vh, 8.5rem) clamp(2rem, 4vw, 4.5rem) clamp(2.5rem, 4vh, 3.5rem);
+    padding: clamp(9.5rem, 16vh, 12rem) clamp(2rem, 4vw, 4.5rem) clamp(2.5rem, 4vh, 3.5rem);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: clamp(2.5rem, 4vh, 4rem);
+    gap: clamp(3rem, 5vh, 4.75rem);
     flex-grow: 1;
   }
 
@@ -1031,18 +1044,18 @@ a {
   }
 
   .pillar-col {
-    gap: 0.65rem;
+    gap: 0.75rem;
     border-right: none;
     padding-right: 0;
   }
 
   .pillar-title {
-    font-size: clamp(2.8rem, 4.4vw, 5.2rem);
-    line-height: 0.92;
+    font-size: clamp(3.6rem, 5.6vw, 6.2rem);
+    line-height: 0.9;
   }
 
   .pillar-title--break {
-    line-height: 0.88;
+    line-height: 0.84;
   }
 
   .pillar-word-line {
@@ -1050,12 +1063,16 @@ a {
     white-space: nowrap;
   }
 
+  .pillar-hyphen {
+    display: inline-block;
+  }
+
   .pillar-img {
-    height: clamp(2.2rem, 3.4vw, 3.4rem);
+    height: clamp(2.4rem, 3.6vw, 3.6rem);
   }
 
   .pillar-bajada {
-    font-size: clamp(0.7rem, 0.9vw, 0.85rem);
+    font-size: clamp(0.72rem, 0.95vw, 0.88rem);
     letter-spacing: 0.08em;
   }
 
@@ -1115,11 +1132,17 @@ a {
    ============================================================ */
 @media (min-width: 1440px) {
   .hero-container {
-    gap: 4.5rem;
+    padding-top: clamp(10.5rem, 17vh, 13rem);
+    gap: 5rem;
   }
 
   .pillar-title {
-    font-size: clamp(3.2rem, 4.6vw, 5.6rem);
+    font-size: clamp(4.4rem, 6.4vw, 7.2rem);
+    line-height: 0.88;
+  }
+
+  .pillar-title--break {
+    line-height: 0.82;
   }
 
   .hero-logo-floating {

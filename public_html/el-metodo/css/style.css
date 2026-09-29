@@ -167,6 +167,18 @@ a {
   max-width: 58ch;
 }
 
+@media (min-width: 900px) {
+  .manifesto-content-right,
+  .decisions-content-right,
+  .testimonials-content-right,
+  .facilitator-content-right,
+  .edition-content-right,
+  .faq-content-right {
+    margin-left: auto;
+    max-width: clamp(560px, 58vw, 820px);
+  }
+}
+
 /* ============================================================
    HEADER / NAV EDITORIAL (inspirado en Franceclat)
    ============================================================ */
@@ -1253,7 +1265,7 @@ a {
 @media (min-width: 900px) {
   .decisions-content-right {
     margin-left: auto;
-    max-width: clamp(620px, 64vw, 940px);
+    max-width: clamp(560px, 58vw, 820px);
   }
 }
 
@@ -1851,7 +1863,7 @@ a {
 @media (min-width: 900px) {
   .testimonials-content-right {
     margin-left: auto;
-    max-width: clamp(640px, 68vw, 980px);
+    max-width: clamp(560px, 58vw, 820px);
   }
 }
 

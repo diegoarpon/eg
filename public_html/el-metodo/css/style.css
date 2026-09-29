@@ -1161,8 +1161,7 @@ a {
 @media (min-width: 900px) {
   .manifesto-content-right {
     margin-left: auto;
-    max-width: clamp(640px, 68vw, 1080px);
-    width: 100%;
+    max-width: clamp(560px, 58vw, 820px);
   }
 }
 
@@ -1193,14 +1192,6 @@ a {
 .manifesto-prose em {
   font-style: italic;
   color: var(--white-85);
-}
-
-@media (min-width: 1024px) {
-  .manifesto-grid {
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: clamp(4rem, 7vw, 9rem);
-    align-items: start;
-  }
 }
 
 /* ============================================================

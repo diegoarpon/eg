@@ -3255,22 +3255,25 @@ a {
   transition: opacity 0.4s var(--ease);
 }
 
-/* 01 · El Enfoque (Manifiesto): entra desde la derecha, parte redonda hacia la izquierda (interior) */
+/* 01 · El Enfoque (Manifiesto): saliendo de la izquierda, parte redonda hacia la derecha (interior) */
 .section-arch-bg--manifesto {
-  --arch-rotate: -90deg;
+  --arch-rotate: 90deg;
   width: clamp(750px, 65vw, 1150px);
   height: clamp(900px, 85vw, 1450px);
-  right: clamp(-380px, -26vw, -220px);
+  left: clamp(-380px, -26vw, -220px);
+  right: auto;
   top: clamp(40px, 12vh, 140px);
 }
 
-/* 02 · 6 Decisiones: posicionado sobre la columna de texto/cards (interviniendo sutilmente con el texto a 0.1) */
+/* 02 · 6 Decisiones: vertical del lado izquierdo */
 .section-arch-bg--decisions {
-  --arch-rotate: -90deg;
-  width: clamp(750px, 65vw, 1150px);
-  height: clamp(900px, 85vw, 1450px);
-  right: clamp(-340px, -22vw, -160px);
-  top: clamp(40px, 10vh, 130px);
+  --arch-rotate: 0deg;
+  width: clamp(650px, 55vw, 980px);
+  height: clamp(850px, 85vw, 1350px);
+  left: clamp(-180px, -12vw, -40px);
+  right: auto;
+  top: clamp(-40px, -4vh, 30px);
+  background-position: left top;
 }
 
 /* 03 · Entregables y Herramientas: entra desde arriba, parte redonda hacia abajo (interior) */
@@ -3291,22 +3294,25 @@ a {
   top: clamp(20px, 6vh, 90px);
 }
 
-/* 05 · Edith Groshaus (Facilitación): entra desde la derecha, parte redonda hacia la izquierda (interior) */
+/* 05 · Edith Groshaus (Facilitación): saliendo de la izquierda, parte redonda hacia la derecha (interior) */
 .section-arch-bg--facilitator {
-  --arch-rotate: -90deg;
+  --arch-rotate: 90deg;
   width: clamp(750px, 65vw, 1150px);
   height: clamp(900px, 85vw, 1450px);
-  right: clamp(-380px, -26vw, -220px);
+  left: clamp(-380px, -26vw, -220px);
+  right: auto;
   top: clamp(20px, 5vh, 100px);
 }
 
-/* 06 · 2º Taller Presencial (Coordenadas): posicionado sobre la columna de texto/detalles (interviniendo a 0.1) */
+/* 06 · 2º Taller Presencial (Coordenadas): vertical del lado izquierdo */
 .section-arch-bg--edition {
-  --arch-rotate: -90deg;
-  width: clamp(750px, 65vw, 1150px);
-  height: clamp(900px, 85vw, 1450px);
-  right: clamp(-340px, -22vw, -160px);
-  top: clamp(30px, 8vh, 110px);
+  --arch-rotate: 0deg;
+  width: clamp(650px, 55vw, 980px);
+  height: clamp(850px, 85vw, 1350px);
+  left: clamp(-180px, -12vw, -40px);
+  right: auto;
+  top: clamp(-40px, -4vh, 30px);
+  background-position: left top;
 }
 
 /* 07 · Preguntas Frecuentes (FAQ): entra desde la derecha, parte redonda hacia la izquierda (interior) */
@@ -3338,15 +3344,17 @@ a {
   .section-arch-bg--manifesto {
     width: 480px;
     height: 680px;
-    right: -200px;
+    left: -200px;
+    right: auto;
     top: 30px;
   }
 
   .section-arch-bg--decisions {
-    width: 480px;
-    height: 680px;
-    right: -200px;
-    top: 30px;
+    width: 440px;
+    height: 650px;
+    left: -120px;
+    right: auto;
+    top: 10px;
   }
 
   .section-arch-bg--deliverables {
@@ -3366,15 +3374,17 @@ a {
   .section-arch-bg--facilitator {
     width: 480px;
     height: 680px;
-    right: -190px;
+    left: -200px;
+    right: auto;
     top: 10px;
   }
 
   .section-arch-bg--edition {
-    width: 460px;
+    width: 440px;
     height: 650px;
-    left: -20px;
-    top: -180px;
+    left: -120px;
+    right: auto;
+    top: 10px;
   }
 
   .section-arch-bg--faq {

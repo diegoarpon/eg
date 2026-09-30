@@ -2829,9 +2829,15 @@ a {
   border-top: 1px solid rgba(216, 149, 16, 0.35);
   background:
     radial-gradient(
-      ellipse 95% 65% at 50% 30%,
-      rgba(216, 149, 16, 0.35) 0%,
-      rgba(216, 149, 16, 0.12) 45%,
+      ellipse 95% 45% at 50% 10%,
+      rgba(4, 33, 37, 0.95) 0%,
+      rgba(7, 53, 59, 0.65) 45%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse 95% 65% at 50% 45%,
+      rgba(216, 149, 16, 0.28) 0%,
+      rgba(216, 149, 16, 0.10) 45%,
       transparent 75%
     ),
     radial-gradient(
@@ -2841,7 +2847,7 @@ a {
       rgba(4, 33, 37, 0.9) 65%,
       transparent 100%
     ),
-    linear-gradient(135deg, rgba(216, 149, 16, 0.12) 0%, transparent 45%, rgba(216, 149, 16, 0.16) 100%),
+    linear-gradient(135deg, rgba(216, 149, 16, 0.08) 0%, transparent 45%, rgba(216, 149, 16, 0.14) 100%),
     linear-gradient(180deg, #020e11 0%, #031518 50%, #020e10 100%);
   overflow: hidden;
 }
@@ -2849,7 +2855,7 @@ a {
 .closing-cta-section::before {
   content: '';
   position: absolute;
-  top: 10%;
+  top: 35%;
   left: 50%;
   transform: translateX(-50%);
   width: clamp(340px, 65vw, 850px);
@@ -2883,12 +2889,12 @@ a {
   gap: 0.65rem;
   margin-bottom: 2.25rem;
   padding: 0.45rem 1.35rem;
-  border: 1px solid rgba(216, 149, 16, 0.45);
-  background: linear-gradient(135deg, rgba(216, 149, 16, 0.22) 0%, rgba(4, 33, 37, 0.75) 100%);
+  border: 1px solid rgba(216, 149, 16, 0.4);
+  background: linear-gradient(135deg, rgba(7, 53, 59, 0.95) 0%, rgba(3, 21, 24, 0.96) 100%);
   border-radius: 999px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 24px rgba(216, 149, 16, 0.22);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 24px rgba(2, 14, 17, 0.6), 0 0 16px rgba(7, 53, 59, 0.4);
 }
 
 .closing-meta__logo {

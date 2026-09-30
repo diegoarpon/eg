@@ -3235,17 +3235,20 @@ a {
 
 /* ============================================================
    ARCH MOTIF BACKGROUNDS (ARCOS DORADOS EDITORIALES)
+   - Asset vectorial oficial: assets/vector-bg.svg
+   - Rotaciones estrictamente ortogonales (NUNCA diagonal: 0°, 90°, 180°, -90°)
    - Parte redonda (cúpula) orientada siempre hacia el interior
-   - Variación dinámica de escala, corte y rotación por sección
+   - Opacidad uniforme de 0.2
    - En la sección de cierre (#reserva), cúpula visible arriba enmarcando el contenido
    ============================================================ */
 .section-arch-bg {
   position: absolute;
   pointer-events: none;
   z-index: 1;
-  background-image: url('../assets/bg-arch-gold.png');
+  background-image: url('../assets/vector-bg.svg');
   background-repeat: no-repeat;
   background-size: contain;
+  opacity: 0.2;
   will-change: transform;
   transform: translate3d(var(--arch-x, 0px), var(--parallax-y, 0px), 0) rotate(var(--arch-rotate, 0deg));
   transform-origin: center center;
@@ -3259,7 +3262,6 @@ a {
   height: clamp(900px, 85vw, 1450px);
   right: clamp(-380px, -26vw, -220px);
   top: clamp(40px, 12vh, 140px);
-  opacity: 0.14;
 }
 
 /* 02 · 6 Decisiones: entra desde la izquierda, parte redonda hacia la derecha (interior) */
@@ -3269,7 +3271,6 @@ a {
   height: clamp(900px, 85vw, 1450px);
   left: clamp(-380px, -26vw, -220px);
   top: clamp(60px, 14vh, 160px);
-  opacity: 0.14;
 }
 
 /* 03 · Entregables y Herramientas: entra desde arriba, parte redonda hacia abajo (interior) */
@@ -3279,17 +3280,15 @@ a {
   height: clamp(880px, 80vw, 1400px);
   right: clamp(10px, 6vw, 100px);
   top: clamp(-340px, -26vh, -180px);
-  opacity: 0.13;
 }
 
 /* 04 · Voces de la 1ª Edición (Testimonios): entra desde la izquierda, parte redonda hacia la derecha (interior) */
 .section-arch-bg--testimonials {
-  --arch-rotate: 80deg;
+  --arch-rotate: 90deg;
   width: clamp(750px, 65vw, 1150px);
   height: clamp(900px, 85vw, 1450px);
   left: clamp(-360px, -24vw, -200px);
   top: clamp(20px, 6vh, 90px);
-  opacity: 0.14;
 }
 
 /* 05 · Edith Groshaus (Facilitación): entra desde la derecha, parte redonda hacia la izquierda (interior) */
@@ -3299,27 +3298,24 @@ a {
   height: clamp(900px, 85vw, 1450px);
   right: clamp(-380px, -26vw, -220px);
   top: clamp(20px, 5vh, 100px);
-  opacity: 0.14;
 }
 
-/* 06 · 2º Taller Presencial (Coordenadas): entra desde arriba-izquierda, parte redonda hacia abajo (interior) */
+/* 06 · 2º Taller Presencial (Coordenadas): entra desde arriba, parte redonda hacia abajo (interior) */
 .section-arch-bg--edition {
-  --arch-rotate: 175deg;
+  --arch-rotate: 180deg;
   width: clamp(700px, 60vw, 1100px);
   height: clamp(880px, 80vw, 1400px);
   left: clamp(10px, 5vw, 100px);
   top: clamp(-340px, -26vh, -180px);
-  opacity: 0.13;
 }
 
 /* 07 · Preguntas Frecuentes (FAQ): entra desde la derecha, parte redonda hacia la izquierda (interior) */
 .section-arch-bg--faq {
-  --arch-rotate: -85deg;
+  --arch-rotate: -90deg;
   width: clamp(750px, 65vw, 1150px);
   height: clamp(900px, 85vw, 1450px);
   right: clamp(-360px, -24vw, -200px);
   top: clamp(20px, 5vh, 80px);
-  opacity: 0.12;
 }
 
 /* 08 · Cierre Editorial & CTA (Reserva): Cúpula visible arriba como en el ejemplo, enmarcando el contenido */
@@ -3331,17 +3327,19 @@ a {
   width: clamp(680px, 72vw, 1050px);
   height: clamp(880px, 95vw, 1400px);
   background-position: center top;
-  opacity: 0.32;
 }
 
 /* Ajustes responsive mobile */
 @media (max-width: 768px) {
+  .section-arch-bg {
+    opacity: 0.18;
+  }
+
   .section-arch-bg--manifesto {
     width: 480px;
     height: 680px;
     right: -200px;
     top: 30px;
-    opacity: 0.11;
   }
 
   .section-arch-bg--decisions {
@@ -3349,7 +3347,6 @@ a {
     height: 680px;
     left: -200px;
     top: 30px;
-    opacity: 0.11;
   }
 
   .section-arch-bg--deliverables {
@@ -3357,7 +3354,6 @@ a {
     height: 650px;
     right: -30px;
     top: -180px;
-    opacity: 0.10;
   }
 
   .section-arch-bg--testimonials {
@@ -3365,7 +3361,6 @@ a {
     height: 680px;
     left: -190px;
     top: 10px;
-    opacity: 0.11;
   }
 
   .section-arch-bg--facilitator {
@@ -3373,7 +3368,6 @@ a {
     height: 680px;
     right: -190px;
     top: 10px;
-    opacity: 0.11;
   }
 
   .section-arch-bg--edition {
@@ -3381,7 +3375,6 @@ a {
     height: 650px;
     left: -20px;
     top: -180px;
-    opacity: 0.10;
   }
 
   .section-arch-bg--faq {
@@ -3389,14 +3382,12 @@ a {
     height: 680px;
     right: -190px;
     top: 10px;
-    opacity: 0.10;
   }
 
   .section-arch-bg--closing {
     width: clamp(480px, 110vw, 760px);
     height: clamp(650px, 125vw, 1000px);
     top: clamp(3rem, 7vh, 5rem);
-    opacity: 0.28;
   }
 }
 

@@ -2882,6 +2882,13 @@ a {
   box-shadow: 0 4px 24px rgba(216, 149, 16, 0.22);
 }
 
+.closing-meta__logo {
+  height: clamp(0.75rem, 1.1vw, 0.95rem);
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 0 10px rgba(216, 149, 16, 0.45));
+}
+
 .closing-meta .label-tag--gold {
   color: var(--gold);
   font-weight: 700;

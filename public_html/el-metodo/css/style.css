@@ -23,7 +23,8 @@
 
   --white:        #ffffff;
   --white-85:     rgba(255, 255, 255, 0.85);
-  --white-60:     rgba(255, 255, 255, 0.60);
+  --white-80:     rgba(255, 255, 255, 0.80);
+  --white-60:     rgba(255, 255, 255, 0.80);
   --white-35:     rgba(255, 255, 255, 0.35);
   --hairline:     rgba(255, 255, 255, 0.08);
 
@@ -70,7 +71,7 @@ a {
   font-weight: 600;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--white-60);
+  color: var(--white-80);
   transition: color 0.3s var(--ease);
 }
 
@@ -130,7 +131,7 @@ a {
   font-size: clamp(0.95rem, 1.15vw, 1.125rem);
   font-weight: 300;
   line-height: 1.65;
-  color: var(--white-60);
+  color: var(--white-80);
 }
 
 .text-contrast {
@@ -837,7 +838,7 @@ a {
   font-size: 0.8rem;
   font-weight: 300;
   line-height: 1.6;
-  color: var(--white-60);
+  color: var(--white-80);
   letter-spacing: 0.02em;
   max-width: 44ch;
 }
@@ -1253,7 +1254,7 @@ a {
   font-size: clamp(0.95rem, 1.15vw, 1.125rem);
   font-weight: 300;
   line-height: 1.65;
-  color: var(--white-60);
+  color: var(--white-80);
 }
 
 /* 2. Luego que termina la bajada, orientar a la derecha el resto del texto, en su columna */
@@ -1278,7 +1279,7 @@ a {
   font-size: clamp(0.95rem, 1.1vw, 1.1rem);
   font-weight: 300;
   line-height: 1.8;
-  color: var(--white-60);
+  color: var(--white-80);
   max-width: 100%;
   width: 100%;
 }
@@ -1348,7 +1349,7 @@ a {
   font-size: clamp(0.95rem, 1.15vw, 1.125rem);
   font-weight: 300;
   line-height: 1.65;
-  color: var(--white-60);
+  color: var(--white-80);
 }
 
 /* 2. Luego que termina la bajada, orientar a la derecha el resto del texto, en su columna */
@@ -1448,7 +1449,7 @@ a {
   font-size: 0.95rem;
   font-weight: 300;
   line-height: 1.7;
-  color: var(--white-60);
+  color: var(--white-80);
   transition: color 0.3s var(--ease);
 }
 
@@ -1477,7 +1478,7 @@ a {
 .decisions-footer__text {
   font-size: 0.95rem;
   font-weight: 300;
-  color: var(--white-60);
+  color: var(--white-80);
   letter-spacing: 0.02em;
 }
 
@@ -1514,7 +1515,7 @@ a {
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--white-60);
+  color: var(--white-80);
   transition: color 0.3s var(--ease);
 }
 
@@ -1590,7 +1591,7 @@ a {
   font-size: clamp(0.95rem, 1.15vw, 1.125rem);
   font-weight: 300;
   line-height: 1.65;
-  color: var(--white-60);
+  color: var(--white-80);
 }
 
 /* Grilla de 3 módulos arquitectónicos */
@@ -1685,7 +1686,7 @@ a {
 .module-format-tag {
   font-size: 0.65rem;
   font-weight: 400;
-  color: var(--white-60);
+  color: var(--white-80);
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -1792,7 +1793,7 @@ a {
   font-size: clamp(0.95rem, 1.15vw, 1.125rem);
   font-weight: 300;
   line-height: 1.65;
-  color: var(--white-60);
+  color: var(--white-80);
 }
 
 .deliverables-grid {
@@ -1880,7 +1881,7 @@ a {
   font-size: 0.95rem;
   font-weight: 300;
   line-height: 1.7;
-  color: var(--white-60);
+  color: var(--white-80);
   transition: color 0.3s var(--ease);
   margin-bottom: 1.75rem;
 }
@@ -1954,7 +1955,7 @@ a {
   font-size: clamp(0.95rem, 1.15vw, 1.125rem);
   font-weight: 300;
   line-height: 1.65;
-  color: var(--white-60);
+  color: var(--white-80);
 }
 
 /* 2. Luego que termina la bajada, orientar a la derecha el resto del texto, en su columna */
@@ -2219,7 +2220,7 @@ a {
   font-size: clamp(0.95rem, 1.15vw, 1.125rem);
   font-weight: 300;
   line-height: 1.65;
-  color: var(--white-60);
+  color: var(--white-80);
 }
 
 /* 2. Luego que termina la bajada, orientar a la derecha el resto del texto, en su columna */
@@ -2289,7 +2290,7 @@ a {
   font-size: clamp(0.925rem, 1.05vw, 1.05rem);
   font-weight: 300;
   line-height: 1.8;
-  color: var(--white-60);
+  color: var(--white-80);
 }
 
 .facilitator-prose strong {
@@ -2333,7 +2334,7 @@ a {
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--white-60);
+  color: var(--white-80);
   line-height: 1.4;
 }
 
@@ -2356,7 +2357,7 @@ a {
 .partner-desc {
   font-size: 0.95rem;
   font-weight: 300;
-  color: var(--white-60);
+  color: var(--white-80);
   line-height: 1.7;
 }
 
@@ -2430,7 +2431,7 @@ a {
   font-size: clamp(0.95rem, 1.15vw, 1.125rem);
   font-weight: 300;
   line-height: 1.65;
-  color: var(--white-60);
+  color: var(--white-80);
 }
 
 /* 2. Luego que termina la bajada, orientar a la derecha el resto del texto, en su columna */
@@ -2506,7 +2507,7 @@ a {
   font-size: 0.95rem;
   font-weight: 300;
   line-height: 1.7;
-  color: var(--white-60);
+  color: var(--white-80);
   max-width: 52ch;
   margin-top: 0.25rem;
 }
@@ -2677,7 +2678,7 @@ a {
 .edition-tile__sub {
   font-size: 0.9rem;
   font-weight: 300;
-  color: var(--white-60);
+  color: var(--white-80);
   line-height: 1.45;
   margin: 0;
 }
@@ -2729,7 +2730,7 @@ a {
   font-size: clamp(0.95rem, 1.15vw, 1.125rem);
   font-weight: 300;
   line-height: 1.65;
-  color: var(--white-60);
+  color: var(--white-80);
 }
 
 /* 2. Luego que termina la bajada, orientar a la derecha el resto del texto, en su columna */
@@ -2810,7 +2811,7 @@ a {
   font-size: clamp(0.9rem, 1.05vw, 1rem);
   font-weight: 300;
   line-height: 1.8;
-  color: var(--white-60);
+  color: var(--white-80);
   max-width: 78ch;
 }
 
@@ -2953,7 +2954,7 @@ a {
 .closing-subtext {
   font-size: 0.9rem;
   font-weight: 300;
-  color: var(--white-60);
+  color: var(--white-80);
   letter-spacing: 0.04em;
   max-width: 44ch;
 }
@@ -3026,7 +3027,7 @@ a {
 .footer-brand-desc {
   font-size: 0.95rem;
   font-weight: 300;
-  color: var(--white-60);
+  color: var(--white-80);
   line-height: 1.7;
   max-width: 38ch;
 }
@@ -3056,7 +3057,7 @@ a {
 .footer-nav-list a {
   font-size: 0.9rem;
   font-weight: 300;
-  color: var(--white-60);
+  color: var(--white-80);
   transition: color 0.3s var(--ease);
 }
 
@@ -3071,7 +3072,7 @@ a {
   gap: 0.75rem;
   font-size: 0.9rem;
   font-weight: 300;
-  color: var(--white-60);
+  color: var(--white-80);
 }
 
 .footer-contact-list a {

@@ -1475,7 +1475,7 @@ a {
 }
 
 .decisions-footer__text {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 300;
   color: var(--white-60);
   letter-spacing: 0.02em;
@@ -1877,7 +1877,7 @@ a {
 }
 
 .deliverable-desc {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 300;
   line-height: 1.7;
   color: var(--white-60);
@@ -2354,10 +2354,10 @@ a {
 }
 
 .partner-desc {
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   font-weight: 300;
   color: var(--white-60);
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
 .partner-desc a {
@@ -2495,7 +2495,7 @@ a {
 }
 
 .edition-typo-note {
-  font-size: clamp(0.875rem, 0.98vw, 0.975rem);
+  font-size: 0.95rem;
   font-weight: 300;
   line-height: 1.7;
   color: var(--white-60);
@@ -2536,7 +2536,7 @@ a {
 }
 
 .edition-networking-desc {
-  font-size: clamp(0.9rem, 1.02vw, 1rem);
+  font-size: 0.95rem;
   font-weight: 300;
   line-height: 1.75;
   color: var(--white-85);
@@ -3009,7 +3009,7 @@ a {
 }
 
 .footer-brand-desc {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 300;
   color: var(--white-60);
   line-height: 1.7;

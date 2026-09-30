@@ -282,6 +282,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
+  // ─── Parallax Scroll para Arcos Arquitectónicos de Fondo ───
+  const archTargets = document.querySelectorAll('[data-arch-parallax]');
+  if (archTargets.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let archTicking = false;
+
+    function updateArchParallax() {
+      const vh = window.innerHeight;
+
+      archTargets.forEach(target => {
+        const section = target.closest('section') || target.parentElement;
+        if (!section) return;
+
+        const rect = section.getBoundingClientRect();
+        if (rect.top < vh && rect.bottom > 0) {
+          const speed = parseFloat(target.getAttribute('data-speed')) || 0.1;
+          const centerOffset = (rect.top + rect.height * 0.5) - (vh * 0.5);
+          const yOffset = centerOffset * speed;
+
+          if (target.classList.contains('section-arch-bg--closing')) {
+            target.style.transform = `translate3d(-50%, ${yOffset.toFixed(1)}px, 0)`;
+          } else {
+            target.style.transform = `translate3d(0, ${yOffset.toFixed(1)}px, 0)`;
+          }
+        }
+      });
+
+      archTicking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!archTicking) {
+        window.requestAnimationFrame(updateArchParallax);
+        archTicking = true;
+      }
+    }, { passive: true });
+
+    window.addEventListener('resize', updateArchParallax, { passive: true });
+    updateArchParallax();
+  }
+
   // ─── Menú Móvil Fullscreen (Franceclat Style) ───────────────
   const headerBurger = document.getElementById('headerBurger');
   const mobileNav = document.getElementById('mobileNav');

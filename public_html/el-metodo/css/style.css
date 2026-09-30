@@ -3233,4 +3233,133 @@ a {
   }
 }
 
+/* ============================================================
+   ARCH MOTIF BACKGROUNDS (ARCOS DORADOS EDITORIALES)
+   - Backgrounds arquitectónicos no repetidos con posicionamiento variado
+   - En la última sección (Cierre / CTA), emerge centrado desde abajo
+   ============================================================ */
+.manifesto-section::before,
+.decisions-section::before,
+.deliverables-section::before,
+.testimonials-section::before,
+.facilitator-section::before,
+.second-edition-section::before,
+.faq-section::before,
+.closing-cta-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/bg-arch-gold.png');
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 01 · El Enfoque (Manifiesto): superior derecho */
+.manifesto-section::before {
+  background-position: right -120px top -70px;
+  background-size: clamp(360px, 32vw, 540px) auto;
+  opacity: 0.14;
+}
+
+/* 02 · 6 Decisiones: superior izquierdo */
+.decisions-section::before {
+  background-position: left -140px top -40px;
+  background-size: clamp(380px, 34vw, 580px) auto;
+  opacity: 0.14;
+}
+
+/* 03 · Entregables y Herramientas: lateral derecho */
+.deliverables-section::before {
+  background-position: right -100px top 40px;
+  background-size: clamp(360px, 32vw, 540px) auto;
+  opacity: 0.14;
+}
+
+/* 04 · Voces de la 1ª Edición (Testimonios): superior izquierdo */
+.testimonials-section::before {
+  background-position: left -120px top -30px;
+  background-size: clamp(380px, 34vw, 560px) auto;
+  opacity: 0.14;
+}
+
+/* 05 · Edith Groshaus (Facilitación): lateral derecho */
+.facilitator-section::before {
+  background-position: right -120px top 20px;
+  background-size: clamp(380px, 34vw, 560px) auto;
+  opacity: 0.14;
+}
+
+/* 06 · 2º Taller Presencial (Coordenadas): lateral izquierdo */
+.second-edition-section::before {
+  background-position: left -130px top 50px;
+  background-size: clamp(360px, 32vw, 540px) auto;
+  opacity: 0.14;
+}
+
+/* 07 · Preguntas Frecuentes (FAQ): superior derecho */
+.faq-section::before {
+  background-position: right -140px top -20px;
+  background-size: clamp(380px, 34vw, 560px) auto;
+  opacity: 0.12;
+}
+
+/* 08 · Cierre Editorial & CTA (Reserva): centrado emergiendo desde abajo */
+.closing-cta-section::after {
+  background-position: center bottom -30px;
+  background-size: clamp(420px, 46vw, 720px) auto;
+  opacity: 0.28;
+}
+
+/* Ajustes responsive mobile */
+@media (max-width: 768px) {
+  .manifesto-section::before {
+    background-position: right -100px top -30px;
+    background-size: 280px auto;
+    opacity: 0.11;
+  }
+
+  .decisions-section::before {
+    background-position: left -120px top -20px;
+    background-size: 290px auto;
+    opacity: 0.11;
+  }
+
+  .deliverables-section::before {
+    background-position: right -90px top 20px;
+    background-size: 280px auto;
+    opacity: 0.11;
+  }
+
+  .testimonials-section::before {
+    background-position: left -100px top -10px;
+    background-size: 280px auto;
+    opacity: 0.11;
+  }
+
+  .facilitator-section::before {
+    background-position: right -100px top 10px;
+    background-size: 280px auto;
+    opacity: 0.11;
+  }
+
+  .second-edition-section::before {
+    background-position: left -100px top 30px;
+    background-size: 280px auto;
+    opacity: 0.11;
+  }
+
+  .faq-section::before {
+    background-position: right -110px top 0;
+    background-size: 280px auto;
+    opacity: 0.10;
+  }
+
+  .closing-cta-section::after {
+    background-position: center bottom -20px;
+    background-size: clamp(320px, 85vw, 460px) auto;
+    opacity: 0.24;
+  }
+}
+
 

@@ -296,15 +296,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const rect = section.getBoundingClientRect();
         if (rect.top < vh && rect.bottom > 0) {
-          const speed = parseFloat(target.getAttribute('data-speed')) || 0.1;
+          const speed = parseFloat(target.getAttribute('data-speed')) || 0.08;
           const centerOffset = (rect.top + rect.height * 0.5) - (vh * 0.5);
           const yOffset = centerOffset * speed;
 
-          if (target.classList.contains('section-arch-bg--closing')) {
-            target.style.transform = `translate3d(-50%, ${yOffset.toFixed(1)}px, 0)`;
-          } else {
-            target.style.transform = `translate3d(0, ${yOffset.toFixed(1)}px, 0)`;
-          }
+          target.style.setProperty('--parallax-y', `${yOffset.toFixed(1)}px`);
         }
       });
 

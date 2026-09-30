@@ -3320,12 +3320,13 @@ a {
   background-position: left bottom;
 }
 
-/* 07 · Preguntas Frecuentes (FAQ): entra desde la derecha, parte redonda hacia la izquierda (interior) */
+/* 07 · Preguntas Frecuentes (FAQ): saliendo de la izquierda, parte redonda hacia la derecha (interior) */
 .section-arch-bg--faq {
-  --arch-rotate: -90deg;
+  --arch-rotate: 90deg;
   width: clamp(750px, 65vw, 1150px);
   height: clamp(900px, 85vw, 1450px);
-  right: clamp(-360px, -24vw, -200px);
+  left: clamp(-380px, -26vw, -220px);
+  right: auto;
   top: clamp(20px, 5vh, 80px);
 }
 
@@ -3402,7 +3403,8 @@ a {
   .section-arch-bg--faq {
     width: 480px;
     height: 680px;
-    right: -190px;
+    left: -200px;
+    right: auto;
     top: 10px;
   }
 

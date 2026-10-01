@@ -3337,16 +3337,16 @@ a {
   top: clamp(40px, 12vh, 140px);
 }
 
-/* 02 · 6 Decisiones: vertical upside down del lado izquierdo */
+/* 02 · 6 Decisiones: vertical upright del lado izquierdo, bajado para no pisar el texto */
 .section-arch-bg--decisions {
-  --arch-rotate: 180deg;
+  --arch-rotate: 0deg;
   width: clamp(650px, 55vw, 1000px);
   height: clamp(850px, 80vw, 1350px);
   left: clamp(-180px, -12vw, -40px);
   right: auto;
-  top: clamp(-60px, -6vh, 40px);
+  top: clamp(260px, 28vh, 420px);
   bottom: auto;
-  background-position: left center;
+  background-position: left top;
 }
 
 /* 03 · Entregables y Herramientas: vertical saliendo desde el bottom del lado derecho */
@@ -3432,9 +3432,9 @@ a {
     height: 650px;
     left: -120px;
     right: auto;
-    top: 10px;
+    top: 260px;
     bottom: auto;
-    background-position: left center;
+    background-position: left top;
   }
 
   .section-arch-bg--deliverables {

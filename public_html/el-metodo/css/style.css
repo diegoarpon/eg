@@ -3337,16 +3337,16 @@ a {
   top: clamp(40px, 12vh, 140px);
 }
 
-/* 02 · 6 Decisiones: entra desde la derecha, parte redonda hacia la izquierda (interior) */
+/* 02 · 6 Decisiones: vertical upside down del lado izquierdo */
 .section-arch-bg--decisions {
-  --arch-rotate: -90deg;
-  width: clamp(750px, 65vw, 1150px);
-  height: clamp(900px, 85vw, 1450px);
-  right: clamp(-380px, -26vw, -220px);
-  left: auto;
-  top: clamp(40px, 10vh, 140px);
+  --arch-rotate: 180deg;
+  width: clamp(650px, 55vw, 1000px);
+  height: clamp(850px, 80vw, 1350px);
+  left: clamp(-180px, -12vw, -40px);
+  right: auto;
+  top: clamp(-60px, -6vh, 40px);
   bottom: auto;
-  background-position: right center;
+  background-position: left center;
 }
 
 /* 03 · Entregables y Herramientas: vertical saliendo desde el bottom del lado derecho */
@@ -3428,13 +3428,13 @@ a {
   }
 
   .section-arch-bg--decisions {
-    width: 480px;
-    height: 680px;
-    right: -200px;
-    left: auto;
-    top: 30px;
+    width: 440px;
+    height: 650px;
+    left: -120px;
+    right: auto;
+    top: 10px;
     bottom: auto;
-    background-position: right center;
+    background-position: left center;
   }
 
   .section-arch-bg--deliverables {

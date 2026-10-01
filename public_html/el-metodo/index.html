@@ -2,15 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>El Método | Taller Presencial de Gestión y Rentabilidad Médica — Edith Groshaus</title>
   <meta name="description" content="Taller intensivo y presencial de gestión económica, costos reales, aranceles y experiencia del paciente para médicos especialistas con consultorio privado. Organizado por EG Marketing en Puerto Madero.">
   <meta name="keywords" content="El Método, EG Marketing, Edith Groshaus, marketing médico, gestión de consultorio, rentabilidad médica, finanzas para médicos, aranceles médicos, honorarios médicos, experiencia del paciente, taller para médicos Buenos Aires, Puerto Madero">
   <meta name="author" content="Edith Groshaus — EG Marketing">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://egmarketing.com.ar/el-metodo">
-  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
 
   <!-- Open Graph / WhatsApp / Facebook -->
   <meta property="og:type" content="website">
@@ -103,13 +105,16 @@
 </head>
 <body>
 
+  <!-- Enlace accesible de salto al contenido -->
+  <a href="#mainContent" class="skip-link">Saltar al contenido principal</a>
+
   <!-- ══════════════════════════════════════════════════════════
        HEADER / NAV EDITORIAL (inspirado en Franceclat)
   ══════════════════════════════════════════════════════════ -->
   <header class="site-header">
     <div class="site-header__inner">
       <a href="#portada" class="site-header__brand" aria-label="El Método por EG Marketing">
-        <img src="assets/logo-metodo-eg-gold.png" alt="El Método × EG Marketing" class="header-brand-logo">
+        <img src="assets/logo-metodo-eg-gold.png" alt="El Método × EG Marketing" class="header-brand-logo" width="1024" height="82">
       </a>
 
       <!-- Menú desktop inline -->
@@ -158,7 +163,7 @@
       <div class="mobile-nav-backdrop"></div>
       <div class="mobile-nav-content">
         <div class="mobile-nav-top-meta">
-          <img src="assets/logo-metodo-eg-gold.png" alt="El Método × EG Marketing" class="header-brand-logo">
+          <img src="assets/logo-metodo-eg-gold.png" alt="El Método × EG Marketing" class="header-brand-logo" width="1024" height="82">
         </div>
 
         <ul class="mobile-nav-links">
@@ -225,6 +230,11 @@
   </header>
 
   <!-- ══════════════════════════════════════════════════════════
+       CONTENIDO PRINCIPAL
+  ══════════════════════════════════════════════════════════ -->
+  <main id="mainContent" tabindex="-1">
+
+  <!-- ══════════════════════════════════════════════════════════
        HERO PRINCIPAL
        Estructura arquitectónica fiel a rendez-vous.franceclat.fr:
        - 3 paneles de fondo con gradientes radiales atmosféricos
@@ -289,6 +299,9 @@
               src="assets/logo-metodo.svg"
               alt="El Método"
               class="hero-logo"
+              width="500"
+              height="87"
+              fetchpriority="high"
             >
           </div>
         </div>
@@ -514,7 +527,7 @@
             </div>
 
             <div class="module-brand-header">
-              <img src="assets/domina.png" alt="DOMINÁ" class="module-title-img">
+              <img src="assets/domina.png" alt="DOMINÁ" class="module-title-img" width="424" height="99" loading="lazy">
               <h3 class="module-subtitle">Rentabilidad y costos</h3>
               <span class="module-format-tag">Mini-clase · Calculadora de costos · Caso real</span>
             </div>
@@ -552,7 +565,7 @@
             </div>
 
             <div class="module-brand-header">
-              <img src="assets/disena.png" alt="DISEÑÁ" class="module-title-img">
+              <img src="assets/disena.png" alt="DISEÑÁ" class="module-title-img" width="369" height="99" loading="lazy">
               <h3 class="module-subtitle">Experiencia del paciente</h3>
               <span class="module-format-tag">Customer journey · Puesta en común</span>
             </div>
@@ -590,7 +603,7 @@
             </div>
 
             <div class="module-brand-header">
-              <img src="assets/diferenciate.png" alt="DIFERENCIATE" class="module-title-img">
+              <img src="assets/diferenciate.png" alt="DIFERENCIATE" class="module-title-img" width="708" height="82" loading="lazy">
               <h3 class="module-subtitle">Estrategia y posicionamiento</h3>
               <span class="module-format-tag">Propuesta de valor · Taller en equipos</span>
             </div>
@@ -810,16 +823,24 @@
             <!-- Barra de tiempo segmentada interactiva -->
             <div class="carousel-progress-track" aria-label="Línea de tiempo de testimonios">
               <button class="carousel-segment is-active" data-slide-target="0" aria-label="Ver testimonio 1 de 4">
-                <span class="carousel-segment__fill"></span>
+                <span class="carousel-segment__track">
+                  <span class="carousel-segment__fill"></span>
+                </span>
               </button>
               <button class="carousel-segment" data-slide-target="1" aria-label="Ver testimonio 2 de 4">
-                <span class="carousel-segment__fill"></span>
+                <span class="carousel-segment__track">
+                  <span class="carousel-segment__fill"></span>
+                </span>
               </button>
               <button class="carousel-segment" data-slide-target="2" aria-label="Ver testimonio 3 de 4">
-                <span class="carousel-segment__fill"></span>
+                <span class="carousel-segment__track">
+                  <span class="carousel-segment__fill"></span>
+                </span>
               </button>
               <button class="carousel-segment" data-slide-target="3" aria-label="Ver testimonio 4 de 4">
-                <span class="carousel-segment__fill"></span>
+                <span class="carousel-segment__track">
+                  <span class="carousel-segment__fill"></span>
+                </span>
               </button>
             </div>
 
@@ -833,13 +854,13 @@
 
               <div class="carousel-arrows">
                 <button class="carousel-arrow carousel-arrow--prev" id="carouselPrev" aria-label="Testimonio anterior">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <line x1="19" y1="12" x2="5" y2="12"></line>
                     <polyline points="12 19 5 12 12 5"></polyline>
                   </svg>
                 </button>
                 <button class="carousel-arrow carousel-arrow--next" id="carouselNext" aria-label="Siguiente testimonio">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>
@@ -891,6 +912,8 @@
               src="assets/edith-groshaus-portrait.jpg"
               alt="Edith Groshaus facilitando El Método"
               class="facilitator-img"
+              width="618"
+              height="595"
               loading="lazy"
             >
           </div>
@@ -925,7 +948,7 @@
         </div>
 
         <div class="facilitator-partner-lockup">
-          <img src="assets/logo-eg.svg" alt="EG Marketing" class="facilitator-eg-logo">
+          <img src="assets/logo-eg.svg" alt="EG Marketing" class="facilitator-eg-logo" width="960" height="101" loading="lazy">
           <p class="partner-desc">
             Consultora especializada en estrategia, branding y desarrollo comercial para médicos y centros médicos. Conocé más en <a href="https://egmarketing.com.ar" target="_blank" rel="noopener noreferrer">egmarketing.com.ar</a> o en Instagram <a href="https://instagram.com/egmarketing_" target="_blank" rel="noopener noreferrer">@egmarketing_</a>.
           </p>
@@ -1004,13 +1027,14 @@
             <article class="edition-tile edition-tile--video">
               <div class="edition-tile__media-wrap">
                 <video
-                  autoplay
                   muted
                   loop
                   playsinline
-                  preload="metadata"
+                  preload="none"
                   poster="assets/clip-1-thumb.jpg"
                   class="edition-tile__media"
+                  width="1080"
+                  height="1920"
                   aria-label="Dinámica de cálculo con calculadora en el taller presencial"
                 >
                   <source src="assets/taller-clip-1.mp4" type="video/mp4">
@@ -1034,6 +1058,8 @@
                   alt="Workbook personalizado de El Método, calculadora y herramientas de trabajo"
                   loading="lazy"
                   class="edition-tile__media"
+                  width="900"
+                  height="1200"
                 >
                 <div class="edition-tile__overlay">
                   <span class="edition-tile__tag">HERRAMIENTAS</span>
@@ -1053,6 +1079,8 @@
                   alt="Médicos participantes en la mesa de trabajo de la 1ª edición de El Método en Puerto Madero"
                   loading="lazy"
                   class="edition-tile__media"
+                  width="900"
+                  height="1200"
                 >
                 <div class="edition-tile__overlay">
                   <span class="edition-tile__tag">ESPACIO EXCLUSIVO</span>
@@ -1068,13 +1096,14 @@
             <article class="edition-tile edition-tile--video">
               <div class="edition-tile__media-wrap">
                 <video
-                  autoplay
                   muted
                   loop
                   playsinline
-                  preload="metadata"
+                  preload="none"
                   poster="assets/clip-2-thumb.jpg"
                   class="edition-tile__media"
+                  width="1080"
+                  height="1920"
                   aria-label="Edith Groshaus facilitando el debate y exposición en la 1ª edición"
                 >
                   <source src="assets/taller-clip-2.mp4" type="video/mp4">
@@ -1131,11 +1160,11 @@
 
         <!-- FAQ 1 -->
         <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
+          <button class="faq-trigger" id="faq-trigger-1" aria-expanded="false" aria-controls="faq-content-1">
             <span>¿Para qué especialidades médicas está indicado El Método?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-content">
+          <div class="faq-content" id="faq-content-1" role="region" aria-labelledby="faq-trigger-1" aria-hidden="true">
             <div class="faq-content__inner">
               El Método está diseñado para cualquier médico o médica que atienda pacientes en el ámbito privado, ya sea de forma exclusiva o combinada: <strong>clínica médica, cirugía, dermatología, medicina estética, odontología, pediatría, oftalmología, traumatología, ginecología, psiquiatría</strong> y cualquier otra especialidad asistencial. Los fundamentos de costos, customer journey y propuesta de valor aplican universalmente al consultorio médico.
             </div>
@@ -1144,11 +1173,11 @@
 
         <!-- FAQ 2 -->
         <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
+          <button class="faq-trigger" id="faq-trigger-2" aria-expanded="false" aria-controls="faq-content-2">
             <span>¿Se requieren conocimientos previos de finanzas o administración?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-content">
+          <div class="faq-content" id="faq-content-2" role="region" aria-labelledby="faq-trigger-2" aria-hidden="true">
             <div class="faq-content__inner">
               En lo absoluto. El taller está específicamente concebido para profesionales de la salud sin formación económica. Los conceptos se abordan de manera clara, visual e intuitiva, y la <strong>Calculadora de Costos</strong> se entrega lista y configurada para que solo tengas que completar las variables de tu práctica médica.
             </div>
@@ -1157,11 +1186,11 @@
 
         <!-- FAQ 3 -->
         <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
+          <button class="faq-trigger" id="faq-trigger-3" aria-expanded="false" aria-controls="faq-content-3">
             <span>¿Qué pasa si todavía no tengo consultorio propio y alquilo por módulos u horas?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-content">
+          <div class="faq-content" id="faq-content-3" role="region" aria-labelledby="faq-trigger-3" aria-hidden="true">
             <div class="faq-content__inner">
               Es el momento más oportuno para realizarlo. Conocer tus costos reales por hora de atención y diseñar tu experiencia de consulta desde el inicio te permitirá planificar tu transición a consultorio propio con certezas financieras, evitando errores habituales que demoran la rentabilidad.
             </div>
@@ -1170,11 +1199,11 @@
 
         <!-- FAQ 4 -->
         <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
+          <button class="faq-trigger" id="faq-trigger-4" aria-expanded="false" aria-controls="faq-content-4">
             <span>¿Cómo se realiza la reserva de cupo y la consulta de aranceles?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-content">
+          <div class="faq-content" id="faq-content-4" role="region" aria-labelledby="faq-trigger-4" aria-hidden="true">
             <div class="faq-content__inner">
               Dado que los cupos son estrictamente limitados para asegurar una dinámica personalizada, las inscripciones y consultas de arancel se canalizan exclusivamente por nuestro canal de WhatsApp. El equipo de EG Marketing te asistirá de forma personalizada para confirmar tu lugar y coordinar los medios de pago disponibles.
             </div>
@@ -1183,11 +1212,11 @@
 
         <!-- FAQ 5 -->
         <div class="faq-item">
-          <button class="faq-trigger" aria-expanded="false">
+          <button class="faq-trigger" id="faq-trigger-5" aria-expanded="false" aria-controls="faq-content-5">
             <span>¿Qué incluye exactamente la inscripción a la jornada?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-content">
+          <div class="faq-content" id="faq-content-5" role="region" aria-labelledby="faq-trigger-5" aria-hidden="true">
             <div class="faq-content__inner">
               La inscripción incluye el acceso presencial a las 4 horas del taller, el <strong>Workbook Personal</strong> impreso en encuadernación editorial, la <strong>Calculadora de Costos</strong> digital, el framework del <strong>Mapa de Experiencia</strong>, la guía del <strong>Plan de Acción a 30 Días</strong> con seguimiento posterior, servicio de coffee break premium y la instancia de intercambio profesional con los colegas asistentes.
             </div>
@@ -1240,6 +1269,7 @@
 
     </div>
   </section>
+  </main>
 
   <!-- ══════════════════════════════════════════════════════════
        FOOTER EDITORIAL ARQUITECTÓNICO
@@ -1252,7 +1282,7 @@
         <!-- Col 1: Marca & Propósito -->
         <div class="footer-brand-col">
           <div class="footer-logo-row">
-            <img src="assets/logo-metodo-eg-gold.png" alt="El Método × EG Marketing" class="footer-brand-logo">
+            <img src="assets/logo-metodo-eg-gold.png" alt="El Método × EG Marketing" class="footer-brand-logo" width="1024" height="82" loading="lazy">
           </div>
           <p class="footer-brand-desc">
             Taller presencial intensivo de gestión empresarial, finanzas y marketing para médicos independientes o con consultorio propio. Una iniciativa creada y dirigida por Edith Groshaus.

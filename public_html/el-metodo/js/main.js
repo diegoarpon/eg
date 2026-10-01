@@ -24,10 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // ─── Smooth scroll para anchors ───────────────────────────
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-      const target = document.querySelector(this.getAttribute('href'));
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (target.getAttribute('tabindex') !== null) {
+          target.focus();
+        }
       }
     });
   });
@@ -48,7 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
             other.classList.remove('is-open');
             other.querySelector('.faq-trigger')?.setAttribute('aria-expanded', 'false');
             const otherContent = other.querySelector('.faq-content');
-            if (otherContent) otherContent.style.maxHeight = null;
+            if (otherContent) {
+              otherContent.style.maxHeight = null;
+              otherContent.setAttribute('aria-hidden', 'true');
+            }
           }
         });
 
@@ -56,14 +64,28 @@ document.addEventListener('DOMContentLoaded', () => {
           item.classList.remove('is-open');
           trigger.setAttribute('aria-expanded', 'false');
           content.style.maxHeight = null;
+          content.setAttribute('aria-hidden', 'true');
         } else {
           item.classList.add('is-open');
           trigger.setAttribute('aria-expanded', 'true');
           content.style.maxHeight = content.scrollHeight + 'px';
+          content.setAttribute('aria-hidden', 'false');
         }
       });
     }
   });
+
+  // Recalcular maxHeight de FAQ abierta en resize/rotación para prevenir recortes de texto
+  let faqResizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(faqResizeTimer);
+    faqResizeTimer = setTimeout(() => {
+      const openFaqContent = document.querySelector('.faq-item.is-open .faq-content');
+      if (openFaqContent) {
+        openFaqContent.style.maxHeight = openFaqContent.scrollHeight + 'px';
+      }
+    }, 100);
+  }, { passive: true });
 
   // ─── Header Sticky & Mobile Bar on Scroll ──────────────────
   const siteHeader = document.querySelector('.site-header');
